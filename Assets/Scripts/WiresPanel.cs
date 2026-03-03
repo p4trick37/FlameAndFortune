@@ -1,22 +1,32 @@
-using System.Collections;
 using UnityEngine;
 
 public class WiresPanel : MonoBehaviour
 {
-    [SerializeField] private RectTransform clickWire;
+    [SerializeField] private RectTransform wireImage;
+    [SerializeField] private RectTransform wireStartPos;
+    [SerializeField] private RectTransform wireEndPos;
+    private bool usingWire;
 
-    
-    public void InteractClick()
+
+    private void Start()
     {
-        Debug.Log("This Works");
+        wireImage = LockWire(wireStartPos, wireEndPos);
+        Instantiate(wireImage);
     }
 
     //Check to see if the player has clicked the mouse button
 
-    private void Update()
-    {
-        
-    }
+    //private void Update()
+    //{
+    //if (Input.GetMouseButton(0) && IsCursorInSpot(wireStartPos))
+    //{
+    //usingWire = true;
+    //}
+    //if(Input.GetMouseButtonUp(0))
+    //{
+    // usingWire = false;
+    //}
+    //}
 
     //Also Check if the cursor is in a certain area of the screen
     private bool IsCursorInSpot(RectTransform rectTransform)
@@ -34,6 +44,33 @@ public class WiresPanel : MonoBehaviour
         {
             return false;
         }
+    }
+
+    private void SpawnWire(RectTransform anchor)
+    {
+        Vector2 screenPos = Input.mousePosition;
+        
+
+
+    }
+
+    private RectTransform LockWire(RectTransform startPos, RectTransform endPos)
+    {
+        RectTransform wire = new RectTransform();
+        wire.position = startPos.position;
+        wire.sizeDelta = new Vector2(endPos.position.x - startPos.position.x, wire.sizeDelta.y);
+        Vector3 onCirclePoint = endPos.position - startPos.position;
+        float angleDeg = Mathf.Atan(endPos.position.y / endPos.position.x) * Mathf.Rad2Deg;
+        if(endPos.position.x < 0)
+        {
+            angleDeg = 180 + angleDeg;
+        }
+        else if(endPos.position.y < 0)
+        {
+            angleDeg = 360 + angleDeg;
+        }
+        wire.rotation = Quaternion.Euler(wire.rotation.x, wire.rotation.y, angleDeg);
+        return wire;
     }
 
 
