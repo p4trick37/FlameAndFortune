@@ -5,24 +5,16 @@ public class WiresPanel : MonoBehaviour
     [SerializeField] private RectTransform wire;
     [SerializeField] private RectTransform wireStartPos;
     [SerializeField] private RectTransform wireEndPos;
+    [SerializeField] private RectTransform parentImage;
     private bool usingWire;
+    private bool wireCompleted;
+    private bool wireSelected;
 
 
     private void Start()
     {
-        //WireComplete();
         usingWire = false;
-    }
-
-    //Check to see if the player has clicked the mouse button
-
-    
-
-    private void WireComplete()
-    {
-        wire.anchoredPosition = wireStartPos.anchoredPosition;
-        wire.sizeDelta = new Vector2(WireWidth(wireStartPos.anchoredPosition, wireEndPos.anchoredPosition), wire.rect.height);
-        wire.rotation = Quaternion.Euler(0, 0, WireRotation(wireStartPos.anchoredPosition, wireEndPos.anchoredPosition));
+        wire.sizeDelta = new Vector2(0, wire.sizeDelta.y);
     }
 
     private void Update()
@@ -30,11 +22,24 @@ public class WiresPanel : MonoBehaviour
         if(Input.GetMouseButtonDown(0) && IsCursorInSpot(wireStartPos))
         {
             usingWire = true;
-            Debug.Log("Happened");
+            wireCompleted = false;
+            wireSelected = true;
         }
+
         if(Input.GetMouseButtonUp(0))
         {
             usingWire = false;
+            if(IsCursorInSpot(wireEndPos) && wireSelected == true)
+            {
+                WireComplete();
+                wireCompleted = true;
+                wireSelected = false;
+            }
+            else if(wireCompleted == false)
+            {
+                wire.sizeDelta = new Vector2(0, wire.rect.height);
+                wireSelected = false;
+            }
         }
 
         if(usingWire == true)
@@ -43,35 +48,49 @@ public class WiresPanel : MonoBehaviour
         }
     }
 
-    //Also Check if the cursor is in a certain area of the screen
     private bool IsCursorInSpot(RectTransform rectTransform)
     {
         Vector2 screenPos = Input.mousePosition;
-        float leftSide = rectTransform.position.x - rectTransform.rect.width / 2;
-        float rightSide = rectTransform.position.x + rectTransform.rect.width / 2;
-        float bottomSide = rectTransform.position.y - rectTransform.rect.height / 2;
-        float upSide = rectTransform.position.y + rectTransform.rect.height / 2;
-        if(screenPos.x >= leftSide && screenPos.x <= rightSide && screenPos.y >= bottomSide && screenPos.y <= upSide)
+        Vector2 localPoint;
+
+        if (RectTransformUtility.ScreenPointToLocalPointInRectangle(rectTransform, screenPos, null, out localPoint))
         {
-            return true;
+            float halfWidth = rectTransform.rect.width / 2;
+            float halfHeight = rectTransform.rect.height / 2;
+            if (localPoint.x >= -halfWidth && localPoint.x <= halfWidth && localPoint.y >= -halfHeight && localPoint.y <= halfHeight)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
         }
-        else
-        {
-            return false;
-        }
+        return false;
     }
 
     private void WireMovement()
     {
         Vector2 screenPos = Input.mousePosition;
-        Vector2 mouseRelWireStart = (Vector2)wireStartPos.position - screenPos;
+        Vector2 localPoint;
+        if(RectTransformUtility.ScreenPointToLocalPointInRectangle(wireStartPos, screenPos, null, out localPoint))
+        {
+            wire.anchoredPosition = wireStartPos.anchoredPosition;
+            wire.sizeDelta = new Vector2(WireWidth(Vector2.zero, localPoint), wire.rect.height);
+            wire.rotation = Quaternion.Euler(0, 0, WireRotation(Vector2.zero, localPoint));
+        }
+    }
+
+    private void WireComplete()
+    {
         wire.anchoredPosition = wireStartPos.anchoredPosition;
-        wire.sizeDelta = new Vector2(WireWidth(wireStartPos.anchoredPosition, mouseRelWireStart), wire.rect.height);
-        wire.rotation = Quaternion.Euler(0, 0, WireRotation(wireStartPos.anchoredPosition, mouseRelWireStart));
+        wire.sizeDelta = new Vector2(WireWidth(wireStartPos.anchoredPosition, wireEndPos.anchoredPosition), wire.rect.height);
+        wire.rotation = Quaternion.Euler(0, 0, WireRotation(wireStartPos.anchoredPosition, wireEndPos.anchoredPosition));
     }
 
     private float WireWidth(Vector2 startPos, Vector2 endPos)
     {
+
         float y = (endPos.y - startPos.y) * (endPos.y - startPos.y);
         float x = (endPos.x - startPos.x) * (endPos.x - startPos.x);
         float width = Mathf.Sqrt(x + y);
@@ -81,7 +100,7 @@ public class WiresPanel : MonoBehaviour
     private float WireRotation(Vector2 startPos, Vector2 endPos)
     {
         Vector3 onCirclePoint = endPos - startPos;
-        float angleDeg = Mathf.Atan(endPos.y / endPos.x) * Mathf.Rad2Deg;
+        float angleDeg = Mathf.Atan(onCirclePoint.y / onCirclePoint.x) * Mathf.Rad2Deg;
         if (endPos.x < 0)
         {
             angleDeg = 180 + angleDeg;
@@ -90,32 +109,7 @@ public class WiresPanel : MonoBehaviour
         {
             angleDeg = 360 + angleDeg;
         }
-        return angleDeg + 180;
+        Debug.Log(startPos + ", " + endPos +  ", " + angleDeg);
+        return angleDeg;
     }
-
-
-    private RectTransform LockWire(RectTransform startPos, RectTransform endPos)
-    {
-        RectTransform wire = new RectTransform();
-        wire.position = startPos.position;
-        wire.sizeDelta = new Vector2(endPos.position.x - startPos.position.x, wire.sizeDelta.y);
-        Vector3 onCirclePoint = endPos.position - startPos.position;
-        float angleDeg = Mathf.Atan(endPos.position.y / endPos.position.x) * Mathf.Rad2Deg;
-        if(endPos.position.x < 0)
-        {
-            angleDeg = 180 + angleDeg;
-        }
-        else if(endPos.position.y < 0)
-        {
-            angleDeg = 360 + angleDeg;
-        }
-        wire.rotation = Quaternion.Euler(wire.rotation.x, wire.rotation.y, angleDeg);
-        return wire;
-    }
-
-
-    //Once the player presses and holds the button, a image spawns that will rotate along the cursor and stretches based on the length
-
-    //Once the player lets go of the wire, if the wire is not on the designated spot, it disapears, if it is, it snaps into place.
-
 }
