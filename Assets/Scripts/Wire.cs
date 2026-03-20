@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class WiresPanel : MonoBehaviour
+public class Wire : MonoBehaviour
 {
     [SerializeField] private RectTransform wire;
     [SerializeField] private RectTransform wireStartPos;
