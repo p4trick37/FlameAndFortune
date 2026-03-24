@@ -48,6 +48,7 @@ public class FireTool : MonoBehaviour
 
             if (burnable != null)
             {
+                Debug.Log("Hit: " + hit.collider.name);
                 burnable.Ignite();
             }
         }
