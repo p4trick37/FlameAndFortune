@@ -29,6 +29,7 @@ public class Player : MonoBehaviour
     void Update()
     {
         Movement(true);
+        Interaction();
     }
 
     private void Movement(bool shouldMove)
@@ -72,4 +73,41 @@ public class Player : MonoBehaviour
             cc.Move(move * Time.deltaTime);
         }
     }
+
+    private void Interaction()
+    {
+        if(Input.GetKeyDown(KeyCode.E))
+        {
+            RaycastHit[] hits = Physics.RaycastAll(playerCamera.transform.position, playerCamera.transform.forward, 2);
+
+            foreach(RaycastHit hit in hits)
+            {
+                EndCord endCord = hit.transform.GetComponent<EndCord>();
+                if(endCord != null)
+                {
+                    if(endCord.isPluggedIn == true)
+                    {
+                        endCord.isPluggedIn = false;
+                    }
+                    else
+                    {
+                        endCord.isPluggedIn = true;
+                    }
+                }
+            }
+        }
+    }
+    private float VectorDistance(Vector3 camera, Vector3 endCord)
+    {
+        float distance = Mathf.Sqrt((endCord.x - camera.x) * (endCord.x - camera.x) + (endCord.y - camera.y) * (endCord.y - camera.y) + (endCord.z - camera.z) * (endCord.z - camera.z));
+        return distance;
+    }
+
+    private Vector3 HoldObject(Vector3 position, Vector3 direction, float distance)
+    {
+        Vector3 objectTransform = position + (direction * distance);
+        return objectTransform;
+
+    }
+    
 }
