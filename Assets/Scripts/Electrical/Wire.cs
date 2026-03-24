@@ -1,4 +1,7 @@
+using NUnit.Framework;
 using UnityEngine;
+using UnityEngine.EventSystems;
+using System.Collections.Generic;
 
 public class Wire : MonoBehaviour
 {
@@ -9,7 +12,7 @@ public class Wire : MonoBehaviour
     private bool usingWire;
     private bool wireCompleted;
     private bool wireSelected;
-
+    private int wireIndex;
 
     private void Start()
     {
@@ -19,11 +22,27 @@ public class Wire : MonoBehaviour
 
     private void Update()
     {
-        if(Input.GetMouseButtonDown(0) && IsCursorInSpot(wireStartPos))
+        GameObject currentSelectedObj = HoveringObject();
+
+        if(Input.GetMouseButtonDown(0) && IsCursorInSpot(wireStartPos) && wireCompleted == false)
         {
             usingWire = true;
             wireCompleted = false;
             wireSelected = true;
+        }
+        else if(Input.GetMouseButtonDown(0) && currentSelectedObj.CompareTag("Wire Image"))
+        {
+            WireImage wireImageFound = currentSelectedObj.GetComponent<WireImage>();
+            if(wireImageFound != null)
+            {
+                if(wireImageFound.imageIndexed == wire.gameObject.GetComponent<WireImage>().imageIndexed)
+                {
+                    wire.sizeDelta = new Vector2(0, wire.rect.height);
+                    wireSelected = false;
+                    usingWire = false;
+                    wireCompleted = false;
+                }
+            }
         }
 
         if(Input.GetMouseButtonUp(0))
@@ -41,6 +60,7 @@ public class Wire : MonoBehaviour
                 wireSelected = false;
             }
         }
+
 
         if(usingWire == true)
         {
@@ -109,7 +129,21 @@ public class Wire : MonoBehaviour
         {
             angleDeg = 360 + angleDeg;
         }
-        Debug.Log(startPos + ", " + endPos +  ", " + angleDeg);
         return angleDeg;
+    }
+
+    private GameObject HoveringObject()
+    {
+        PointerEventData pointer = new PointerEventData(EventSystem.current);
+        pointer.position = Input.mousePosition;
+
+        List<RaycastResult> hitResults = new List<RaycastResult>();
+        EventSystem.current.RaycastAll(pointer, hitResults);
+
+        if(hitResults.Count > 0)
+        {
+            return hitResults[0].gameObject;
+        }
+        return null;    
     }
 }
