@@ -16,7 +16,7 @@ public class EndCord : MonoBehaviour
             if(pluginForFire == true && objectOnFire == false)
             {
                 BurnableObject burnObject = burnableObject.GetComponent<BurnableObject>();
-                //burnObject.isBurning = true;
+                burnObject.Ignite();
                 Debug.Log("Fridge Is Now On Fire");
                 objectOnFire = true;
             }

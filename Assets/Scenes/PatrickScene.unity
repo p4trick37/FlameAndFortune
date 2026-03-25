@@ -232,6 +232,47 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &452998926 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 62475674803172161, guid: 171518447b6d2db458139a02cc654b79, type: 3}
+  m_PrefabInstance: {fileID: 738848146}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &452998927
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 452998926}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4b234415ec5b9f948896c680264c7815, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::BurnableObject
+  maxHealth: 100
+  currentHealth: 100
+  burnDamagePerSecond: 10
+  isBurning: 0
+  isBurnedOut: 0
+  isGasSoaked: 0
+  gasBurnMultiplier: 2
+  canSpreadFire: 1
+  spreadRadius: 2
+  spreadInterval: 1
+  spreadLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  targetRenderers: []
+  burnedColor: {r: 0.1, g: 0.1, b: 0.1, a: 1}
+  affectEmission: 0
+  fireParticlePrefab: {fileID: 1255053967005034563, guid: 982b091f07779d846ad915e29a06ddc8, type: 3}
+  particleSpawnPoint: {fileID: 1344377552}
+  particleOffset: {x: 0, y: 0, z: 0}
+--- !u!4 &452998936 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 834896455143434747, guid: 171518447b6d2db458139a02cc654b79, type: 3}
+  m_PrefabInstance: {fileID: 738848146}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &480659353 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 927873178098938379, guid: 62781a46394a0bf45a2345e6d78b9551, type: 3}
@@ -398,7 +439,6 @@ MonoBehaviour:
   inPlugTransform: {fileID: 2000967094}
   outPlugTransform: {fileID: 1793092020}
   burnableObject: {fileID: 480659353}
-  inlet: {fileID: 0}
   pluginForFire: 0
 --- !u!65 &612299762
 BoxCollider:
@@ -503,6 +543,77 @@ MonoBehaviour:
   sprintFOV: 90
   cc: {fileID: 646031918}
   freezePlayer: 0
+--- !u!1001 &738848146
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 62475674803172161, guid: 171518447b6d2db458139a02cc654b79, type: 3}
+      propertyPath: m_Name
+      value: Chair_arm
+      objectReference: {fileID: 0}
+    - target: {fileID: 62475674803172161, guid: 171518447b6d2db458139a02cc654b79, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 834896455143434747, guid: 171518447b6d2db458139a02cc654b79, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -2.37
+      objectReference: {fileID: 0}
+    - target: {fileID: 834896455143434747, guid: 171518447b6d2db458139a02cc654b79, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 834896455143434747, guid: 171518447b6d2db458139a02cc654b79, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 1.12
+      objectReference: {fileID: 0}
+    - target: {fileID: 834896455143434747, guid: 171518447b6d2db458139a02cc654b79, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 834896455143434747, guid: 171518447b6d2db458139a02cc654b79, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 834896455143434747, guid: 171518447b6d2db458139a02cc654b79, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 834896455143434747, guid: 171518447b6d2db458139a02cc654b79, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 834896455143434747, guid: 171518447b6d2db458139a02cc654b79, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 834896455143434747, guid: 171518447b6d2db458139a02cc654b79, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 834896455143434747, guid: 171518447b6d2db458139a02cc654b79, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4332002524530201185, guid: 171518447b6d2db458139a02cc654b79, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects:
+    - targetCorrespondingSourceObject: {fileID: 834896455143434747, guid: 171518447b6d2db458139a02cc654b79, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1344377552}
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 62475674803172161, guid: 171518447b6d2db458139a02cc654b79, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 452998927}
+  m_SourcePrefab: {fileID: 100100000, guid: 171518447b6d2db458139a02cc654b79, type: 3}
 --- !u!1 &749014742
 GameObject:
   m_ObjectHideFlags: 0
@@ -1253,6 +1364,37 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 19bd9e124056ccd43a9dd9161ed7ecde, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::WiresPanel
+--- !u!1 &1344377551
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1344377552}
+  m_Layer: 0
+  m_Name: FireSpawn
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1344377552
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1344377551}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0.501, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 452998936}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1384811102
 GameObject:
   m_ObjectHideFlags: 0
@@ -2606,3 +2748,4 @@ SceneRoots:
   - {fileID: 1905774105}
   - {fileID: 538997163}
   - {fileID: 749014746}
+  - {fileID: 738848146}
