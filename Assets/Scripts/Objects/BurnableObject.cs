@@ -9,7 +9,7 @@ public class BurnableObject : MonoBehaviour
 
     [Header("Burning")]
     [SerializeField] private float burnDamagePerSecond = 10f;
-    [SerializeField] private bool isBurning = false;
+    public bool isBurning = false;
     [SerializeField] private bool isBurnedOut = false;
 
     [Header("Gas")]

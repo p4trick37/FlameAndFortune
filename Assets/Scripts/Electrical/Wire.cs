@@ -5,19 +5,23 @@ using System.Collections.Generic;
 
 public class Wire : MonoBehaviour
 {
-    [SerializeField] private RectTransform wire;
-    [SerializeField] private RectTransform wireStartPos;
-    [SerializeField] private RectTransform wireEndPos;
+    public RectTransform wire;
+    public RectTransform wireStartPos;
+    public RectTransform wireEndPos;
     [SerializeField] private RectTransform parentImage;
     private bool usingWire;
-    private bool wireCompleted;
+    public bool wireCompleted;
     private bool wireSelected;
-    private int wireIndex;
+
+    private void Awake()
+    {
+        WireComplete();
+        wireCompleted = true;
+    }
 
     private void Start()
     {
         usingWire = false;
-        wire.sizeDelta = new Vector2(0, wire.sizeDelta.y);
     }
 
     private void Update()
@@ -101,7 +105,7 @@ public class Wire : MonoBehaviour
         }
     }
 
-    private void WireComplete()
+    public void WireComplete()
     {
         wire.anchoredPosition = wireStartPos.anchoredPosition;
         wire.sizeDelta = new Vector2(WireWidth(wireStartPos.anchoredPosition, wireEndPos.anchoredPosition), wire.rect.height);
@@ -119,16 +123,8 @@ public class Wire : MonoBehaviour
 
     private float WireRotation(Vector2 startPos, Vector2 endPos)
     {
-        Vector3 onCirclePoint = endPos - startPos;
-        float angleDeg = Mathf.Atan(onCirclePoint.y / onCirclePoint.x) * Mathf.Rad2Deg;
-        if (endPos.x < 0)
-        {
-            angleDeg = 180 + angleDeg;
-        }
-        else if (endPos.y < 0)
-        {
-            angleDeg = 360 + angleDeg;
-        }
+        Vector2 onCirclePoint = endPos - startPos;
+        float angleDeg = Mathf.Atan2(onCirclePoint.y, onCirclePoint.x) * Mathf.Rad2Deg;
         return angleDeg;
     }
 

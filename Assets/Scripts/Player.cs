@@ -20,6 +20,9 @@ public class Player : MonoBehaviour
     [Header("Character Controller")]
     [SerializeField] private CharacterController cc;
 
+    public bool freezePlayer = false;
+    
+
 
     private void Start()
     {
@@ -28,8 +31,17 @@ public class Player : MonoBehaviour
 
     void Update()
     {
-        Movement(false);
-        Interaction();
+        if(freezePlayer == true)
+        {
+
+            Movement(false);
+            Interaction(false);
+        }
+        else
+        {
+            Movement(true);
+            Interaction(true);
+        }
     }
 
     private void Movement(bool shouldMove)
@@ -74,24 +86,34 @@ public class Player : MonoBehaviour
         }
     }
 
-    private void Interaction()
+    private void Interaction(bool useInteraction)
     {
-        if(Input.GetKeyDown(KeyCode.E))
+        if (useInteraction == true)
         {
-            RaycastHit[] hits = Physics.RaycastAll(playerCamera.transform.position, playerCamera.transform.forward, 2);
 
-            foreach(RaycastHit hit in hits)
+
+            if (Input.GetKeyDown(KeyCode.E))
             {
-                EndCord endCord = hit.transform.GetComponent<EndCord>();
-                if(endCord != null)
+                RaycastHit[] hits = Physics.RaycastAll(playerCamera.transform.position, playerCamera.transform.forward, 4);
+
+                foreach (RaycastHit hit in hits)
                 {
-                    if(endCord.isPluggedIn == true)
+                    EndCord endCord = hit.transform.GetComponent<EndCord>();
+                    PowerInlet inlet = hit.transform.GetComponent<PowerInlet>();
+                    if (endCord != null)
                     {
-                        endCord.isPluggedIn = false;
+                        if (endCord.isPluggedIn == true)
+                        {
+                            endCord.isPluggedIn = false;
+                        }
+                        else
+                        {
+                            endCord.isPluggedIn = true;
+                        }
                     }
-                    else
+                    else if (inlet != null)
                     {
-                        endCord.isPluggedIn = true;
+                        inlet.activated = true;
                     }
                 }
             }
