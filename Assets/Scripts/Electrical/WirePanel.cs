@@ -36,6 +36,7 @@ public class WirePanel : MonoBehaviour
             endCord.pluginForFire = true;
             gameObject.SetActive(false);
             player.freezePlayer = false;
+            Cursor.lockState = CursorLockMode.Locked;
         }
 
     }

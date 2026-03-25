@@ -17,6 +17,7 @@ public class PowerInlet : MonoBehaviour
         if(activated == true && endCord.isPluggedIn == false)
         {
             wirePanel.SetActive(true);
+            Cursor.lockState = CursorLockMode.None;
             player.freezePlayer = true;
         }
         activated = false;
