@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.Experimental.AI;
 
 public class PowerCord : MonoBehaviour
 {
@@ -8,10 +9,12 @@ public class PowerCord : MonoBehaviour
     [Header("Two Points to Draw Cord")]
     [SerializeField] private GameObject ObjectPowerInlet;
     [SerializeField] private GameObject WallOutletInteractable;
-    [Header("The two cubes to connect points")]
+    [Header("The cubes to connect points")]
     [SerializeField] private GameObject cubePoint1;
     [SerializeField] private GameObject cubeMid;
     [SerializeField] private GameObject cubePoint2;
+    [SerializeField] private GameObject cubeVert1;
+    [SerializeField] private GameObject cubeVert2;
     [Header("Cube Settings")]
     [SerializeField] private Color cordColor;
 
@@ -38,6 +41,13 @@ public class PowerCord : MonoBehaviour
             cubeMid.transform.localPosition = midPoint;
             float xDistance = Distance(ObjectPowerInlet.transform.localPosition.x, WallOutletInteractable.transform.localPosition.x);
             cubeMid.transform.localScale = new Vector3(xDistance, 0.05f, 0.05f);
+
+            cubeVert1.transform.localPosition = new Vector3(cubePoint1.transform.localPosition.x, MidPoint(cubePoint1.transform.localPosition, midPoint).y, midPoint.z);
+            cubeVert2.transform.localPosition = new Vector3(cubePoint2.transform.localPosition.x, MidPoint(cubePoint2.transform.localPosition, midPoint).y, midPoint.z);
+            float yDistance1 = Distance(ObjectPowerInlet.transform.localPosition.y, midPoint.y);
+            float yDistance2 = Distance(WallOutletInteractable.transform.localPosition.y, midPoint.y);
+            cubeVert1.transform.localScale = new Vector3(0.05f, yDistance1, 0.05f);
+            cubeVert2.transform.localScale = new Vector3(0.05f, yDistance2, 0.05f); 
         }
         else 
         {
@@ -52,6 +62,13 @@ public class PowerCord : MonoBehaviour
             cubeMid.transform.localPosition = midPoint;
             float zDistance = Distance(ObjectPowerInlet.transform.localPosition.z, WallOutletInteractable.transform.localPosition.z);
             cubeMid.transform.localScale = new Vector3(0.05f, 0.05f, zDistance);
+
+            cubeVert1.transform.localPosition = new Vector3(midPoint.x, MidPoint(cubePoint1.transform.localPosition, midPoint).y, cubePoint1.transform.localPosition.z);
+            cubeVert2.transform.localPosition = new Vector3(midPoint.x, MidPoint(cubePoint2.transform.localPosition, midPoint).y, cubePoint2.transform.localPosition.z);
+            float yDistance1 = Distance(ObjectPowerInlet.transform.localPosition.y, midPoint.y);
+            float yDistance2 = Distance(WallOutletInteractable.transform.localPosition.y, midPoint.y);
+            cubeVert1.transform.localScale = new Vector3(0.05f, yDistance1, 0.05f);
+            cubeVert2.transform.localScale = new Vector3(0.05f, yDistance2, 0.05f);
         }
         
     }
