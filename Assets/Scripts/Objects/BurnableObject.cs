@@ -3,23 +3,39 @@ using UnityEngine;
 
 public class BurnableObject : MonoBehaviour
 {
+    public enum FireType
+    {
+        Combustible,   // red
+        Electrical,    // blue
+        Chemical       // green
+    }
+
+    [Header("Type")]
+    [SerializeField] private FireType fireType = FireType.Combustible;
+
     [Header("Health")]
     [SerializeField] private float maxHealth = 100f;
     [SerializeField] private float currentHealth = 100f;
 
+    [Tooltip("How much of max health must be lost before the object starts burning on its own. 0.10 = 10%")]
+    [Range(0.01f, 0.95f)]
+    [SerializeField] private float igniteDamagePercentToStartBurning = 0.10f;
+
     [Header("Burning")]
     [SerializeField] private float burnDamagePerSecond = 10f;
-    public bool isBurning = false;
+    [SerializeField] private bool isBurning = false;
     [SerializeField] private bool isBurnedOut = false;
 
     [Header("Gas")]
     [SerializeField] private bool isGasSoaked = false;
+    [SerializeField] private float gasIgniteMultiplier = 2f;
     [SerializeField] private float gasBurnMultiplier = 2f;
 
     [Header("Spread")]
     [SerializeField] private bool canSpreadFire = true;
     [SerializeField] private float spreadRadius = 2f;
-    [SerializeField] private float spreadInterval = 1f;
+    [SerializeField] private float spreadInterval = 0.5f;
+    [SerializeField] private float spreadIgniteDamagePerSecond = 3f;
     [SerializeField] private LayerMask spreadLayers = ~0;
 
     [Header("Visual Burn Darkening")]
@@ -27,10 +43,17 @@ public class BurnableObject : MonoBehaviour
     [SerializeField] private Color burnedColor = new Color(0.1f, 0.1f, 0.1f, 1f);
     [SerializeField] private bool affectEmission = false;
 
+    private MaterialPropertyBlock hoverPropertyBlock;
+private static readonly int OutlineColorID = Shader.PropertyToID("_OutlineColor");
+
     [Header("Particles")]
     [SerializeField] private GameObject fireParticlePrefab;
     [SerializeField] private Transform particleSpawnPoint;
     [SerializeField] private Vector3 particleOffset = Vector3.zero;
+
+    [Header("UI Anchor")]
+    [SerializeField] private Transform uiAnchorOverride;
+    [SerializeField] private Vector3 uiOffset = new Vector3(0f, 1.2f, 0f);
 
     private GameObject spawnedFireEffect;
     private Material[][] runtimeMaterials;
@@ -39,6 +62,11 @@ public class BurnableObject : MonoBehaviour
     private Coroutine burnRoutine;
     private Coroutine spreadRoutine;
 
+    private Transform[] cachedChildTransforms;
+    private int[] cachedOriginalLayers;
+    private bool layersCached = false;
+
+    public FireType Type => fireType;
     public bool IsBurning => isBurning;
     public bool IsBurnedOut => isBurnedOut;
     public bool IsGasSoaked => isGasSoaked;
@@ -56,6 +84,7 @@ public class BurnableObject : MonoBehaviour
 
         CreateRuntimeMaterialInstances();
         UpdateBurnVisual();
+        CacheLayers();
     }
 
     private void CreateRuntimeMaterialInstances()
@@ -70,13 +99,13 @@ public class BurnableObject : MonoBehaviour
                 continue;
             }
 
-            Material[] sharedMats = targetRenderers[i].materials;
-            runtimeMaterials[i] = new Material[sharedMats.Length];
-            originalColors[i] = new Color[sharedMats.Length];
+            Material[] mats = targetRenderers[i].materials;
+            runtimeMaterials[i] = new Material[mats.Length];
+            originalColors[i] = new Color[mats.Length];
 
-            for (int j = 0; j < sharedMats.Length; j++)
+            for (int j = 0; j < mats.Length; j++)
             {
-                Material newMat = new Material(sharedMats[j]);
+                Material newMat = new Material(mats[j]);
                 runtimeMaterials[i][j] = newMat;
 
                 if (newMat.HasProperty("_BaseColor"))
@@ -97,7 +126,129 @@ public class BurnableObject : MonoBehaviour
         }
     }
 
-    public void Ignite()
+
+    public void ApplyHoverOutlineColor()
+{
+    if (targetRenderers == null || targetRenderers.Length == 0)
+    {
+        targetRenderers = GetComponentsInChildren<Renderer>();
+    }
+
+    if (hoverPropertyBlock == null)
+    {
+        hoverPropertyBlock = new MaterialPropertyBlock();
+    }
+
+    Color hoverColor = GetHoverColor();
+
+    for (int i = 0; i < targetRenderers.Length; i++)
+    {
+        if (targetRenderers[i] == null)
+        {
+            continue;
+        }
+
+        targetRenderers[i].GetPropertyBlock(hoverPropertyBlock);
+        hoverPropertyBlock.SetColor(OutlineColorID, hoverColor);
+        targetRenderers[i].SetPropertyBlock(hoverPropertyBlock);
+    }
+}
+
+    private void CacheLayers()
+    {
+        cachedChildTransforms = GetComponentsInChildren<Transform>(true);
+        cachedOriginalLayers = new int[cachedChildTransforms.Length];
+
+        for (int i = 0; i < cachedChildTransforms.Length; i++)
+        {
+            cachedOriginalLayers[i] = cachedChildTransforms[i].gameObject.layer;
+        }
+
+        layersCached = true;
+    }
+
+public void SetHovered(bool hovered, int hoveredLayer)
+{
+    if (!layersCached)
+    {
+        CacheLayers();
+    }
+
+    if (hovered)
+    {
+        ApplyHoverOutlineColor();
+    }
+
+    for (int i = 0; i < cachedChildTransforms.Length; i++)
+    {
+        if (cachedChildTransforms[i] == null)
+        {
+            continue;
+        }
+
+        cachedChildTransforms[i].gameObject.layer = hovered ? hoveredLayer : cachedOriginalLayers[i];
+    }
+}
+
+    public bool CanBeIgnitedByTorch()
+    {
+        return fireType == FireType.Combustible || fireType == FireType.Chemical;
+    }
+
+    public void ApplyGas()
+    {
+        if (isBurnedOut)
+        {
+            return;
+        }
+
+        isGasSoaked = true;
+    }
+
+    public void AddIgniteDamage(float amount)
+    {
+        if (isBurnedOut)
+        {
+            return;
+        }
+
+        if (isBurning)
+        {
+            return;
+        }
+
+        float finalAmount = amount;
+        if (isGasSoaked)
+        {
+            finalAmount *= gasIgniteMultiplier;
+        }
+
+        currentHealth -= finalAmount;
+        currentHealth = Mathf.Clamp(currentHealth, 0f, maxHealth);
+
+        UpdateBurnVisual();
+
+        if (currentHealth <= GetIgnitionHealthThreshold())
+        {
+            StartBurning();
+        }
+        else if (currentHealth <= 0f)
+        {
+            BurnOut();
+        }
+    }
+
+    public void IgniteImmediately()
+    {
+        if (isBurning || isBurnedOut)
+        {
+            return;
+        }
+
+        StartBurning();
+    }
+
+    private void StartBurning()
     {
         if (isBurning || isBurnedOut)
         {
@@ -122,16 +273,6 @@ public class BurnableObject : MonoBehaviour
             }
             spreadRoutine = StartCoroutine(SpreadRoutine());
         }
-    }
-
-    public void ApplyGas()
-    {
-        if (isBurnedOut)
-        {
-            return;
-        }
-
-        isGasSoaked = true;
     }
 
     public void Extinguish()
@@ -162,8 +303,12 @@ public class BurnableObject : MonoBehaviour
     {
         while (isBurning && !isBurnedOut)
         {
-            float multiplier = isGasSoaked ? gasBurnMultiplier : 1f;
-            float damage = burnDamagePerSecond * multiplier * Time.deltaTime;
+            float damage = burnDamagePerSecond * Time.deltaTime;
+
+            if (isGasSoaked)
+            {
+                damage *= gasBurnMultiplier;
+            }
 
             currentHealth -= damage;
             currentHealth = Mathf.Clamp(currentHealth, 0f, maxHealth);
@@ -195,27 +340,20 @@ public class BurnableObject : MonoBehaviour
                     continue;
                 }
 
-                if (hits[i].gameObject == gameObject)
-                {
-                    continue;
-                }
-
                 BurnableObject other = hits[i].GetComponentInParent<BurnableObject>();
 
-                if (other == null)
+                if (other == null || other == this)
                 {
                     continue;
                 }
 
-                if (other == this)
+                if (other.IsBurnedOut || other.IsBurning)
                 {
                     continue;
                 }
 
-                if (!other.IsBurning && !other.IsBurnedOut)
-                {
-                    other.Ignite();
-                }
+                float igniteDamageThisTick = spreadIgniteDamagePerSecond * spreadInterval;
+                other.AddIgniteDamage(igniteDamageThisTick);
             }
 
             yield return wait;
@@ -246,12 +384,7 @@ public class BurnableObject : MonoBehaviour
 
     private void SpawnFireEffect()
     {
-        if (fireParticlePrefab == null)
-        {
-            return;
-        }
-
-        if (spawnedFireEffect != null)
+        if (fireParticlePrefab == null || spawnedFireEffect != null)
         {
             return;
         }
@@ -311,6 +444,85 @@ public class BurnableObject : MonoBehaviour
             }
         }
     }
+
+    public float GetIgnitionHealthThreshold()
+    {
+        return maxHealth * (1f - igniteDamagePercentToStartBurning);
+    }
+
+    public void Ignite()
+{
+    IgniteImmediately();
+}
+
+    public float GetIgnitionProgress01()
+    {
+        if (isBurning)
+        {
+            return 1f;
+        }
+
+        float threshold = GetIgnitionHealthThreshold();
+
+        if (Mathf.Approximately(maxHealth, threshold))
+        {
+            return 0f;
+        }
+
+        float t = Mathf.InverseLerp(maxHealth, threshold, currentHealth);
+        return Mathf.Clamp01(t);
+    }
+
+    public Vector3 GetUIWorldPosition()
+    {
+        if (uiAnchorOverride != null)
+        {
+            return uiAnchorOverride.position;
+        }
+
+        Bounds bounds = GetCombinedBounds();
+        if (bounds.size != Vector3.zero)
+        {
+            return new Vector3(bounds.center.x, bounds.max.y, bounds.center.z) + uiOffset;
+        }
+
+        return transform.position + uiOffset;
+    }
+
+    private Bounds GetCombinedBounds()
+    {
+        Renderer[] renderers = GetComponentsInChildren<Renderer>();
+        if (renderers.Length == 0)
+        {
+            return new Bounds(transform.position, Vector3.zero);
+        }
+
+        Bounds combined = renderers[0].bounds;
+        for (int i = 1; i < renderers.Length; i++)
+        {
+            combined.Encapsulate(renderers[i].bounds);
+        }
+
+        return combined;
+    }
+
+public Color GetHoverColor()
+{
+    switch (fireType)
+    {
+        case FireType.Combustible:
+            return Color.red;
+
+        case FireType.Electrical:
+            return Color.blue;
+
+        case FireType.Chemical:
+            return Color.green;
+
+        default:
+            return Color.white;
+    }
+}
 
     private void OnDrawGizmosSelected()
     {
