@@ -14,13 +14,15 @@ public class Player : MonoBehaviour
     private float ySpeed;
 
     [Header("Camera")]
-    [SerializeField] private Camera playerCamera;
+    public Camera playerCamera;
     [SerializeField] private float walkFOV;
     [SerializeField] private float sprintFOV;
     [Header("Character Controller")]
     [SerializeField] private CharacterController cc;
 
     public bool freezePlayer = false;
+
+    private bool moveAppliance;
     
 
 
@@ -35,12 +37,14 @@ public class Player : MonoBehaviour
         {
 
             Movement(false);
-            Interaction(false);
+            EInteraction(false);
+            RightClickInteraction(false);
         }
         else
         {
             Movement(true);
-            Interaction(true);
+            EInteraction(true);
+            RightClickInteraction(true);
         }
     }
 
@@ -86,50 +90,89 @@ public class Player : MonoBehaviour
         }
     }
 
-    private void Interaction(bool useInteraction)
+    private void EInteraction(bool useInteraction)
     {
         if (useInteraction == true)
         {
-
-
             if (Input.GetKeyDown(KeyCode.E))
             {
                 RaycastHit[] hits = Physics.RaycastAll(playerCamera.transform.position, playerCamera.transform.forward, 4);
 
                 foreach (RaycastHit hit in hits)
                 {
-                    EndCord endCord = hit.transform.GetComponent<EndCord>();
-                    PowerInlet inlet = hit.transform.GetComponent<PowerInlet>();
-                    if (endCord != null)
-                    {
-                        if (endCord.isPluggedIn == true)
-                        {
-                            endCord.isPluggedIn = false;
-                        }
-                        else
-                        {
-                            endCord.isPluggedIn = true;
-                        }
-                    }
-                    else if (inlet != null)
-                    {
-                        inlet.activated = true;
-                    }
+                    TryForEndCord(hit);
+                    TryForPowerInlet(hit);
                 }
             }
         }
     }
-    private float VectorDistance(Vector3 camera, Vector3 endCord)
+
+    private void RightClickInteraction(bool shouldInteract)
     {
-        float distance = Mathf.Sqrt((endCord.x - camera.x) * (endCord.x - camera.x) + (endCord.y - camera.y) * (endCord.y - camera.y) + (endCord.z - camera.z) * (endCord.z - camera.z));
-        return distance;
+        if(shouldInteract == true)
+        {
+            if(Input.GetMouseButton(1))
+            {
+                if(Physics.Raycast(playerCamera.transform.position, playerCamera.transform.forward, out RaycastHit hit, 4))
+                {
+                    moveAppliance = true;
+                    TryForMovableAppliance(hit);
+                }
+            }
+
+            if(Input.GetMouseButtonUp(1))
+            {
+                if (Physics.Raycast(playerCamera.transform.position, playerCamera.transform.forward, out RaycastHit hit, 4))
+                {
+                    moveAppliance = false;
+                    TryForMovableAppliance(hit);
+                }
+            }
+        }
     }
 
-    private Vector3 HoldObject(Vector3 position, Vector3 direction, float distance)
+    private void TryForEndCord(RaycastHit hit)
     {
-        Vector3 objectTransform = position + (direction * distance);
-        return objectTransform;
-
+        EndCord endCord = hit.transform.GetComponent<EndCord>();
+        if(endCord != null)
+        {
+            if (endCord.isPluggedIn == true)
+            {
+                endCord.isPluggedIn = false;
+            }
+            else
+            {
+                endCord.isPluggedIn = true;
+            }
+        }
     }
+
+    private void TryForPowerInlet(RaycastHit hit)
+    {
+        PowerInlet inlet = hit.transform.GetComponent<PowerInlet>();
+        if(inlet != null)
+        {
+            inlet.activated = true;
+        }
+    }
+
+    private void TryForMovableAppliance(RaycastHit hit)
+    {
+        MoveAppliance appliance = hit.transform.GetComponent<MoveAppliance>();
+        if(appliance != null)
+        {
+            if (moveAppliance == true)
+            {
+                appliance.moveObject = true;
+                appliance.hitTransform = hit.point;
+            }
+            else
+            {
+                appliance.moveObject = false;
+            }
+        }
+        
+    }
+    
     
 }
