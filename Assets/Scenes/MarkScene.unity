@@ -1448,7 +1448,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4b234415ec5b9f948896c680264c7815, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::BurnableObject
-  fireType: 2
+  fireType: 1
   maxHealth: 100
   currentHealth: 100
   igniteDamagePercentToStartBurning: 0.1
