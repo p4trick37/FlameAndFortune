@@ -140,7 +140,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7961538665946744700}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: 0.9435288, z: -0, w: -0.33129066}
+  m_LocalRotation: {x: 0, y: 0.94352955, z: -0, w: -0.3312885}
   m_LocalPosition: {x: 2.158, y: 1.427, z: -0.606}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -208,6 +208,8 @@ GameObject:
   - component: {fileID: 6961042014341529433}
   - component: {fileID: 1740521877870286949}
   - component: {fileID: 3051471664326782186}
+  - component: {fileID: 6436031615851198442}
+  - component: {fileID: 1655724781185544476}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -333,3 +335,56 @@ MonoBehaviour:
     m_VarianceClampScale: 0.9
     m_ContrastAdaptiveSharpening: 0
   m_Version: 2
+--- !u!114 &6436031615851198442
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8800135068554256839}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a63e2c185d839bd498dff6398c127ded, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::FireTool
+  playerCamera: {fileID: 0}
+  useDistance: 8
+  hitLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  drawDebugRay: 1
+--- !u!114 &1655724781185544476
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8800135068554256839}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a38887f2deefb8f4b99e201a5c1429f5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::TorchFireTool
+  playerCamera: {fileID: 0}
+  progressUI: {fileID: 0}
+  litTorchVisual: {fileID: 0}
+  interactLayers:
+    serializedVersion: 2
+    m_Bits: 192
+  hoveredLayerName: Hovered
+  hoverDistance: 6
+  igniteDistance: 3
+  torchIsLit: 0
+  relightKey: 114
+  relightRadius: 2
+  torchIgniteSourceLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  torchIgniteDamagePerSecond: 5
+  hairsprayIgniteMultiplier: 2.5
+  fallbackBoostKey: 304
+  useMicrophone: 1
+  sampleWindow: 128
+  micThreshold: 0.02
+  drawDebugRay: 1
+  logHoverName: 0
