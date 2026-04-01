@@ -609,26 +609,6 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 3287721971126743948, guid: aa01e0058bffc3a458f4624664465e29, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 0.2
-      objectReference: {fileID: 0}
-    - target: {fileID: 3287721971126743948, guid: aa01e0058bffc3a458f4624664465e29, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 0.2
-      objectReference: {fileID: 0}
-    - target: {fileID: 3287721971126743948, guid: aa01e0058bffc3a458f4624664465e29, type: 3}
-      propertyPath: m_LocalScale.z
-      value: 0.2
-      objectReference: {fileID: 0}
-    - target: {fileID: 3287721971126743948, guid: aa01e0058bffc3a458f4624664465e29, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3287721971126743948, guid: aa01e0058bffc3a458f4624664465e29, type: 3}
-      propertyPath: m_ConstrainProportionsScale
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 5189074883368246972, guid: aa01e0058bffc3a458f4624664465e29, type: 3}
       propertyPath: m_Name
       value: ProgressBar
@@ -712,10 +692,6 @@ PrefabInstance:
     - target: {fileID: 5225116802745522206, guid: aa01e0058bffc3a458f4624664465e29, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5387484314134057430, guid: aa01e0058bffc3a458f4624664465e29, type: 3}
-      propertyPath: extraOffset.y
-      value: -0.5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

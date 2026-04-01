@@ -99,54 +99,53 @@ public class TorchFireTool : MonoBehaviour
     }
 
     private void UpdateHover()
-{
-    BurnableObject newHovered = null;
-
-    Ray ray = new Ray(playerCamera.transform.position, playerCamera.transform.forward);
-
-    if (drawDebugRay)
     {
-        Debug.DrawRay(ray.origin, ray.direction * hoverDistance, Color.white);
-    }
+        BurnableObject newHovered = null;
 
-if (Physics.Raycast(ray, out RaycastHit hit, hoverDistance, interactLayers))
-{
-    // Debug.Log("RAY HIT: " + hit.collider.name + " | Parent Burnable: " + 
-    //           (hit.collider.GetComponentInParent<BurnableObject>() != null 
-    //           ? hit.collider.GetComponentInParent<BurnableObject>().name 
-    //           : "None"));
+        Ray ray = new Ray(playerCamera.transform.position, playerCamera.transform.forward);
 
-    newHovered = hit.collider.GetComponentInParent<BurnableObject>();
-            Debug.Log(hit);
-}
-
-    if (newHovered != currentHovered)
-    {
-        if (currentHovered != null)
+        if (drawDebugRay)
         {
-            Debug.Log("UNHOVER: " + currentHovered.name + " | Root Layer Before Reset: " + currentHovered.gameObject.layer);
+            Debug.DrawRay(ray.origin, ray.direction * hoverDistance, Color.white);
         }
 
-        if (currentHovered != null && hoveredLayer >= 0)
+        if (Physics.Raycast(ray, out RaycastHit hit, hoverDistance, interactLayers))
         {
-            currentHovered.SetHovered(false, hoveredLayer);
+            // Debug.Log("RAY HIT: " + hit.collider.name + " | Parent Burnable: " + 
+            //           (hit.collider.GetComponentInParent<BurnableObject>() != null 
+            //           ? hit.collider.GetComponentInParent<BurnableObject>().name 
+            //           : "None"));
+
+            newHovered = hit.collider.GetComponentInParent<BurnableObject>();
         }
 
-        currentHovered = newHovered;
-
-        if (currentHovered != null && hoveredLayer >= 0)
+        if (newHovered != currentHovered)
         {
-            currentHovered.SetHovered(true, hoveredLayer);
-
-            //Debug.Log("HOVER: " + currentHovered.name + " | Root Layer After Set: " + currentHovered.gameObject.layer);
-
-            if (logHoverName)
+            if (currentHovered != null)
             {
-                Debug.Log("Hovering: " + currentHovered.name);
+                Debug.Log("UNHOVER: " + currentHovered.name + " | Root Layer Before Reset: " + currentHovered.gameObject.layer);
+            }
+
+            if (currentHovered != null && hoveredLayer >= 0)
+            {
+                currentHovered.SetHovered(false, hoveredLayer);
+            }
+
+            currentHovered = newHovered;
+
+            if (currentHovered != null && hoveredLayer >= 0)
+            {
+                currentHovered.SetHovered(true, hoveredLayer);
+
+                //Debug.Log("HOVER: " + currentHovered.name + " | Root Layer After Set: " + currentHovered.gameObject.layer);
+
+                if (logHoverName)
+                {
+                    Debug.Log("Hovering: " + currentHovered.name);
+                }
             }
         }
     }
-}
 
 private void TryIgniteHeldTarget()
 {
