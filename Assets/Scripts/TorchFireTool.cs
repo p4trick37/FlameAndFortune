@@ -117,6 +117,7 @@ if (Physics.Raycast(ray, out RaycastHit hit, hoverDistance, interactLayers))
     //           : "None"));
 
     newHovered = hit.collider.GetComponentInParent<BurnableObject>();
+            Debug.Log(hit);
 }
 
     if (newHovered != currentHovered)
