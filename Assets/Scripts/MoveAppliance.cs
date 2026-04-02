@@ -6,25 +6,31 @@ using UnityEngine;
 public class MoveAppliance : MonoBehaviour
 {
     private Player player;
-    [Header("Keep Track of Inlet Position")]
-    [SerializeField] private Transform cordInlet;
-    [SerializeField] private Transform inletOnAppliance;
+    [Header("Move other Objects")]
+    [SerializeField] private Transform[] moveObjectsWith;
+    private Vector3[] startingRelPos;
+
     [Header("Movement Axis")]
-    [SerializeField] private bool xAxis;
+    [SerializeField] private bool zAxis;
     [Header("Move Object at Position")]
     public bool moveObject;
     public Vector3 hitTransform;
     [Header("Stopped Transform")]
     public Transform stopTransformLessThan;
     public Transform stopTransformGreaterThan;
-    public bool OutOfbounds => outOfBounds;
-    private bool outOfBounds;
+
     
 
     private void Start()
     {
+        startingRelPos = new Vector3[moveObjectsWith.Length];
+        for(int i = 0; i < moveObjectsWith.Length; i++)
+        {
+            startingRelPos[i] = moveObjectsWith[i].position - transform.position;
+        }
+
         player = FindAnyObjectByType<Player>();
-        if(xAxis == true)
+        if(zAxis == false)
         {
             transform.localPosition = new Vector3(stopTransformLessThan.localPosition.x, transform.localPosition.y, transform.localPosition.z);
         }
@@ -38,7 +44,7 @@ public class MoveAppliance : MonoBehaviour
     {
         if(moveObject == true)
         {
-            if(xAxis == true)
+            if(zAxis == false)
             {
                 MoveOnXAxis(hitTransform);
                 if(transform.localPosition.x < stopTransformLessThan.localPosition.x)
@@ -66,9 +72,10 @@ public class MoveAppliance : MonoBehaviour
             }
         }
 
-
-
-        cordInlet.transform.position = inletOnAppliance.position;
+        for(int i = 0; i < moveObjectsWith.Length; i++)
+        {
+            moveObjectsWith[i].position = transform.position + startingRelPos[i];
+        }
     }
 
     private void MoveOnXAxis(Vector3 hitTransform)
@@ -90,6 +97,15 @@ public class MoveAppliance : MonoBehaviour
     public void ExitSelecting()
     {
         moveObject = false;
+    }
+
+    private void MoveOtherObjects(Vector3 hitTransform)
+    {
+        foreach(Transform objPos in moveObjectsWith)
+        {
+            Vector3 distance = objPos.position - transform.position;
+            objPos.position = transform.position + distance;
+        }
     }
 
 }
