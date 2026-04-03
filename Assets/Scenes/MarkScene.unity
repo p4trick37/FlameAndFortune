@@ -925,6 +925,10 @@ PrefabInstance:
       propertyPath: progressUI
       value: 
       objectReference: {fileID: 1537132216}
+    - target: {fileID: 1655724781185544476, guid: b4a4b1ad148c9524fb9f2a51a8da89d3, type: 3}
+      propertyPath: torchIsLit
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3212859566087897257, guid: b4a4b1ad148c9524fb9f2a51a8da89d3, type: 3}
       propertyPath: m_LocalPosition.x
       value: 2.02
@@ -1071,7 +1075,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4b234415ec5b9f948896c680264c7815, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::BurnableObject
-  fireType: 1
+  fireType: 0
   maxHealth: 100
   currentHealth: 100
   igniteDamagePercentToStartBurning: 0.1
