@@ -1,6 +1,7 @@
 using NUnit.Framework;
 using System.Collections.Generic;
 using Unity.Jobs;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class MoveAppliance : MonoBehaviour
@@ -44,6 +45,7 @@ public class MoveAppliance : MonoBehaviour
     {
         if(moveObject == true)
         {
+            /*
             if(zAxis == false)
             {
                 MoveOnXAxis(hitTransform);
@@ -70,6 +72,9 @@ public class MoveAppliance : MonoBehaviour
                     transform.localPosition = new Vector3(transform.localPosition.x, transform.localPosition.y, stopTransformGreaterThan.localPosition.z);
                 }
             }
+            */
+            MoveOnForwardVector(hitTransform);
+            
         }
 
         for(int i = 0; i < moveObjectsWith.Length; i++)
@@ -88,10 +93,17 @@ public class MoveAppliance : MonoBehaviour
         transform.position = new Vector3(transform.position.x, transform.position.y, hitTransform.z);
     }
 
+    private void MoveOnForwardVector(Vector3 hitTransform)
+    {
+        Vector3 forwardVector = transform.forward.normalized;
+        Debug.Log(forwardVector);
+        transform.position = hitTransform.z * forwardVector;
+    }
+
     public void CurrentlySelecting(RaycastHit hit)
     {
         moveObject = true;
-        hitTransform = hit.point;
+        hitTransform = hit.transform.position;
     }
 
     public void ExitSelecting()
