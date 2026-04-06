@@ -17,15 +17,21 @@ public class MoveAppliance : MonoBehaviour
     public bool moveObject;
     public Vector3 hitTransform;
     [Header("Stopped Transform")]
-    public Transform stopTransformLessThan;
-    public Transform stopTransformGreaterThan;
+    private Transform stopTransformLessThan;
+    private Transform stopTransformGreaterThan;
+    [SerializeField] private Transform setStopTransform1;
+    [SerializeField] private Transform setStopTransform2;
 
-    
+    private void Awake()
+    {
+        stopTransformLessThan = setStopTransform1;
+        stopTransformGreaterThan = setStopTransform2;
+    }
 
     private void Start()
     {
         startingRelPos = new Vector3[moveObjectsWith.Length];
-        for(int i = 0; i < moveObjectsWith.Length; i++)
+        for (int i = 0; i < moveObjectsWith.Length; i++)
         {
             startingRelPos[i] = moveObjectsWith[i].position - transform.position;
         }
@@ -45,35 +51,41 @@ public class MoveAppliance : MonoBehaviour
     {
         if(moveObject == true)
         {
-            /*
+            ///*
             if(zAxis == false)
             {
                 MoveOnXAxis(hitTransform);
-                if(transform.localPosition.x < stopTransformLessThan.localPosition.x)
+                Debug.Log("Moving");
+                if (transform.position.z < stopTransformLessThan.position.z)
                 {
-                    transform.localPosition = new Vector3(stopTransformLessThan.localPosition.x, transform.localPosition.y, transform.localPosition.z);
+                    transform.position = new Vector3(transform.position.x, transform.position.y, stopTransformLessThan.position.z);
+                    Debug.Log("Position is bugged");
                 }
 
-                if(transform.localPosition.x > stopTransformGreaterThan.localPosition.x)
+                if(transform.position.z > stopTransformGreaterThan.position.z)
                 {
-                    transform.localPosition = new Vector3(stopTransformGreaterThan.localPosition.x, transform.localPosition.y, transform.localPosition.z);
+                    transform.position = new Vector3(transform.position.x, transform.position.y, stopTransformGreaterThan.position.z);
+                    Debug.Log("Next Position is bugged");
                 }
             }
             else
             {
                 MoveOnZAxis(hitTransform);
+                
                 if(transform.localPosition.z < stopTransformLessThan.localPosition.z)
                 {
                     transform.localPosition = new Vector3(transform.localPosition.x, transform.localPosition.y, stopTransformLessThan.localPosition.z);
+                    
                 }
 
                 if(transform.localPosition.z > stopTransformGreaterThan.localPosition.z)
                 {
                     transform.localPosition = new Vector3(transform.localPosition.x, transform.localPosition.y, stopTransformGreaterThan.localPosition.z);
+                    
                 }
             }
-            */
-            MoveOnForwardVector(hitTransform);
+            //*/
+            //MoveOnForwardVector(hitTransform);
             
         }
 
