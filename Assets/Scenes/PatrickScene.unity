@@ -2419,7 +2419,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 552719074287904945, guid: 62781a46394a0bf45a2345e6d78b9551, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.39999998
+      value: 0.38935992
       objectReference: {fileID: 0}
     - target: {fileID: 552719074287904945, guid: 62781a46394a0bf45a2345e6d78b9551, type: 3}
       propertyPath: m_LocalPosition.y
@@ -2427,11 +2427,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 552719074287904945, guid: 62781a46394a0bf45a2345e6d78b9551, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0.22732589
+      value: 0.23981297
       objectReference: {fileID: 0}
     - target: {fileID: 552719074287904945, guid: 62781a46394a0bf45a2345e6d78b9551, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 1
+      value: 0.7071069
       objectReference: {fileID: 0}
     - target: {fileID: 552719074287904945, guid: 62781a46394a0bf45a2345e6d78b9551, type: 3}
       propertyPath: m_LocalRotation.x
@@ -2439,7 +2439,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 552719074287904945, guid: 62781a46394a0bf45a2345e6d78b9551, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0.00000058114523
+      value: 0.70710677
       objectReference: {fileID: 0}
     - target: {fileID: 552719074287904945, guid: 62781a46394a0bf45a2345e6d78b9551, type: 3}
       propertyPath: m_LocalRotation.z
@@ -2451,7 +2451,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 552719074287904945, guid: 62781a46394a0bf45a2345e6d78b9551, type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
+      value: 90
       objectReference: {fileID: 0}
     - target: {fileID: 552719074287904945, guid: 62781a46394a0bf45a2345e6d78b9551, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
@@ -2479,7 +2479,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7013181576486223802, guid: 62781a46394a0bf45a2345e6d78b9551, type: 3}
       propertyPath: zAxis
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7013181576486223802, guid: 62781a46394a0bf45a2345e6d78b9551, type: 3}
       propertyPath: setStopTransform1

@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using Unity.Jobs;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.ProBuilder.Shapes;
+using UnityEngine.Rendering;
 
 public class MoveAppliance : MonoBehaviour
 {
@@ -47,8 +49,17 @@ public class MoveAppliance : MonoBehaviour
         }
     }
 
+    //Get rid of the stop transforms in the fridge child.
+    //Set one of the stop transforms as its base position when the game starts
+    //Set the other one at a distance that can be set in the inspector.
+    //Determine if the object reaches beyond that distance
+    //NOTE: I think you should use the global transform. detect x or z movements. 
+    //NOTE: Depending rotation, have some sort of parameter crfeated that determines if it should be less than or greater than desired movement. 
+
     private void Update()
     {
+        Debug.Log(stopTransformLessThan.position);
+        Debug.Log(stopTransformGreaterThan.position);
         if(moveObject == true)
         {
             ///*
@@ -56,13 +67,13 @@ public class MoveAppliance : MonoBehaviour
             {
                 MoveOnXAxis(hitTransform);
                 Debug.Log("Moving");
-                if (transform.position.z < stopTransformLessThan.position.z)
+                if (transform.position.z < stopTransformLessThan.position.x)
                 {
-                    transform.position = new Vector3(transform.position.x, transform.position.y, stopTransformLessThan.position.z);
+                    transform.position = new Vector3(stopTransformLessThan.position.x, transform.position.y, transform.position.z);
                     Debug.Log("Position is bugged");
                 }
 
-                if(transform.position.z > stopTransformGreaterThan.position.z)
+                if(transform.position.z > stopTransformGreaterThan.position.x)
                 {
                     transform.position = new Vector3(transform.position.x, transform.position.y, stopTransformGreaterThan.position.z);
                     Debug.Log("Next Position is bugged");
@@ -105,12 +116,6 @@ public class MoveAppliance : MonoBehaviour
         transform.position = new Vector3(transform.position.x, transform.position.y, hitTransform.z);
     }
 
-    private void MoveOnForwardVector(Vector3 hitTransform)
-    {
-        Vector3 forwardVector = transform.forward.normalized;
-        Debug.Log(forwardVector);
-        transform.position = hitTransform.z * forwardVector;
-    }
 
     public void CurrentlySelecting(RaycastHit hit)
     {
@@ -131,5 +136,4 @@ public class MoveAppliance : MonoBehaviour
             objPos.position = transform.position + distance;
         }
     }
-
 }
