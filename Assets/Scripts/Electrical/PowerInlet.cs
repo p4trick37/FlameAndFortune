@@ -14,7 +14,7 @@ public class PowerInlet : MonoBehaviour
 
     private void Update()
     {
-        if(activated == true && endCord.isPluggedIn == false)
+        if(activated == true && endCord.isPluggedIn == false && endCord.pluginForFire == false)
         {
             wirePanel.SetActive(true);
             Cursor.lockState = CursorLockMode.None;
