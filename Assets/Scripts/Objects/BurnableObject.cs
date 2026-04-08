@@ -50,6 +50,7 @@ private static readonly int OutlineColorID = Shader.PropertyToID("_OutlineColor"
     [SerializeField] private GameObject fireParticlePrefab;
     [SerializeField] private Transform particleSpawnPoint;
     [SerializeField] private Vector3 particleOffset = Vector3.zero;
+    [SerializeField] private MeshFilter TargetMeshFilter;
 
     [Header("UI Anchor")]
     [SerializeField] private Transform uiAnchorOverride;
@@ -77,10 +78,19 @@ private static readonly int OutlineColorID = Shader.PropertyToID("_OutlineColor"
     {
         currentHealth = Mathf.Clamp(currentHealth, 0f, maxHealth);
 
-        if (targetRenderers == null || targetRenderers.Length == 0)
+        if (TargetMeshFilter == null)
+{
+    MeshFilter[] meshFilters = GetComponentsInChildren<MeshFilter>();
+
+    for (int i = 0; i < meshFilters.Length; i++)
+    {
+        if (meshFilters[i] != null && meshFilters[i].sharedMesh != null)
         {
-            targetRenderers = GetComponentsInChildren<Renderer>();
+            TargetMeshFilter = meshFilters[i];
+            break;
         }
+    }
+}
 
         CreateRuntimeMaterialInstances();
         UpdateBurnVisual();
@@ -382,18 +392,45 @@ public void SetHovered(bool hovered, int hoveredLayer)
         DestroyFireEffect();
     }
 
-    private void SpawnFireEffect()
+private void SpawnFireEffect()
+{
+    if (fireParticlePrefab == null || spawnedFireEffect != null)
     {
-        if (fireParticlePrefab == null || spawnedFireEffect != null)
+        return;
+    }
+
+    Transform spawnTransform = particleSpawnPoint != null ? particleSpawnPoint : transform;
+    Vector3 spawnPosition = spawnTransform.position + particleOffset;
+
+    spawnedFireEffect = Instantiate(fireParticlePrefab, spawnPosition, Quaternion.identity, transform);
+
+    PSMesh psMesh = spawnedFireEffect.GetComponent<PSMesh>();
+
+    if (psMesh == null)
+    {
+        Debug.LogWarning("Spawned fire effect is missing a PSMesh component.", spawnedFireEffect);
+        return;
+    }
+
+    if (TargetMeshFilter == null)
+    {
+        TargetMeshFilter = GetComponentInChildren<MeshFilter>();
+
+        if (TargetMeshFilter == null)
         {
+            Debug.LogWarning("No TargetMeshFilter assigned or found for " + gameObject.name, gameObject);
             return;
         }
-
-        Transform spawnTransform = particleSpawnPoint != null ? particleSpawnPoint : transform;
-        Vector3 spawnPosition = spawnTransform.position + particleOffset;
-
-        spawnedFireEffect = Instantiate(fireParticlePrefab, spawnPosition, Quaternion.identity, transform);
     }
+
+    if (TargetMeshFilter.sharedMesh == null)
+    {
+        Debug.LogWarning("TargetMeshFilter has no mesh assigned on " + TargetMeshFilter.name, TargetMeshFilter);
+        return;
+    }
+
+    psMesh.SetMesh(TargetMeshFilter);
+}
 
     private void DestroyFireEffect()
     {

@@ -7,7 +7,13 @@ public class PSMesh : MonoBehaviour
 
         private void Update()
         {
-            ParticleSystem.ShapeModule shapeModule = ps.shape;
-            shapeModule.mesh = targetMesh.mesh;
+            
+        }
+
+        public void SetMesh (MeshFilter meshFilter)
+        
+        {
+        ParticleSystem.ShapeModule shapeModule = ps.shape;
+            shapeModule.mesh = meshFilter.mesh;
         }
     }
