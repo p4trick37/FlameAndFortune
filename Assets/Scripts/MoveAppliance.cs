@@ -15,19 +15,24 @@ public class MoveAppliance : MonoBehaviour
 
     [Header("Movement Axis")]
     [SerializeField] private bool zAxis;
+    [SerializeField] private bool posDirection;
     [Header("Move Object at Position")]
     public bool moveObject;
     public Vector3 hitTransform;
-    [Header("Stopped Transform")]
-    private Transform stopTransformLessThan;
-    private Transform stopTransformGreaterThan;
-    [SerializeField] private Transform setStopTransform1;
-    [SerializeField] private Transform setStopTransform2;
+    [Header("Stopping Distance")]
+    [SerializeField] private float stopDistance;
+    private float startPosition;
+    private float endPosition;
+    //private Transform stopTransformLessThan;
+    //private Transform stopTransformGreaterThan;
+    //[SerializeField] private Transform setStopTransform1;
+    //[SerializeField] private Transform setStopTransform2;
+
 
     private void Awake()
     {
-        stopTransformLessThan = setStopTransform1;
-        stopTransformGreaterThan = setStopTransform2;
+        //stopTransformLessThan = setStopTransform1;
+        //stopTransformGreaterThan = setStopTransform2;
     }
 
     private void Start()
@@ -39,14 +44,41 @@ public class MoveAppliance : MonoBehaviour
         }
 
         player = FindAnyObjectByType<Player>();
-        if(zAxis == false)
+        //if(zAxis == false)
+        //  {
+        //transform.localPosition = new Vector3(stopTransformLessThan.localPosition.x, transform.localPosition.y, transform.localPosition.z);
+        // }
+        // else
+        //  {
+        //transform.localPosition = new Vector3(transform.localPosition.x, transform.localPosition.y, stopTransformLessThan.localPosition.z);
+        // }
+        if(zAxis == true)
         {
-            transform.localPosition = new Vector3(stopTransformLessThan.localPosition.x, transform.localPosition.y, transform.localPosition.z);
+            startPosition = transform.position.z;
+            if (posDirection == true)
+            {
+                endPosition = transform.position.z + stopDistance;
+            }
+            else
+            {
+                endPosition = transform.position.z - stopDistance;
+            }
         }
         else
         {
-            transform.localPosition = new Vector3(transform.localPosition.x, transform.localPosition.y, stopTransformLessThan.localPosition.z);
+            startPosition = transform.position.x;
+            if (posDirection == true)
+            {
+                endPosition = transform.position.x + stopDistance;
+            }
+            else
+            {
+                endPosition = transform.position.x - stopDistance;
+            }
         }
+        
+
+        
     }
 
     //Get rid of the stop transforms in the fridge child.
@@ -58,46 +90,19 @@ public class MoveAppliance : MonoBehaviour
 
     private void Update()
     {
-        Debug.Log(stopTransformLessThan.position);
-        Debug.Log(stopTransformGreaterThan.position);
+        //Debug.Log(stopTransformLessThan.position);
+        //Debug.Log(stopTransformGreaterThan.position);
         if(moveObject == true)
         {
-            ///*
-            if(zAxis == false)
+            if(zAxis == true)
             {
-                MoveOnXAxis(hitTransform);
-                Debug.Log("Moving");
-                if (transform.position.z < stopTransformLessThan.position.x)
-                {
-                    transform.position = new Vector3(stopTransformLessThan.position.x, transform.position.y, transform.position.z);
-                    Debug.Log("Position is bugged");
-                }
-
-                if(transform.position.z > stopTransformGreaterThan.position.x)
-                {
-                    transform.position = new Vector3(transform.position.x, transform.position.y, stopTransformGreaterThan.position.z);
-                    Debug.Log("Next Position is bugged");
-                }
+                MoveOnZAxis(hitTransform);
             }
             else
             {
-                MoveOnZAxis(hitTransform);
-                
-                if(transform.localPosition.z < stopTransformLessThan.localPosition.z)
-                {
-                    transform.localPosition = new Vector3(transform.localPosition.x, transform.localPosition.y, stopTransformLessThan.localPosition.z);
-                    
-                }
-
-                if(transform.localPosition.z > stopTransformGreaterThan.localPosition.z)
-                {
-                    transform.localPosition = new Vector3(transform.localPosition.x, transform.localPosition.y, stopTransformGreaterThan.localPosition.z);
-                    
-                }
+                MoveOnXAxis(hitTransform);
             }
-            //*/
-            //MoveOnForwardVector(hitTransform);
-            
+            Bounds();
         }
 
         for(int i = 0; i < moveObjectsWith.Length; i++)
@@ -109,13 +114,76 @@ public class MoveAppliance : MonoBehaviour
     private void MoveOnXAxis(Vector3 hitTransform)
     {
         transform.position = new Vector3(hitTransform.x, transform.position.y, transform.position.z);
+
+        
     }
 
     private void MoveOnZAxis(Vector3 hitTransform)
     {
         transform.position = new Vector3(transform.position.x, transform.position.y, hitTransform.z);
-    }
+        
 
+    }
+    
+    private void Bounds()
+    {
+        if(zAxis == true)
+        {
+            if(posDirection == true)
+            {
+                if (transform.position.z < startPosition)
+                {
+                    transform.position = new Vector3(transform.position.x, transform.position.y, startPosition);
+                }
+
+                if (transform.position.z > endPosition)
+                {
+                    transform.position = new Vector3(transform.position.x, transform.position.y, endPosition);
+                }
+            }
+            else
+            {
+                if (transform.position.z > startPosition)
+                {
+                    transform.position = new Vector3(transform.position.x, transform.position.y, startPosition);
+                }
+
+                if (transform.position.z < endPosition)
+                {
+                    transform.position = new Vector3(transform.position.x, transform.position.y, endPosition);
+                }
+            }
+            
+        }
+        else
+        {
+            if(posDirection == true)
+            {
+                if (transform.position.x < startPosition)
+                {
+                    transform.position = new Vector3(startPosition, transform.position.y, transform.position.z);
+                }
+
+                if (transform.position.x > endPosition)
+                {
+                    transform.position = new Vector3(endPosition, transform.position.y, transform.position.z);
+                }
+            }
+            else
+            {
+                if (transform.position.x > startPosition)
+                {
+                    transform.position = new Vector3(startPosition, transform.position.y, transform.position.z);
+                }
+
+                if (transform.position.x < endPosition)
+                {
+                    transform.position = new Vector3(endPosition, transform.position.y, transform.position.z);
+                }
+            }
+            
+        }
+    }
 
     public void CurrentlySelecting(RaycastHit hit)
     {
@@ -128,12 +196,12 @@ public class MoveAppliance : MonoBehaviour
         moveObject = false;
     }
 
-    private void MoveOtherObjects(Vector3 hitTransform)
+    private void OnDrawGizmos()
     {
-        foreach(Transform objPos in moveObjectsWith)
+        if(startPosition != 0)
         {
-            Vector3 distance = objPos.position - transform.position;
-            objPos.position = transform.position + distance;
+            Gizmos.DrawSphere(new Vector3(transform.localPosition.x, transform.localPosition.y, startPosition), 1);
+            Gizmos.DrawSphere(new Vector3(transform.localPosition.x, transform.localPosition.y, endPosition), 1);
         }
     }
 }
