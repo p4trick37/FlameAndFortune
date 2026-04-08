@@ -1,11 +1,21 @@
 using UnityEngine;
 using System.Collections.Generic;
+using TMPro;
 public class GameManager : MonoBehaviour
 {
+    [Header("Burns Completed")]
     [SerializeField] private List<BurnableObject> allBurnableObjects = new List<BurnableObject>();
     [SerializeField] private int numberOfBurns;
     [SerializeField] private int numberOfObjects;
     [SerializeField] private float percentBurned;
+    [SerializeField] private TMP_Text percentBurnedText;
+    [Header("Timer")]
+    [SerializeField] private float burnTime;
+    [SerializeField] private TMP_Text timerText;
+    private float timer;
+    private bool gameOver = false;
+    
+    
     private void Awake()
     {
         BurnableObject[] objects = FindObjectsByType<BurnableObject>(FindObjectsSortMode.None);
@@ -16,14 +26,24 @@ public class GameManager : MonoBehaviour
         numberOfObjects = allBurnableObjects.Count;
     }
 
+    private void Start()
+    {
+        timer = burnTime;
+    }
+
     private void Update()
     {
-        CheckForBurns();
-        percentBurned = PercentBurned(numberOfBurns, numberOfObjects);
-        if(percentBurned > 0 )
+        Timer();
+        if(gameOver == false)
         {
-            Debug.Log("Object can be burned");
+            CheckForBurns();
+            percentBurned = PercentBurned(numberOfBurns, numberOfObjects);
         }
+        else
+        {
+            GameOver();
+        }
+        percentBurnedText.text = percentBurned.ToString("F0") + "%";
     }
 
     private void CheckForBurns()
@@ -43,4 +63,23 @@ public class GameManager : MonoBehaviour
         float percent = ((float)currentBurns / numOfBurnObj) * 100;
         return percent;
     }
+
+    private void Timer()
+    {
+        timer -= Time.deltaTime;
+        if(timer <= 0)
+        {
+            gameOver = true;
+            timer = 0;
+        }
+        timerText.text = timer.ToString("F2");
+    }
+
+    private void GameOver()
+    {
+        Debug.Log("GAME IS OVER DUDE");
+    }
+
+ 
+
 }
