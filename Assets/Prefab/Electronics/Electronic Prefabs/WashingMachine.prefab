@@ -143,7 +143,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4967845299381163553, guid: 1e569e666d5d1d04db03b50d14e46146, type: 3}
       propertyPath: imageIndexed
-      value: 2
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 5117183484510126967, guid: 1e569e666d5d1d04db03b50d14e46146, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -151,7 +151,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7031903874194748398, guid: 1e569e666d5d1d04db03b50d14e46146, type: 3}
       propertyPath: m_Name
-      value: Wire (3)
+      value: Wire 5
       objectReference: {fileID: 0}
     - target: {fileID: 7031903874194748398, guid: 1e569e666d5d1d04db03b50d14e46146, type: 3}
       propertyPath: m_IsActive
@@ -338,6 +338,7 @@ MonoBehaviour:
   fireParticlePrefab: {fileID: 8295591563862043295, guid: 98c5ce036f68d8941922e7541fb70887, type: 3}
   particleSpawnPoint: {fileID: 0}
   particleOffset: {x: 0, y: 0, z: 0}
+  TargetMeshFilter: {fileID: 0}
   uiAnchorOverride: {fileID: 0}
   uiOffset: {x: 0, y: 1.2, z: 0}
 --- !u!114 &1337019662658874834
@@ -397,7 +398,7 @@ PrefabInstance:
       objectReference: {fileID: 2388852903182121051}
     - target: {fileID: 86052370540641597, guid: 128bf3adbee745043ba3c9de26f86210, type: 3}
       propertyPath: incompleteColors.Array.size
-      value: 4
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 86052370540641597, guid: 128bf3adbee745043ba3c9de26f86210, type: 3}
       propertyPath: completeColors.Array.data[3].a
@@ -425,15 +426,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 86052370540641597, guid: 128bf3adbee745043ba3c9de26f86210, type: 3}
       propertyPath: incompleteColors.Array.data[2].b
-      value: 0.5019608
+      value: 0.078431375
       objectReference: {fileID: 0}
     - target: {fileID: 86052370540641597, guid: 128bf3adbee745043ba3c9de26f86210, type: 3}
       propertyPath: incompleteColors.Array.data[2].g
-      value: 0.49733788
+      value: 0.5019608
       objectReference: {fileID: 0}
     - target: {fileID: 86052370540641597, guid: 128bf3adbee745043ba3c9de26f86210, type: 3}
       propertyPath: incompleteColors.Array.data[2].r
-      value: 0.078431375
+      value: 0.08451309
       objectReference: {fileID: 0}
     - target: {fileID: 86052370540641597, guid: 128bf3adbee745043ba3c9de26f86210, type: 3}
       propertyPath: incompleteColors.Array.data[3].a
@@ -445,10 +446,26 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 86052370540641597, guid: 128bf3adbee745043ba3c9de26f86210, type: 3}
       propertyPath: incompleteColors.Array.data[3].g
-      value: 0.20946637
+      value: 0.4321449
       objectReference: {fileID: 0}
     - target: {fileID: 86052370540641597, guid: 128bf3adbee745043ba3c9de26f86210, type: 3}
       propertyPath: incompleteColors.Array.data[3].r
+      value: 0.078431375
+      objectReference: {fileID: 0}
+    - target: {fileID: 86052370540641597, guid: 128bf3adbee745043ba3c9de26f86210, type: 3}
+      propertyPath: incompleteColors.Array.data[4].a
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 86052370540641597, guid: 128bf3adbee745043ba3c9de26f86210, type: 3}
+      propertyPath: incompleteColors.Array.data[4].b
+      value: 0.5019608
+      objectReference: {fileID: 0}
+    - target: {fileID: 86052370540641597, guid: 128bf3adbee745043ba3c9de26f86210, type: 3}
+      propertyPath: incompleteColors.Array.data[4].g
+      value: 0.1465548
+      objectReference: {fileID: 0}
+    - target: {fileID: 86052370540641597, guid: 128bf3adbee745043ba3c9de26f86210, type: 3}
+      propertyPath: incompleteColors.Array.data[4].r
       value: 0.078431375
       objectReference: {fileID: 0}
     - target: {fileID: 2037275499351034403, guid: 128bf3adbee745043ba3c9de26f86210, type: 3}
@@ -523,6 +540,14 @@ PrefabInstance:
       propertyPath: m_LocalPosition.z
       value: -1.184
       objectReference: {fileID: 0}
+    - target: {fileID: 5121246457737843116, guid: 128bf3adbee745043ba3c9de26f86210, type: 3}
+      propertyPath: posDirection
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5121246457737843116, guid: 128bf3adbee745043ba3c9de26f86210, type: 3}
+      propertyPath: burnableObject
+      value: 
+      objectReference: {fileID: 7797643423175452009}
     - target: {fileID: 5635078620873983549, guid: 128bf3adbee745043ba3c9de26f86210, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0.27299976
@@ -586,6 +611,18 @@ PrefabInstance:
     - target: {fileID: 6448833526892785827, guid: 128bf3adbee745043ba3c9de26f86210, type: 3}
       propertyPath: m_LocalPosition.z
       value: -1.184
+      objectReference: {fileID: 0}
+    - target: {fileID: 6717775982774451419, guid: 128bf3adbee745043ba3c9de26f86210, type: 3}
+      propertyPath: m_Name
+      value: Wire 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6931649663328172413, guid: 128bf3adbee745043ba3c9de26f86210, type: 3}
+      propertyPath: m_Name
+      value: Wire 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 7450169484797623449, guid: 128bf3adbee745043ba3c9de26f86210, type: 3}
+      propertyPath: m_Name
+      value: Wire 2
       objectReference: {fileID: 0}
     - target: {fileID: 9175166159806378388, guid: 128bf3adbee745043ba3c9de26f86210, type: 3}
       propertyPath: m_LocalPosition.x
@@ -731,7 +768,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4967845299381163553, guid: 1e569e666d5d1d04db03b50d14e46146, type: 3}
       propertyPath: imageIndexed
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 5117183484510126967, guid: 1e569e666d5d1d04db03b50d14e46146, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -739,7 +776,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7031903874194748398, guid: 1e569e666d5d1d04db03b50d14e46146, type: 3}
       propertyPath: m_Name
-      value: Wire (2)
+      value: Wire 4
       objectReference: {fileID: 0}
     - target: {fileID: 7031903874194748398, guid: 1e569e666d5d1d04db03b50d14e46146, type: 3}
       propertyPath: m_IsActive

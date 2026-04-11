@@ -2,6 +2,7 @@ using UnityEngine;
 using System.Collections.Generic;
 using UnityEngine.UI;
 using UnityEditor.Rendering;
+using JetBrains.Annotations;
 
 public class WirePanel : MonoBehaviour
 {
@@ -14,7 +15,8 @@ public class WirePanel : MonoBehaviour
     private bool wiresRearranged = false;
     private bool wiresDestroyed = false;
 
-
+    public bool WiresCompleted => wiresCompleted;
+    private bool wiresCompleted = false;
 
     private void OnEnable()
     {
@@ -33,10 +35,7 @@ public class WirePanel : MonoBehaviour
 
         if(wiresDestroyed == true && CheckForWiresCompleted() == true)
         {
-            endCord.pluginForFire = true;
-            gameObject.SetActive(false);
-            player.freezePlayer = false;
-            Cursor.lockState = CursorLockMode.Locked;
+            wiresCompleted = true;
         }
 
     }
@@ -108,4 +107,6 @@ public class WirePanel : MonoBehaviour
 
         
     }
+
+
 }

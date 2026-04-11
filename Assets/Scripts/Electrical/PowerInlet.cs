@@ -2,24 +2,18 @@ using UnityEngine;
 
 public class PowerInlet : MonoBehaviour
 {
-    public GameObject wirePanel;
-    public bool activated = false;
+    public bool Activated => activated;
+    private bool activated = false;
     [SerializeField] private EndCord endCord;
-    private Player player;
 
-    private void Awake()
+   
+    public void Activate()
     {
-        player = FindAnyObjectByType<Player>();
+        activated = true;
     }
 
-    private void Update()
+    public void Deactivate()
     {
-        if(activated == true && endCord.isPluggedIn == false && endCord.pluginForFire == false)
-        {
-            wirePanel.SetActive(true);
-            Cursor.lockState = CursorLockMode.None;
-            player.freezePlayer = true;
-        }
         activated = false;
     }
 }

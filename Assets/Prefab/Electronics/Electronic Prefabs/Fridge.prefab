@@ -65,6 +65,10 @@ PrefabInstance:
       propertyPath: m_StaticEditorFlags
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5121246457737843116, guid: 128bf3adbee745043ba3c9de26f86210, type: 3}
+      propertyPath: posDirection
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5635078620873983549, guid: 128bf3adbee745043ba3c9de26f86210, type: 3}
       propertyPath: m_LocalPosition.x
       value: 2.4429998
@@ -206,7 +210,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7013181576486223802, guid: 62781a46394a0bf45a2345e6d78b9551, type: 3}
       propertyPath: zAxis
-      value: 0
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7013181576486223802, guid: 62781a46394a0bf45a2345e6d78b9551, type: 3}
+      propertyPath: posDirection
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7013181576486223802, guid: 62781a46394a0bf45a2345e6d78b9551, type: 3}
       propertyPath: stopDistance

@@ -390,15 +390,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 399d1d2ad94fb2c459c7cddae9e242d2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PowerCord
+  burnableObject: {fileID: 0}
   zDirection: 1
+  posDirection: 0
   ObjectPowerInlet: {fileID: 6716405772737064373}
-  WallOutletInteractable: {fileID: 3794460108958688037}
+  outletInteract: {fileID: 3794460108958688037}
   cubePoint1: {fileID: 2110659470502334737}
   cubeMid: {fileID: 2127221812548537546}
   cubePoint2: {fileID: 4791651682175078465}
   cubeVert1: {fileID: 1543239423014959188}
   cubeVert2: {fileID: 8420666624496987476}
   cordColor: {r: 0, g: 0, b: 0, a: 0}
+  flashTime: 0.2
+  endCord: {fileID: 3640532922679377842}
+  powerInlet: {fileID: 2058687965827071206}
+  wireCanvas: {fileID: 8410561036714159986}
+  wirePanel: {fileID: 86052370540641597}
 --- !u!1 &3211672669399505798
 GameObject:
   m_ObjectHideFlags: 0
@@ -498,11 +505,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 05a55e5f5b9ffc84289dcf4ebbaff030, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EndCord
-  isPluggedIn: 1
   inPlugTransform: {fileID: 3933880549117647947}
   outPlugTransform: {fileID: 2054751273407549227}
   burnableObject: {fileID: 0}
-  pluginForFire: 0
 --- !u!33 &7257946927716366020
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -776,7 +781,7 @@ GameObject:
   - component: {fileID: 6781616031591221985}
   - component: {fileID: 2058687965827071206}
   m_Layer: 0
-  m_Name: Fridge Power Inlet
+  m_Name: Power Inlet
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -887,8 +892,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cad1ffe13cadef542bc8eb4f96971339, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PowerInlet
-  wirePanel: {fileID: 8410561036714159986}
-  activated: 0
   endCord: {fileID: 3640532922679377842}
 --- !u!1 &7923932906900413690
 GameObject:

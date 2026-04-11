@@ -44,14 +44,6 @@ public class MoveAppliance : MonoBehaviour
         }
 
         player = FindAnyObjectByType<Player>();
-        //if(zAxis == false)
-        //  {
-        //transform.localPosition = new Vector3(stopTransformLessThan.localPosition.x, transform.localPosition.y, transform.localPosition.z);
-        // }
-        // else
-        //  {
-        //transform.localPosition = new Vector3(transform.localPosition.x, transform.localPosition.y, stopTransformLessThan.localPosition.z);
-        // }
         if(zAxis == true)
         {
             startPosition = transform.position.z;

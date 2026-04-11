@@ -136,13 +136,13 @@ public class Player : MonoBehaviour
         EndCord endCord = hit.transform.GetComponent<EndCord>();
         if(endCord != null)
         {
-            if (endCord.isPluggedIn == true)
+            if (endCord.IsPluggedIn == true)
             {
-                endCord.isPluggedIn = false;
+                endCord.UnPlug();
             }
             else
             {
-                endCord.isPluggedIn = true;
+                endCord.PlugIn();
             }
         }
     }
@@ -152,7 +152,7 @@ public class Player : MonoBehaviour
         PowerInlet inlet = hit.transform.GetComponent<PowerInlet>();
         if(inlet != null)
         {
-            inlet.activated = true;
+            inlet.Activate();
         }
     }
 
