@@ -18,7 +18,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 126
+  m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!4 &1434479085896060327
 Transform:
@@ -146,12 +146,13 @@ GameObject:
   m_Component:
   - component: {fileID: 3681302985973342071}
   - component: {fileID: 8452273704385652742}
+  - component: {fileID: -7927201713424991499}
   m_Layer: 6
   m_Name: Bed
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 4294967295
+  m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!4 &3681302985973342071
 Transform:
@@ -195,6 +196,44 @@ LODGroup:
     renderers:
     - renderer: {fileID: 8038525216361333025}
   m_Enabled: 1
+--- !u!114 &-7927201713424991499
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4061487252469368269}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4b234415ec5b9f948896c680264c7815, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::BurnableObject
+  fireType: 0
+  maxHealth: 100
+  currentHealth: 100
+  igniteDamagePercentToStartBurning: 0.105
+  burnDamagePerSecond: 40
+  isBurning: 0
+  isBurnedOut: 0
+  isGasSoaked: 0
+  gasIgniteMultiplier: 2
+  gasBurnMultiplier: 2
+  canSpreadFire: 1
+  spreadRadius: 1
+  spreadInterval: 3
+  spreadIgniteDamagePerSecond: 3
+  spreadLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  targetRenderers: []
+  burnedColor: {r: 0.1, g: 0.1, b: 0.1, a: 1}
+  affectEmission: 0
+  fireParticlePrefab: {fileID: 8295591563862043295, guid: 86cf272c329017647a3b0c6c6edcff58, type: 3}
+  particleSpawnPoint: {fileID: 0}
+  particleOffset: {x: 0, y: 0, z: 0}
+  TargetMeshFilter: {fileID: 0}
+  uiAnchorOverride: {fileID: 0}
+  uiOffset: {x: 0, y: 0.7, z: 0}
 --- !u!1 &6212090439184320648
 GameObject:
   m_ObjectHideFlags: 0
@@ -213,7 +252,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 4294967295
+  m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!4 &5326715664239298287
 Transform:
@@ -339,6 +378,34 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 3681302985973342071}
     m_Modifications:
+    - target: {fileID: -5517296670238207804, guid: 56de18d291eba3d4d99529c189217267, type: 3}
+      propertyPath: uiOffset.y
+      value: 1.2
+      objectReference: {fileID: 0}
+    - target: {fileID: -5517296670238207804, guid: 56de18d291eba3d4d99529c189217267, type: 3}
+      propertyPath: spreadRadius
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: -5517296670238207804, guid: 56de18d291eba3d4d99529c189217267, type: 3}
+      propertyPath: spreadInterval
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: -5517296670238207804, guid: 56de18d291eba3d4d99529c189217267, type: 3}
+      propertyPath: fireParticlePrefab
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: -5517296670238207804, guid: 56de18d291eba3d4d99529c189217267, type: 3}
+      propertyPath: burnDamagePerSecond
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: -5517296670238207804, guid: 56de18d291eba3d4d99529c189217267, type: 3}
+      propertyPath: spreadIgniteDamagePerSecond
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: -5517296670238207804, guid: 56de18d291eba3d4d99529c189217267, type: 3}
+      propertyPath: igniteDamagePercentToStartBurning
+      value: 0.1
+      objectReference: {fileID: 0}
     - target: {fileID: 3605031170231494970, guid: 56de18d291eba3d4d99529c189217267, type: 3}
       propertyPath: m_RootOrder
       value: 2
@@ -409,6 +476,34 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 3681302985973342071}
     m_Modifications:
+    - target: {fileID: -4662662965521698191, guid: 11e845079357ee94085d7dc4df4a9458, type: 3}
+      propertyPath: uiOffset.y
+      value: 1.2
+      objectReference: {fileID: 0}
+    - target: {fileID: -4662662965521698191, guid: 11e845079357ee94085d7dc4df4a9458, type: 3}
+      propertyPath: spreadRadius
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: -4662662965521698191, guid: 11e845079357ee94085d7dc4df4a9458, type: 3}
+      propertyPath: spreadInterval
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: -4662662965521698191, guid: 11e845079357ee94085d7dc4df4a9458, type: 3}
+      propertyPath: fireParticlePrefab
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: -4662662965521698191, guid: 11e845079357ee94085d7dc4df4a9458, type: 3}
+      propertyPath: burnDamagePerSecond
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: -4662662965521698191, guid: 11e845079357ee94085d7dc4df4a9458, type: 3}
+      propertyPath: spreadIgniteDamagePerSecond
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: -4662662965521698191, guid: 11e845079357ee94085d7dc4df4a9458, type: 3}
+      propertyPath: igniteDamagePercentToStartBurning
+      value: 0.1
+      objectReference: {fileID: 0}
     - target: {fileID: 2412592889355478853, guid: 11e845079357ee94085d7dc4df4a9458, type: 3}
       propertyPath: m_Name
       value: Bed_pillow_A

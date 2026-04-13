@@ -17,12 +17,13 @@ GameObject:
   - component: {fileID: 3886186826349739455}
   - component: {fileID: 5530389425049275546}
   - component: {fileID: 4332002524530201185}
+  - component: {fileID: 8745890523208581846}
   m_Layer: 6
   m_Name: Chair_arm
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 4294967295
+  m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!4 &834896455143434747
 Transform:
@@ -222,3 +223,41 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.12, y: 0.2, z: 0.46}
   m_Center: {x: -0.34, y: 0.5197596, z: 0.03}
+--- !u!114 &8745890523208581846
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 62475674803172161}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4b234415ec5b9f948896c680264c7815, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::BurnableObject
+  fireType: 0
+  maxHealth: 100
+  currentHealth: 100
+  igniteDamagePercentToStartBurning: 0.105
+  burnDamagePerSecond: 40
+  isBurning: 0
+  isBurnedOut: 0
+  isGasSoaked: 0
+  gasIgniteMultiplier: 2
+  gasBurnMultiplier: 2
+  canSpreadFire: 1
+  spreadRadius: 1
+  spreadInterval: 3
+  spreadIgniteDamagePerSecond: 3
+  spreadLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  targetRenderers: []
+  burnedColor: {r: 0.1, g: 0.1, b: 0.1, a: 1}
+  affectEmission: 0
+  fireParticlePrefab: {fileID: 8295591563862043295, guid: 86cf272c329017647a3b0c6c6edcff58, type: 3}
+  particleSpawnPoint: {fileID: 0}
+  particleOffset: {x: 0, y: 0, z: 0}
+  TargetMeshFilter: {fileID: 4339779482853418590}
+  uiAnchorOverride: {fileID: 0}
+  uiOffset: {x: 0, y: 0.7, z: 0}
