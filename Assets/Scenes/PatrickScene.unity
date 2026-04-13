@@ -1670,6 +1670,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1452405136}
+  - component: {fileID: 1452405137}
+  - component: {fileID: 1452405138}
   m_Layer: 0
   m_Name: Torch
   m_TagString: Untagged
@@ -1685,15 +1687,73 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1452405135}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.0021642235, y: 0.000014882541, z: 0.0068764407, w: 0.999974}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -7.851497e-11, w: 1}
+  m_LocalPosition: {x: 1.962399, y: 1.6010001, z: 9.462447}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 882090514}
   - {fileID: 1260612302}
-  m_Father: {fileID: 1550188490}
+  m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1452405137
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1452405135}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a38887f2deefb8f4b99e201a5c1429f5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::TorchFireTool
+  playerCamera: {fileID: 0}
+  progressUI: {fileID: 971522140}
+  litTorchVisual: {fileID: 0}
+  player: {fileID: 1647563499}
+  interactLayers:
+    serializedVersion: 2
+    m_Bits: 192
+  hoveredLayerName: Hovered
+  hoverDistance: 6
+  igniteDistance: 3
+  torchIsLit: 0
+  relightKey: 114
+  relightRadius: 2
+  torchIgniteSourceLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  torchIgniteDamagePerSecond: 5
+  hairsprayIgniteMultiplier: 2.5
+  fallbackBoostKey: 304
+  useMicrophone: 1
+  sampleWindow: 128
+  micThreshold: 0.02
+  drawDebugRay: 1
+  logHoverName: 0
+  slotNumber: 0
+--- !u!65 &1452405138
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1452405135}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.15911496, y: 0.65119946, z: 0.1637659}
+  m_Center: {x: -0.00168401, y: 0.07110101, z: -0.0046010017}
 --- !u!1 &1464343312
 GameObject:
   m_ObjectHideFlags: 0
@@ -1859,10 +1919,20 @@ Transform:
   m_LocalPosition: {x: 0.38899994, y: -0.41600013, z: 0.5290003}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 1452405136}
+  m_Children: []
   m_Father: {fileID: 6286263868416525910}
   m_LocalEulerAnglesHint: {x: -0.248, y: 0, z: -0.788}
+--- !u!114 &1647563499 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7842793328727363585, guid: b4a4b1ad148c9524fb9f2a51a8da89d3, type: 3}
+  m_PrefabInstance: {fileID: 6286263868416525909}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e4f096a17f739f14baba983d2d57e582, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Player
 --- !u!1 &1691556617 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 62475674803172161, guid: 171518447b6d2db458139a02cc654b79, type: 3}
@@ -2447,6 +2517,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 305037847072332463, guid: db10d2c97b7760640afaa23717c867ea, type: 3}
+      propertyPath: m_IsTrigger
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 383914258465514993, guid: db10d2c97b7760640afaa23717c867ea, type: 3}
       propertyPath: m_LocalPosition.x
       value: -2.56
@@ -2747,11 +2821,16 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7842793328727363585, guid: b4a4b1ad148c9524fb9f2a51a8da89d3, type: 3}
+      propertyPath: inventorySize
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 7961538665946744700, guid: b4a4b1ad148c9524fb9f2a51a8da89d3, type: 3}
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 1655724781185544476, guid: b4a4b1ad148c9524fb9f2a51a8da89d3, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects:
     - targetCorrespondingSourceObject: {fileID: 1528914673806858356, guid: b4a4b1ad148c9524fb9f2a51a8da89d3, type: 3}
@@ -2786,3 +2865,4 @@ SceneRoots:
   - {fileID: 3295415916791977743}
   - {fileID: 3614260917700271447}
   - {fileID: 687043912}
+  - {fileID: 1452405136}
