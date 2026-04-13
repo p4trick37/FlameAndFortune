@@ -49,7 +49,6 @@ public class EndCord : MonoBehaviour
             if (powerCord.PosDirection == true)
             {
                 position = new Vector3(target.localPosition.x, target.localPosition.y, target.localPosition.z + (target.localScale.z / 2));
-                Debug.Log("TargetPos: " + target.localPosition + ". . . LocalScale: " + (target.localScale.z / 2) + "Position:" + position);
             }
             else
             {

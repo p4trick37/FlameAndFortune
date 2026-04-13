@@ -1,11 +1,13 @@
 using UnityEngine;
 
-public class TorchFireTool : MonoBehaviour
+public class TorchFireTool : MonoBehaviour, IPickupable
 {
     [Header("References")]
     [SerializeField] private Camera playerCamera;
     [SerializeField] private IgniteProgressUI progressUI;
     [SerializeField] private GameObject litTorchVisual;
+    [SerializeField] private Player player;
+    private GameObject playerHand;
 
     [Header("Layers")]
     [SerializeField] private LayerMask interactLayers = ~0;
@@ -37,6 +39,11 @@ public class TorchFireTool : MonoBehaviour
     [SerializeField] private bool drawDebugRay = true;
     [SerializeField] private bool logHoverName = false;
 
+    [Header("Inventory Management")]
+    public int SlotNumber => slotNumber;
+    [SerializeField] private int slotNumber;
+    private bool selectingItem;
+
     private BurnableObject currentHovered;
     private int hoveredLayer = -1;
 
@@ -61,6 +68,7 @@ public class TorchFireTool : MonoBehaviour
 
         UpdateTorchVisual();
         SetupMicrophone();
+        playerHand = FindHand();
     }
 
     private void Update()
@@ -227,6 +235,7 @@ private void TryIgniteHeldTarget()
         UpdateTorchVisual();
     }
 
+    
     private void TryRelightTorch()
     {
         Collider[] hits = Physics.OverlapSphere(transform.position, relightRadius, torchIgniteSourceLayers);
@@ -302,5 +311,28 @@ private void TryIgniteHeldTarget()
     {
         Gizmos.color = torchIsLit ? Color.yellow : Color.gray;
         Gizmos.DrawWireSphere(transform.position, relightRadius);
+    }
+
+    private GameObject FindHand()
+    {
+        GameObject hand = GameObject.Find("Hand");
+        return hand;
+    }
+
+    public void SetToHand()
+    {
+        transform.SetParent(playerHand.transform);
+    }
+
+
+
+    public void GetSlotNumber(int index)
+    {
+        slotNumber = index;
+    }
+
+    public GameObject GetItem()
+    {
+        return gameObject;
     }
 }

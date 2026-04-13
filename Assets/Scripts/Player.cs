@@ -1,3 +1,4 @@
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class Player : MonoBehaviour
@@ -19,6 +20,12 @@ public class Player : MonoBehaviour
     [SerializeField] private float sprintFOV;
     [Header("Character Controller")]
     [SerializeField] private CharacterController cc;
+    [Header("Inventory")]
+    [SerializeField] private int inventorySize;
+    [SerializeField] private GameObject[] inventory;
+    public int CurrentSlot => currentSlot;
+    [SerializeField] private int currentSlot;
+    private bool inventoryFull = false;
 
     public bool freezePlayer = false;
 
@@ -29,6 +36,7 @@ public class Player : MonoBehaviour
     private void Start()
     {
         Cursor.lockState = CursorLockMode.Locked;
+        inventory = SetInventory(inventorySize);
     }
 
     void Update()
@@ -46,6 +54,7 @@ public class Player : MonoBehaviour
             EInteraction(true);
             RightClickInteraction(true);
         }
+        inventorySelect();
     }
 
     private void Movement(bool shouldMove)
@@ -102,6 +111,7 @@ public class Player : MonoBehaviour
                 {
                     TryForEndCord(hit);
                     TryForPowerInlet(hit);
+                    TryForObjects(hit);
                 }
             }
         }
@@ -172,6 +182,71 @@ public class Player : MonoBehaviour
             }
         }
         
+    }
+
+    private void TryForObjects(RaycastHit hit)
+    {
+        if(hit.transform.TryGetComponent<IPickupable>(out IPickupable item))
+        {
+            bool emptySlot = false;
+            int emptyIndex = 0;
+            for(int i = 0; i < inventory.Length; i++)
+            {
+                if (inventory[i] == null)
+                {
+                    emptySlot = true;
+                    emptyIndex = i;
+                    break;
+                }
+            }
+            if(emptySlot == true)
+            {
+                item.SetToHand();
+                inventory[emptyIndex] = item.GetItem();
+                item.GetSlotNumber(emptyIndex + 1);
+            }
+            Debug.Log("Torch");
+        }
+    }
+
+
+    private GameObject[] SetInventory(int size)
+    {
+        GameObject[] gameObjects = new GameObject[size];
+        return gameObjects;
+    }
+
+    private int NumKeyboardPressedReturn()
+    {
+        int select = 0;
+        for (int i = 1; i <= inventory.Length; i++)
+        {
+            if (Input.GetKeyDown(KeyCode.Alpha0 + i))
+            {
+                select = i;
+            }
+        }
+        return select;
+    }
+
+    private void inventorySelect()
+    {
+        currentSlot = NumKeyboardPressedReturn();
+        Debug.Log(currentSlot);
+        for (int i = 0; i < inventory.Length; i++)
+        {
+            if (inventory[i] != null)
+            {
+                if (i == currentSlot - 1)
+                {
+                    inventory[i].SetActive(true);
+                }
+                else
+                {
+                    inventory[i].SetActive(false);
+                }
+            }
+        }
     }
     
     

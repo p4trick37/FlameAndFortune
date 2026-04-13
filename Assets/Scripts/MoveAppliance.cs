@@ -188,12 +188,5 @@ public class MoveAppliance : MonoBehaviour
         moveObject = false;
     }
 
-    private void OnDrawGizmos()
-    {
-        if(startPosition != 0)
-        {
-            Gizmos.DrawSphere(new Vector3(transform.localPosition.x, transform.localPosition.y, startPosition), 1);
-            Gizmos.DrawSphere(new Vector3(transform.localPosition.x, transform.localPosition.y, endPosition), 1);
-        }
-    }
+
 }
