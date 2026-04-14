@@ -114,6 +114,37 @@ CapsuleCollider:
   m_Height: 2
   m_Direction: 1
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!1 &3611036518446449928
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3290709301936091894}
+  m_Layer: 0
+  m_Name: Hand
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &3290709301936091894
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3611036518446449928}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0.0021642235, y: -0.000014882541, z: -0.0068764407, w: 0.999974}
+  m_LocalPosition: {x: 0.38899994, y: -0.41600013, z: 0.5290003}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1528914673806858356}
+  m_LocalEulerAnglesHint: {x: -0.248, y: 0, z: -0.788}
 --- !u!1 &7961538665946744700
 GameObject:
   m_ObjectHideFlags: 0
@@ -195,6 +226,9 @@ MonoBehaviour:
   walkFOV: 70
   sprintFOV: 90
   cc: {fileID: 4292091903218352689}
+  inventorySize: 3
+  inventory: []
+  currentSlot: 0
   freezePlayer: 0
 --- !u!1 &8800135068554256839
 GameObject:
@@ -209,7 +243,6 @@ GameObject:
   - component: {fileID: 1740521877870286949}
   - component: {fileID: 3051471664326782186}
   - component: {fileID: 6436031615851198442}
-  - component: {fileID: 1655724781185544476}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -225,13 +258,14 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8800135068554256839}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: 0.60876125, z: -0, w: 0.7933535}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0.59000015, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 3290709301936091894}
   m_Father: {fileID: 3212859566087897257}
-  m_LocalEulerAnglesHint: {x: 0, y: 75, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!20 &6961042014341529433
 Camera:
   m_ObjectHideFlags: 0
@@ -353,38 +387,3 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 4294967295
   drawDebugRay: 1
---- !u!114 &1655724781185544476
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8800135068554256839}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a38887f2deefb8f4b99e201a5c1429f5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::TorchFireTool
-  playerCamera: {fileID: 0}
-  progressUI: {fileID: 0}
-  litTorchVisual: {fileID: 0}
-  interactLayers:
-    serializedVersion: 2
-    m_Bits: 192
-  hoveredLayerName: Hovered
-  hoverDistance: 6
-  igniteDistance: 3
-  torchIsLit: 0
-  relightKey: 114
-  relightRadius: 2
-  torchIgniteSourceLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  torchIgniteDamagePerSecond: 5
-  hairsprayIgniteMultiplier: 2.5
-  fallbackBoostKey: 304
-  useMicrophone: 1
-  sampleWindow: 128
-  micThreshold: 0.02
-  drawDebugRay: 1
-  logHoverName: 0

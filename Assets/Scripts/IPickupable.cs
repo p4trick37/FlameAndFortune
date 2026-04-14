@@ -6,6 +6,6 @@ public interface IPickupable
 
     public void GetSlotNumber(int index);
 
-    public GameObject GetItem();
+    public GameObject OnPickup();
 
 }

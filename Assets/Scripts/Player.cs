@@ -25,7 +25,6 @@ public class Player : MonoBehaviour
     [SerializeField] private GameObject[] inventory;
     public int CurrentSlot => currentSlot;
     [SerializeField] private int currentSlot;
-    private bool inventoryFull = false;
 
     public bool freezePlayer = false;
 
@@ -37,6 +36,7 @@ public class Player : MonoBehaviour
     {
         Cursor.lockState = CursorLockMode.Locked;
         inventory = SetInventory(inventorySize);
+        currentSlot = 1;
     }
 
     void Update()
@@ -202,10 +202,9 @@ public class Player : MonoBehaviour
             if(emptySlot == true)
             {
                 item.SetToHand();
-                inventory[emptyIndex] = item.GetItem();
+                inventory[emptyIndex] = item.OnPickup();
                 item.GetSlotNumber(emptyIndex + 1);
             }
-            Debug.Log("Torch");
         }
     }
 
@@ -218,7 +217,7 @@ public class Player : MonoBehaviour
 
     private int NumKeyboardPressedReturn()
     {
-        int select = 0;
+        int select = currentSlot;
         for (int i = 1; i <= inventory.Length; i++)
         {
             if (Input.GetKeyDown(KeyCode.Alpha0 + i))
@@ -232,7 +231,7 @@ public class Player : MonoBehaviour
     private void inventorySelect()
     {
         currentSlot = NumKeyboardPressedReturn();
-        Debug.Log(currentSlot);
+        
         for (int i = 0; i < inventory.Length; i++)
         {
             if (inventory[i] != null)
