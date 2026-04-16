@@ -43088,6 +43088,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Metal_plate
       objectReference: {fileID: 0}
+    - target: {fileID: 1171612141897976657, guid: 83f07198b4987174a883c9e39736b786, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1948290235375636971, guid: 83f07198b4987174a883c9e39736b786, type: 3}
       propertyPath: m_RootOrder
       value: 509

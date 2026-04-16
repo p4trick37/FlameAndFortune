@@ -121,7 +121,7 @@ public class Player : MonoBehaviour
     {
         if(shouldInteract == true)
         {
-            if(Input.GetMouseButton(1))
+            if(Input.GetMouseButton(0))
             {
                 if(Physics.Raycast(playerCamera.transform.position, playerCamera.transform.forward, out RaycastHit hit, 4))
                 {
