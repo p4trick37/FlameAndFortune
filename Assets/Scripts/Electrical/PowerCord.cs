@@ -46,7 +46,7 @@ public class PowerCord : MonoBehaviour
 
     private void Awake()
     {
-        player = FindAnyObjectByType<Player>();
+        player = Player.instance;
         burnableObject = transform.parent.GetComponentInChildren<BurnableObject>();
         FlashObject();
     }

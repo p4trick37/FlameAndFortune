@@ -43,7 +43,7 @@ public class MoveAppliance : MonoBehaviour
             startingRelPos[i] = moveObjectsWith[i].position - transform.position;
         }
 
-        player = FindAnyObjectByType<Player>();
+        player = Player.instance;
         if(zAxis == true)
         {
             startPosition = transform.position.z;
@@ -187,6 +187,7 @@ public class MoveAppliance : MonoBehaviour
     {
         moveObject = false;
     }
+
 
 
 }

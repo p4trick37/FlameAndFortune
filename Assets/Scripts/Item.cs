@@ -9,7 +9,7 @@ public class Item : MonoBehaviour, IPickupable
     private bool inInventory = false;
     protected bool currentlySelecting = false;
 
-    private void Start()
+    private void OnEnable()
     {
         playerHand = FindHand();
 

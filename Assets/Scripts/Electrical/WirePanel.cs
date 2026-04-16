@@ -21,7 +21,7 @@ public class WirePanel : MonoBehaviour
     private void OnEnable()
     {
         WireLoad();
-        player = FindAnyObjectByType<Player>();
+        player = Player.instance;
     }
 
     private void Update()

@@ -14,25 +14,48 @@ public class GameManager : MonoBehaviour
     [SerializeField] private TMP_Text timerText;
     private float timer;
     private bool gameOver = false;
+    [Header("Player")]
+    [SerializeField] private Transform playerSpawnPoint;
+    private Player player;
+    private bool spawnPlayer = false;
+    private bool dummybool = true;
+    
     
     
     private void Awake()
     {
+        player = Player.instance;
+        player.gameObject.transform.position = playerSpawnPoint.position;
+        Debug.Log("Setting player Position");
+
+
         BurnableObject[] objects = FindObjectsByType<BurnableObject>(FindObjectsSortMode.None);
         for(int i = 0; i < objects.Length; i++)
         {
             allBurnableObjects.Add(objects[i]);
         }
         numberOfObjects = allBurnableObjects.Count;
+        spawnPlayer = true;
+    }
+
+    private void OnEnable()
+    {
+        
     }
 
     private void Start()
     {
         timer = burnTime;
+        
     }
 
     private void Update()
     {
+        if (spawnPlayer == true && dummybool == true)
+        {
+            
+            dummybool = false;
+        }
         Timer();
         if(gameOver == false)
         {
@@ -44,6 +67,8 @@ public class GameManager : MonoBehaviour
             GameOver();
         }
         percentBurnedText.text = percentBurned.ToString("F0") + "%";
+
+        spawnPlayer = true;
     }
 
     private void CheckForBurns()

@@ -3,6 +3,8 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
+
+    public static Player instance;
     [Header("Player Movement")]
     [SerializeField] private float mouseSens;
     [SerializeField] private float walkSpeed;
@@ -29,8 +31,19 @@ public class Player : MonoBehaviour
     public bool freezePlayer = false;
 
     private bool moveAppliance;
-    
 
+    private void Awake()
+    {
+        if(instance == null)
+        {
+            instance = this;
+            DontDestroyOnLoad(gameObject);
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
+    }
 
     private void Start()
     {
@@ -54,7 +67,7 @@ public class Player : MonoBehaviour
             EInteraction(true);
             RightClickInteraction(true);
         }
-        inventorySelect();
+        InventorySelect();
     }
 
     private void Movement(bool shouldMove)
@@ -130,7 +143,7 @@ public class Player : MonoBehaviour
                 }
             }
 
-            if(Input.GetMouseButtonUp(1))
+            if(Input.GetMouseButtonUp(0))
             {
                 if (Physics.Raycast(playerCamera.transform.position, playerCamera.transform.forward, out RaycastHit hit, 4))
                 {
@@ -228,7 +241,7 @@ public class Player : MonoBehaviour
         return select;
     }
 
-    private void inventorySelect()
+    private void InventorySelect()
     {
         currentSlot = NumKeyboardPressedReturn();
         
@@ -245,6 +258,15 @@ public class Player : MonoBehaviour
                     inventory[i].SetActive(false);
                 }
             }
+        }
+    }
+
+    private void ClearInventory()
+    {
+        for(int i = 0; i < inventory.Length; i++)
+        {
+            Destroy(inventory[i]);
+            inventory[i] = null;
         }
     }
     

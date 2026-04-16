@@ -49,6 +49,11 @@ public class TorchFireTool : Item
 
     public bool TorchIsLit => torchIsLit;
 
+    private void Awake()
+    {
+        player = Player.instance;
+    }
+
     private void Start()
     {
         if (playerCamera == null)
