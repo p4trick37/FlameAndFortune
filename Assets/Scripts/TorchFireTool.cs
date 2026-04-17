@@ -112,21 +112,21 @@ public class TorchFireTool : Item
             Debug.DrawRay(ray.origin, ray.direction * hoverDistance, Color.white);
         }
 
-        if (Physics.Raycast(ray, out RaycastHit hit, hoverDistance, interactLayers))
-        {
-            // Debug.Log("RAY HIT: " + hit.collider.name + " | Parent Burnable: " + 
-            //           (hit.collider.GetComponentInParent<BurnableObject>() != null 
-            //           ? hit.collider.GetComponentInParent<BurnableObject>().name 
-            //           : "None"));
+if (Physics.Raycast(ray, out RaycastHit hit, hoverDistance, interactLayers))
+{
+    BurnableObject hitBurnable = hit.collider.GetComponentInParent<BurnableObject>();
 
-            newHovered = hit.collider.GetComponentInParent<BurnableObject>();
-        }
+    if (hitBurnable != null && !hitBurnable.IsBurnedOut)
+    {
+        newHovered = hitBurnable;
+    }
+}
 
         if (newHovered != currentHovered)
         {
             if (currentHovered != null)
             {
-                Debug.Log("UNHOVER: " + currentHovered.name + " | Root Layer Before Reset: " + currentHovered.gameObject.layer);
+                //Debug.Log("UNHOVER: " + currentHovered.name + " | Root Layer Before Reset: " + currentHovered.gameObject.layer);
             }
 
             if (currentHovered != null && hoveredLayer >= 0)
@@ -157,6 +157,19 @@ private void TryIgniteHeldTarget()
         Debug.Log("No hovered object.");
         return;
     }
+
+    if (currentHovered.IsBurnedOut)
+    {
+        Debug.Log("Target is already burned out.");
+        return;
+    }
+
+    // // Optional: block ignition while already burning
+    // if (currentHovered.IsBurning)
+    // {
+    //     Debug.Log("Target is already burning.");
+    //     return;
+    // }
 
     if (!torchIsLit)
     {
@@ -267,27 +280,27 @@ private void TryIgniteHeldTarget()
         }
     }
 
-    private void UpdateProgressUI()
+   private void UpdateProgressUI()
+{
+    if (progressUI == null)
     {
-        if (progressUI == null)
-        {
-            return;
-        }
-
-        if (currentHovered == null)
-        {
-            progressUI.Hide();
-            return;
-        }
-
-        progressUI.Show(currentHovered, playerCamera, currentHovered.GetHoverColor());
-
-        bool canIgnite = torchIsLit && currentHovered.CanBeIgnitedByTorch();
-        bool inRange = Vector3.Distance(playerCamera.transform.position, currentHovered.GetUIWorldPosition()) <= igniteDistance;
-        bool isApplyingIgnition = Input.GetMouseButton(0) && canIgnite && inRange;
-
-        progressUI.SetFill(currentHovered.GetIgnitionProgress01(), isApplyingIgnition);
+        return;
     }
+
+    if (currentHovered == null || currentHovered.IsBurnedOut)
+    {
+        progressUI.Hide();
+        return;
+    }
+
+    progressUI.Show(currentHovered, playerCamera, currentHovered.GetHoverColor());
+
+    bool canIgnite = torchIsLit && currentHovered.CanBeIgnitedByTorch();
+    bool inRange = Vector3.Distance(playerCamera.transform.position, currentHovered.GetUIWorldPosition()) <= igniteDistance;
+    bool isApplyingIgnition = Input.GetMouseButton(0) && canIgnite && inRange;
+
+    progressUI.SetFill(currentHovered.GetIgnitionProgress01(), isApplyingIgnition);
+}
 
     private void OnDisable()
     {

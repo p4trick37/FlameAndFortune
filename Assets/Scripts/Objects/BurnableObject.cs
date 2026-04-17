@@ -74,28 +74,33 @@ private static readonly int OutlineColorID = Shader.PropertyToID("_OutlineColor"
     public float CurrentHealth => currentHealth;
     public float MaxHealth => maxHealth;
 
-    private void Awake()
-    {
-        currentHealth = Mathf.Clamp(currentHealth, 0f, maxHealth);
-
-        if (TargetMeshFilter == null)
+private void Awake()
 {
-    MeshFilter[] meshFilters = GetComponentsInChildren<MeshFilter>();
+    currentHealth = Mathf.Clamp(currentHealth, 0f, maxHealth);
 
-    for (int i = 0; i < meshFilters.Length; i++)
+    if (TargetMeshFilter == null)
     {
-        if (meshFilters[i] != null && meshFilters[i].sharedMesh != null)
+        MeshFilter[] meshFilters = GetComponentsInChildren<MeshFilter>();
+
+        for (int i = 0; i < meshFilters.Length; i++)
         {
-            TargetMeshFilter = meshFilters[i];
-            break;
+            if (meshFilters[i] != null && meshFilters[i].sharedMesh != null)
+            {
+                TargetMeshFilter = meshFilters[i];
+                break;
+            }
         }
     }
-}
 
-        CreateRuntimeMaterialInstances();
-        UpdateBurnVisual();
-        CacheLayers();
+    if (targetRenderers == null || targetRenderers.Length == 0)
+    {
+        targetRenderers = GetComponentsInChildren<Renderer>();
     }
+
+    CreateRuntimeMaterialInstances();
+    UpdateBurnVisual();
+    CacheLayers();
+}
 
     private void CreateRuntimeMaterialInstances()
     {
@@ -158,9 +163,12 @@ private static readonly int OutlineColorID = Shader.PropertyToID("_OutlineColor"
             continue;
         }
 
-        targetRenderers[i].GetPropertyBlock(hoverPropertyBlock);
-        hoverPropertyBlock.SetColor(OutlineColorID, hoverColor);
-        targetRenderers[i].SetPropertyBlock(hoverPropertyBlock);
+targetRenderers[i].GetPropertyBlock(hoverPropertyBlock);
+
+// ONLY set outline color, do not touch base color
+hoverPropertyBlock.SetColor(OutlineColorID, hoverColor);
+
+targetRenderers[i].SetPropertyBlock(hoverPropertyBlock);
     }
 }
 
@@ -236,7 +244,7 @@ public void SetHovered(bool hovered, int hoveredLayer)
         currentHealth -= finalAmount;
         currentHealth = Mathf.Clamp(currentHealth, 0f, maxHealth);
 
-        UpdateBurnVisual();
+        Debug.Log("Updating burn visual on " + name);
 
         if (currentHealth <= GetIgnitionHealthThreshold())
         {
@@ -323,8 +331,7 @@ public void SetHovered(bool hovered, int hoveredLayer)
             currentHealth -= damage;
             currentHealth = Mathf.Clamp(currentHealth, 0f, maxHealth);
 
-            UpdateBurnVisual();
-
+Debug.Log("Updating burn visual on " + name);
             if (currentHealth <= 0f)
             {
                 BurnOut();
