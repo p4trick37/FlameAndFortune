@@ -181,7 +181,7 @@ public class PowerCord : MonoBehaviour
     {
         wireCanvas.SetActive(true);
         Cursor.lockState = CursorLockMode.None;
-        player.freezePlayer = true;
+        Player.instance.freezePlayer = true;
     }
 
     private void IgniteObject()
@@ -193,7 +193,7 @@ public class PowerCord : MonoBehaviour
     {
         wireCanvas.SetActive(false);
         Cursor.lockState = CursorLockMode.Locked;
-        player.freezePlayer = false;
+        Player.instance.freezePlayer = false;
 
     }
 

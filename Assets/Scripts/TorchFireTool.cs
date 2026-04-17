@@ -6,7 +6,6 @@ public class TorchFireTool : Item
     [SerializeField] private Camera playerCamera;
     [SerializeField] private IgniteProgressUI progressUI;
     [SerializeField] private GameObject litTorchVisual;
-    [SerializeField] private Player player;
 
     [Header("Layers")]
     [SerializeField] private LayerMask interactLayers = ~0;
@@ -49,10 +48,6 @@ public class TorchFireTool : Item
 
     public bool TorchIsLit => torchIsLit;
 
-    private void Awake()
-    {
-        player = Player.instance;
-    }
 
     private void Start()
     {

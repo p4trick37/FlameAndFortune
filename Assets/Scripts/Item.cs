@@ -53,5 +53,20 @@ public class Item : MonoBehaviour, IPickupable
             currentlySelecting = false;
         }
     }
-    
+
+    public void ChangeGravity()
+    {
+        Rigidbody rb = gameObject.GetComponent<Rigidbody>();
+        if(rb != null)
+        {
+            if(rb.useGravity == false)
+            {
+                rb.useGravity = true;
+            }
+            else
+            {
+                rb.useGravity = false;
+            }
+        }
+    }
 }

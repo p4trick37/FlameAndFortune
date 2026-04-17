@@ -10,7 +10,6 @@ public class WirePanel : MonoBehaviour
     [SerializeField] private List<Color> completeColors = new List<Color>();
     [SerializeField] private List<Color> incompleteColors = new List<Color>();
     [SerializeField] private EndCord endCord;
-    private Player player;
 
     private bool wiresRearranged = false;
     private bool wiresDestroyed = false;
@@ -21,7 +20,6 @@ public class WirePanel : MonoBehaviour
     private void OnEnable()
     {
         WireLoad();
-        player = Player.instance;
     }
 
     private void Update()

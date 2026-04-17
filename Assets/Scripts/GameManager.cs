@@ -24,8 +24,7 @@ public class GameManager : MonoBehaviour
     
     private void Awake()
     {
-        player = Player.instance;
-        player.gameObject.transform.position = playerSpawnPoint.position;
+        
         Debug.Log("Setting player Position");
 
 
@@ -40,7 +39,8 @@ public class GameManager : MonoBehaviour
 
     private void OnEnable()
     {
-        
+        player = Player.instance;
+        Player.instance.gameObject.transform.position = playerSpawnPoint.position;
     }
 
     private void Start()
@@ -103,6 +103,7 @@ public class GameManager : MonoBehaviour
     private void GameOver()
     {
         Debug.Log("GAME IS OVER DUDE");
+        Player.instance.ClearInventory();
     }
 
  

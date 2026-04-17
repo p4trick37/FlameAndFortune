@@ -276,7 +276,6 @@ MonoBehaviour:
   playerCamera: {fileID: 0}
   progressUI: {fileID: 0}
   litTorchVisual: {fileID: 0}
-  player: {fileID: 0}
   interactLayers:
     serializedVersion: 2
     m_Bits: 192

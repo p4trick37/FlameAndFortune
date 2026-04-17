@@ -59,12 +59,14 @@ public class Player : MonoBehaviour
 
             Movement(false);
             EInteraction(false);
+            LeftClickInteractioni(false);
             RightClickInteraction(false);
         }
         else
         {
             Movement(true);
             EInteraction(true);
+            LeftClickInteractioni(true);
             RightClickInteraction(true);
         }
         InventorySelect();
@@ -100,7 +102,7 @@ public class Player : MonoBehaviour
                 if(Input.GetKeyDown(KeyCode.Space))
                 {
                     ySpeed = jumpHeight;
-                }
+                } 
             }
             else
             {
@@ -129,27 +131,37 @@ public class Player : MonoBehaviour
             }
         }
     }
-
-    private void RightClickInteraction(bool shouldInteract)
+    private void LeftClickInteractioni(bool shouldInteract)
     {
-        if(shouldInteract == true)
+        if (shouldInteract == true)
         {
-            if(Input.GetMouseButton(0))
+            if (Input.GetMouseButton(0))
             {
-                if(Physics.Raycast(playerCamera.transform.position, playerCamera.transform.forward, out RaycastHit hit, 4))
+                if (Physics.Raycast(playerCamera.transform.position, playerCamera.transform.forward, out RaycastHit hit, 4))
                 {
                     moveAppliance = true;
                     TryForMovableAppliance(hit);
                 }
             }
 
-            if(Input.GetMouseButtonUp(0))
+            if (Input.GetMouseButtonUp(0))
             {
                 if (Physics.Raycast(playerCamera.transform.position, playerCamera.transform.forward, out RaycastHit hit, 4))
                 {
                     moveAppliance = false;
                     TryForMovableAppliance(hit);
                 }
+            }
+        }
+    }
+
+    private void RightClickInteraction(bool shouldInteract)
+    {
+        if(shouldInteract == true)
+        {
+            if(Input.GetMouseButton(1))
+            {
+                DropCurrentItem();
             }
         }
     }
@@ -201,6 +213,7 @@ public class Player : MonoBehaviour
     {
         if(hit.transform.TryGetComponent<IPickupable>(out IPickupable item))
         {
+            Debug.Log("Ran");
             bool emptySlot = false;
             int emptyIndex = 0;
             for(int i = 0; i < inventory.Length; i++)
@@ -217,6 +230,7 @@ public class Player : MonoBehaviour
                 item.SetToHand();
                 inventory[emptyIndex] = item.OnPickup();
                 item.GetSlotNumber(emptyIndex + 1);
+                item.ChangeGravity();
             }
         }
     }
@@ -241,6 +255,8 @@ public class Player : MonoBehaviour
         return select;
     }
 
+
+
     private void InventorySelect()
     {
         currentSlot = NumKeyboardPressedReturn();
@@ -261,7 +277,43 @@ public class Player : MonoBehaviour
         }
     }
 
-    private void ClearInventory()
+    private void DropCurrentItem()
+    {
+        if(inventory[currentSlot - 1] != null)
+        {
+            GameObject dropItem = inventory[currentSlot - 1];
+            dropItem.transform.SetParent(null);
+            if(Physics.Raycast(playerCamera.transform.position, playerCamera.transform.forward, out RaycastHit hit, 1f))
+            {
+                dropItem.transform.position = hit.point;
+            }
+            dropItem.GetComponent<Item>().ChangeGravity();
+            inventory[currentSlot - 1] = null;
+            
+        }
+    }
+    
+    private void RemoveItemFromInventory(GameObject item)
+    {
+        bool moveItems = false;
+        for(int i = 0; i < inventory.Length;i++)
+        {
+            if (moveItems == true)
+            {
+                inventory[i - 1] = inventory[i];
+                inventory[i] = null;
+            }
+
+            if (inventory[i] == item)
+            {
+                inventory[i] = null;
+                moveItems = true;
+            }
+            
+        }
+    }
+
+    public void ClearInventory()
     {
         for(int i = 0; i < inventory.Length; i++)
         {
