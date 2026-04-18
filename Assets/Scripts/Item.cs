@@ -6,7 +6,7 @@ public class Item : MonoBehaviour, IPickupable
     public int SlotNumber => slotNumber;
     [SerializeField] private int slotNumber;
     [SerializeField] private GameObject playerHand;
-    private bool inInventory = false;
+    protected bool inInventory = false;
     protected bool currentlySelecting = false;
 
     private void OnEnable()

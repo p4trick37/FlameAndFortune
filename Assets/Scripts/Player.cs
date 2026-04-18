@@ -293,23 +293,15 @@ public class Player : MonoBehaviour
         }
     }
     
-    private void RemoveItemFromInventory(GameObject item)
+    public void DestroyCertainItem(GameObject item)
     {
-        bool moveItems = false;
-        for(int i = 0; i < inventory.Length;i++)
+        for(int i = 0; i < inventory.Length; i++)
         {
-            if (moveItems == true)
-            {
-                inventory[i - 1] = inventory[i];
-                inventory[i] = null;
-            }
-
-            if (inventory[i] == item)
+            if(inventory[i] == item)
             {
                 inventory[i] = null;
-                moveItems = true;
+                Destroy(item);
             }
-            
         }
     }
 
