@@ -25,7 +25,6 @@ public class GameManager : MonoBehaviour
     private void Awake()
     {
         
-        Debug.Log("Setting player Position");
 
 
         BurnableObject[] objects = FindObjectsByType<BurnableObject>(FindObjectsSortMode.None);

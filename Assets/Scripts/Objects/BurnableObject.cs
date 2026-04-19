@@ -221,6 +221,7 @@ public void SetHovered(bool hovered, int hoveredLayer)
         }
 
         isGasSoaked = true;
+        Debug.Log("Gas is now on Object");
     }
 
     public void AddIgniteDamage(float amount)

@@ -7,8 +7,15 @@ public class Player : MonoBehaviour
     public static Player instance;
     [Header("Player Movement")]
     [SerializeField] private float mouseSens;
-    [SerializeField] private float walkSpeed;
-    [SerializeField] private float sprintSpeed;
+    public float DefaultWalkSpeed => defaultWalkSpeed;
+    public float DefaultSprintSpeed => defaultSprintSpeed;
+    [SerializeField] private float defaultWalkSpeed;
+    [SerializeField] private float defaultSprintSpeed;
+    public float WalkSpeed => walkSpeed;
+    public float SprintSpeed => sprintSpeed;
+    private float walkSpeed;
+    private float sprintSpeed;
+    private bool shouldSprint;
     [SerializeField] private float jumpHeight;
     [SerializeField] private float gravity;
 
@@ -34,7 +41,7 @@ public class Player : MonoBehaviour
 
     private void Awake()
     {
-        if(instance == null)
+        if (instance == null)
         {
             instance = this;
             DontDestroyOnLoad(gameObject);
@@ -43,6 +50,9 @@ public class Player : MonoBehaviour
         {
             Destroy(gameObject);
         }
+
+        SetMovementSpeed(defaultWalkSpeed, defaultSprintSpeed);
+        LockSprint(false);
     }
 
     private void Start()
@@ -54,7 +64,7 @@ public class Player : MonoBehaviour
 
     void Update()
     {
-        if(freezePlayer == true)
+        if (freezePlayer == true)
         {
 
             Movement(false);
@@ -74,7 +84,7 @@ public class Player : MonoBehaviour
 
     private void Movement(bool shouldMove)
     {
-        if(shouldMove == true)
+        if (shouldMove == true)
         {
             transform.Rotate(0, Input.GetAxis("Mouse X") * mouseSens, 0);
             float mouseInput = Input.GetAxis("Mouse Y") * mouseSens;
@@ -85,7 +95,7 @@ public class Player : MonoBehaviour
             move = Vector3.zero;
 
             move += transform.right * Input.GetAxis("Horizontal") * walkSpeed;
-            if(Input.GetKey(KeyCode.LeftShift))
+            if (Input.GetKey(KeyCode.LeftShift) && shouldSprint == true)
             {
                 move += transform.forward * Input.GetAxis("Vertical") * sprintSpeed;
                 playerCamera.fieldOfView = sprintFOV;
@@ -97,12 +107,12 @@ public class Player : MonoBehaviour
 
             }
 
-            if(cc.isGrounded == true)
+            if (cc.isGrounded == true)
             {
-                if(Input.GetKeyDown(KeyCode.Space))
+                if (Input.GetKeyDown(KeyCode.Space))
                 {
                     ySpeed = jumpHeight;
-                } 
+                }
             }
             else
             {
@@ -111,6 +121,29 @@ public class Player : MonoBehaviour
             move += new Vector3(0, ySpeed, 0);
 
             cc.Move(move * Time.deltaTime);
+        }
+    }
+
+    public void SetMovementSpeed(float speed)
+    {
+        walkSpeed = speed;
+    }
+
+    public void SetMovementSpeed(float changeWalk, float changeSprint)
+    {
+        walkSpeed = changeWalk;
+        sprintSpeed = changeSprint;
+    }
+
+    public void LockSprint(bool shouldLock)
+    {
+        if(shouldLock == true)
+        {
+            shouldSprint = false;
+        }
+        else
+        {
+            shouldSprint = true;
         }
     }
 
@@ -135,6 +168,7 @@ public class Player : MonoBehaviour
     {
         if (shouldInteract == true)
         {
+
             if (Input.GetMouseButton(0))
             {
                 if (Physics.Raycast(playerCamera.transform.position, playerCamera.transform.forward, out RaycastHit hit, 4))
@@ -143,6 +177,7 @@ public class Player : MonoBehaviour
                     TryForMovableAppliance(hit);
                 }
             }
+
 
             if (Input.GetMouseButtonUp(0))
             {

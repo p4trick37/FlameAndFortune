@@ -81,6 +81,7 @@ public class TorchFireTool : Item
         }
 
         UpdateProgressUI();
+
     }
 
     private void SetupMicrophone()

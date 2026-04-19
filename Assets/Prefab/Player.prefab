@@ -218,8 +218,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Player
   mouseSens: 4
-  walkSpeed: 3
-  sprintSpeed: 5
+  defaultWalkSpeed: 3
+  defaultSprintSpeed: 5
   jumpHeight: 6
   gravity: -12
   playerCamera: {fileID: 6961042014341529433}

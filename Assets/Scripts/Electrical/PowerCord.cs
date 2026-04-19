@@ -73,7 +73,6 @@ public class PowerCord : MonoBehaviour
                 StoppingCoroutines();
                 StartCoroutine(FlashingRenderer(inletRenderer));
             }
-            Debug.Log("Flashed");
             flashColor = false;
         }
         
