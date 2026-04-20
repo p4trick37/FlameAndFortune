@@ -870,6 +870,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Candle_holder_B (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 557976101606975631, guid: f6c8623661fa28c43a0169d1fbc875ad, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 933798606022947381, guid: f6c8623661fa28c43a0169d1fbc875ad, type: 3}
       propertyPath: m_RootOrder
       value: 9
@@ -2086,6 +2090,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8021971539368996258, guid: 47461ea99e0495343b49586d75202381, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -2176,6 +2184,10 @@ PrefabInstance:
     - target: {fileID: 6005047723739740156, guid: 3dbf603e51f997744a65b5e80834f31f, type: 3}
       propertyPath: m_Name
       value: Candle_holder_A (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6005047723739740156, guid: 3dbf603e51f997744a65b5e80834f31f, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6349485836424588614, guid: 3dbf603e51f997744a65b5e80834f31f, type: 3}
       propertyPath: m_RootOrder
@@ -3591,6 +3603,10 @@ PrefabInstance:
     - target: {fileID: 3862396709926527445, guid: b136ba735377dd5459d84dc71af771c0, type: 3}
       propertyPath: m_Name
       value: Wall_5m
+      objectReference: {fileID: 0}
+    - target: {fileID: 3862396709926527445, guid: b136ba735377dd5459d84dc71af771c0, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4526731104115145583, guid: b136ba735377dd5459d84dc71af771c0, type: 3}
       propertyPath: m_RootOrder
@@ -5302,6 +5318,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Painting_small_C
       objectReference: {fileID: 0}
+    - target: {fileID: 2640473230381553717, guid: ba79dc52f2b009246bd54dd347d8c595, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3453989082984759951, guid: ba79dc52f2b009246bd54dd347d8c595, type: 3}
       propertyPath: m_RootOrder
       value: 416
@@ -5916,6 +5936,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Wall_3m (21)
       objectReference: {fileID: 0}
+    - target: {fileID: 528607987778224448, guid: fccc93b795fddda41a7703500af84464, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 873186533270936570, guid: fccc93b795fddda41a7703500af84464, type: 3}
       propertyPath: m_RootOrder
       value: 60
@@ -6516,6 +6540,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8021971539368996258, guid: 47461ea99e0495343b49586d75202381, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -6651,6 +6679,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8021971539368996258, guid: 47461ea99e0495343b49586d75202381, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -6675,6 +6707,10 @@ PrefabInstance:
     - target: {fileID: 5081666792890487201, guid: da4e4facdf8ac0d499f62d65d71b8f48, type: 3}
       propertyPath: m_Name
       value: Book_single_A
+      objectReference: {fileID: 0}
+    - target: {fileID: 5081666792890487201, guid: da4e4facdf8ac0d499f62d65d71b8f48, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5606530369685981979, guid: da4e4facdf8ac0d499f62d65d71b8f48, type: 3}
       propertyPath: m_RootOrder
@@ -9289,6 +9325,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Book_pile_A
       objectReference: {fileID: 0}
+    - target: {fileID: 7825521293521901738, guid: 7348a8e11da232946b810f8feb0446fa, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -9420,6 +9460,10 @@ PrefabInstance:
     - target: {fileID: 6449584350095330671, guid: 447482a62d099f64eb06d91f57597382, type: 3}
       propertyPath: m_Name
       value: Vase_A
+      objectReference: {fileID: 0}
+    - target: {fileID: 6449584350095330671, guid: 447482a62d099f64eb06d91f57597382, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -9556,6 +9600,10 @@ PrefabInstance:
     - target: {fileID: 7886073623198141483, guid: 904093aec5abcbf4ea399c2693bf1c11, type: 3}
       propertyPath: m_Name
       value: Painting_medium_H
+      objectReference: {fileID: 0}
+    - target: {fileID: 7886073623198141483, guid: 904093aec5abcbf4ea399c2693bf1c11, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -10869,6 +10917,10 @@ PrefabInstance:
     - target: {fileID: 3363590610171470666, guid: 0b29c9f88cd8eb144a749c1f16c348f3, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5833013543227591154, guid: 0b29c9f88cd8eb144a749c1f16c348f3, type: 3}
+      propertyPath: igniteDamagePercentToStartBurning
+      value: 0.25
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -15037,6 +15089,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Wall_3m_door (7)
       objectReference: {fileID: 0}
+    - target: {fileID: 1972404149789272052, guid: b676e499bd8cd704db12cf2c690f8133, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -15942,6 +15998,10 @@ PrefabInstance:
     - target: {fileID: 1972404149789272052, guid: b676e499bd8cd704db12cf2c690f8133, type: 3}
       propertyPath: m_Name
       value: Wall_3m_door (20)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1972404149789272052, guid: b676e499bd8cd704db12cf2c690f8133, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -18251,6 +18311,10 @@ PrefabInstance:
     - target: {fileID: 3862396709926527445, guid: b136ba735377dd5459d84dc71af771c0, type: 3}
       propertyPath: m_Name
       value: Wall_5m (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 3862396709926527445, guid: b136ba735377dd5459d84dc71af771c0, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4526731104115145583, guid: b136ba735377dd5459d84dc71af771c0, type: 3}
       propertyPath: m_RootOrder
@@ -21440,6 +21504,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Lamp_table_B
       objectReference: {fileID: 0}
+    - target: {fileID: 6020137608344057233, guid: dfe5fb4e33421b84298b38d4e2511c71, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6395115794402996011, guid: dfe5fb4e33421b84298b38d4e2511c71, type: 3}
       propertyPath: m_RootOrder
       value: 22
@@ -22905,6 +22973,10 @@ PrefabInstance:
     - target: {fileID: 1636495244379539676, guid: 1bab815708d578b4189e1f2e6c5196cf, type: 3}
       propertyPath: m_Name
       value: Carpet_B (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1636495244379539676, guid: 1bab815708d578b4189e1f2e6c5196cf, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2161217018788549222, guid: 1bab815708d578b4189e1f2e6c5196cf, type: 3}
       propertyPath: m_RootOrder
@@ -24749,6 +24821,22 @@ PrefabInstance:
       propertyPath: m_Name
       value: Bookshelf
       objectReference: {fileID: 0}
+    - target: {fileID: 4813669373001066174, guid: 699d05550aa356b43a052438a558c0c2, type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5288343694954110704, guid: 699d05550aa356b43a052438a558c0c2, type: 3}
+      propertyPath: isBurning
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6234152138024770648, guid: 699d05550aa356b43a052438a558c0c2, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7427470756966844476, guid: 699d05550aa356b43a052438a558c0c2, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -24906,6 +24994,10 @@ PrefabInstance:
     - target: {fileID: 3541475730442151890, guid: 26574e2273ce3694cbd2f74b9919dc57, type: 3}
       propertyPath: m_Name
       value: Floor_3m_3m (16)
+      objectReference: {fileID: 0}
+    - target: {fileID: 3541475730442151890, guid: 26574e2273ce3694cbd2f74b9919dc57, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4210313444812635496, guid: 26574e2273ce3694cbd2f74b9919dc57, type: 3}
       propertyPath: m_RootOrder
@@ -25592,6 +25684,10 @@ PrefabInstance:
     - target: {fileID: 2730887242245241328, guid: 0b29c9f88cd8eb144a749c1f16c348f3, type: 3}
       propertyPath: m_Name
       value: Cabinet_A (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 2730887242245241328, guid: 0b29c9f88cd8eb144a749c1f16c348f3, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3363590610171470666, guid: 0b29c9f88cd8eb144a749c1f16c348f3, type: 3}
       propertyPath: m_RootOrder
@@ -26986,6 +27082,10 @@ PrefabInstance:
     - target: {fileID: 528607987778224448, guid: fccc93b795fddda41a7703500af84464, type: 3}
       propertyPath: m_Name
       value: Wall_3m (25)
+      objectReference: {fileID: 0}
+    - target: {fileID: 528607987778224448, guid: fccc93b795fddda41a7703500af84464, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 873186533270936570, guid: fccc93b795fddda41a7703500af84464, type: 3}
       propertyPath: m_RootOrder
@@ -28637,6 +28737,10 @@ PrefabInstance:
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
       objectReference: {fileID: 2100000, guid: c81cfff4349415246be05bfddd741c95, type: 2}
+    - target: {fileID: 6085312451497037137, guid: 3b82d1acc061249448eb9a903e5e0b96, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7128879073486572134, guid: 3b82d1acc061249448eb9a903e5e0b96, type: 3}
       propertyPath: m_RootOrder
       value: 16
@@ -29201,6 +29305,10 @@ PrefabInstance:
     - target: {fileID: 2730887242245241328, guid: 0b29c9f88cd8eb144a749c1f16c348f3, type: 3}
       propertyPath: m_Name
       value: Cabinet_A (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 2730887242245241328, guid: 0b29c9f88cd8eb144a749c1f16c348f3, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3363590610171470666, guid: 0b29c9f88cd8eb144a749c1f16c348f3, type: 3}
       propertyPath: m_RootOrder
@@ -30485,6 +30593,10 @@ PrefabInstance:
     - target: {fileID: 8535654743952678207, guid: b757b4561c421e042aec68e82ce2fc84, type: 3}
       propertyPath: m_Name
       value: Decorative_plate
+      objectReference: {fileID: 0}
+    - target: {fileID: 8535654743952678207, guid: b757b4561c421e042aec68e82ce2fc84, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 9025051374623983493, guid: b757b4561c421e042aec68e82ce2fc84, type: 3}
       propertyPath: m_RootOrder
@@ -32240,6 +32352,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Wall_3m_door (5)
       objectReference: {fileID: 0}
+    - target: {fileID: 1972404149789272052, guid: b676e499bd8cd704db12cf2c690f8133, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -33183,6 +33299,10 @@ PrefabInstance:
     - target: {fileID: 8466703734528798844, guid: ab426a055cff2d14eb81eaf0188b7774, type: 3}
       propertyPath: m_Name
       value: Painting_table_I
+      objectReference: {fileID: 0}
+    - target: {fileID: 8466703734528798844, guid: ab426a055cff2d14eb81eaf0188b7774, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 9093918409954929350, guid: ab426a055cff2d14eb81eaf0188b7774, type: 3}
       propertyPath: m_RootOrder
@@ -34224,6 +34344,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Vase_B
       objectReference: {fileID: 0}
+    - target: {fileID: 1739417874651690538, guid: 2e44707427d749d49b9bb86a9be29436, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -34771,6 +34895,10 @@ PrefabInstance:
     - target: {fileID: 1093361277731452276, guid: 02b7dbc4ca82b08449b26b7b15980dde, type: 3}
       propertyPath: m_Name
       value: Dresser_large_A (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1093361277731452276, guid: 02b7dbc4ca82b08449b26b7b15980dde, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -35882,6 +36010,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Floor_3m_3m (14)
       objectReference: {fileID: 0}
+    - target: {fileID: 3541475730442151890, guid: 26574e2273ce3694cbd2f74b9919dc57, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4210313444812635496, guid: 26574e2273ce3694cbd2f74b9919dc57, type: 3}
       propertyPath: m_RootOrder
       value: 7
@@ -36625,6 +36757,10 @@ PrefabInstance:
     - target: {fileID: 528607987778224448, guid: fccc93b795fddda41a7703500af84464, type: 3}
       propertyPath: m_Name
       value: Wall_3m (22)
+      objectReference: {fileID: 0}
+    - target: {fileID: 528607987778224448, guid: fccc93b795fddda41a7703500af84464, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 873186533270936570, guid: fccc93b795fddda41a7703500af84464, type: 3}
       propertyPath: m_RootOrder
@@ -41820,6 +41956,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Ceiling_5m_3m (16)
       objectReference: {fileID: 0}
+    - target: {fileID: 4990988251072317239, guid: b405d7ff5a99ac342b3006a33d31e5b5, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5622847430578937229, guid: b405d7ff5a99ac342b3006a33d31e5b5, type: 3}
       propertyPath: m_RootOrder
       value: 95
@@ -42366,6 +42506,10 @@ PrefabInstance:
     - target: {fileID: 3541475730442151890, guid: 26574e2273ce3694cbd2f74b9919dc57, type: 3}
       propertyPath: m_Name
       value: Floor_3m_3m (20)
+      objectReference: {fileID: 0}
+    - target: {fileID: 3541475730442151890, guid: 26574e2273ce3694cbd2f74b9919dc57, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4210313444812635496, guid: 26574e2273ce3694cbd2f74b9919dc57, type: 3}
       propertyPath: m_RootOrder
@@ -44602,6 +44746,10 @@ PrefabInstance:
     - target: {fileID: 4990988251072317239, guid: b405d7ff5a99ac342b3006a33d31e5b5, type: 3}
       propertyPath: m_Name
       value: Ceiling_5m_3m (15)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4990988251072317239, guid: b405d7ff5a99ac342b3006a33d31e5b5, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5622847430578937229, guid: b405d7ff5a99ac342b3006a33d31e5b5, type: 3}
       propertyPath: m_RootOrder
@@ -46866,6 +47014,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Wall_3m_door (19)
       objectReference: {fileID: 0}
+    - target: {fileID: 1972404149789272052, guid: b676e499bd8cd704db12cf2c690f8133, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -46957,6 +47109,10 @@ PrefabInstance:
     - target: {fileID: 3797214375771417834, guid: 99265c689b5762b4a8463d68b4ddc60b, type: 3}
       propertyPath: m_Name
       value: Dresser_C
+      objectReference: {fileID: 0}
+    - target: {fileID: 3797214375771417834, guid: 99265c689b5762b4a8463d68b4ddc60b, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4609921266452592208, guid: 99265c689b5762b4a8463d68b4ddc60b, type: 3}
       propertyPath: m_RootOrder
@@ -48250,6 +48406,10 @@ PrefabInstance:
     - target: {fileID: 1338568140958633967, guid: 5273736aae164cc45ad4a60a5df98d54, type: 3}
       propertyPath: m_Name
       value: Decorative_bowl (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1338568140958633967, guid: 5273736aae164cc45ad4a60a5df98d54, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1862339658160985429, guid: 5273736aae164cc45ad4a60a5df98d54, type: 3}
       propertyPath: m_RootOrder
@@ -49995,6 +50155,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Carpet_B
       objectReference: {fileID: 0}
+    - target: {fileID: 1636495244379539676, guid: 1bab815708d578b4189e1f2e6c5196cf, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2161217018788549222, guid: 1bab815708d578b4189e1f2e6c5196cf, type: 3}
       propertyPath: m_RootOrder
       value: 409
@@ -50950,6 +51114,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Wall_3m_door (6)
       objectReference: {fileID: 0}
+    - target: {fileID: 1972404149789272052, guid: b676e499bd8cd704db12cf2c690f8133, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -51037,6 +51205,10 @@ PrefabInstance:
     - target: {fileID: 8448786404272111867, guid: 8efd7eb341db2d34da5f0583e1039216, type: 3}
       propertyPath: m_Name
       value: Painting_table_C
+      objectReference: {fileID: 0}
+    - target: {fileID: 8448786404272111867, guid: 8efd7eb341db2d34da5f0583e1039216, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 9082580483509475905, guid: 8efd7eb341db2d34da5f0583e1039216, type: 3}
       propertyPath: m_RootOrder
@@ -52103,6 +52275,10 @@ PrefabInstance:
     - target: {fileID: 6193895758735166699, guid: c37010faba6cf3f4aab49dc4b1576cda, type: 3}
       propertyPath: m_Name
       value: Lamp_wall (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6193895758735166699, guid: c37010faba6cf3f4aab49dc4b1576cda, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6827162145348982353, guid: c37010faba6cf3f4aab49dc4b1576cda, type: 3}
       propertyPath: m_RootOrder
@@ -53599,6 +53775,10 @@ PrefabInstance:
     - target: {fileID: 6193895758735166699, guid: c37010faba6cf3f4aab49dc4b1576cda, type: 3}
       propertyPath: m_Name
       value: Lamp_wall (4)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6193895758735166699, guid: c37010faba6cf3f4aab49dc4b1576cda, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6827162145348982353, guid: c37010faba6cf3f4aab49dc4b1576cda, type: 3}
       propertyPath: m_RootOrder
@@ -55833,6 +56013,14 @@ PrefabInstance:
     - target: {fileID: 3363590610171470666, guid: 0b29c9f88cd8eb144a749c1f16c348f3, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5833013543227591154, guid: 0b29c9f88cd8eb144a749c1f16c348f3, type: 3}
+      propertyPath: burnDamagePerSecond
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 5833013543227591154, guid: 0b29c9f88cd8eb144a749c1f16c348f3, type: 3}
+      propertyPath: spreadIgniteDamagePerSecond
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

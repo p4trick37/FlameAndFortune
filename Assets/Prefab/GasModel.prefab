@@ -137,7 +137,7 @@ MonoBehaviour:
   gasIgniteMultiplier: 2
   gasBurnMultiplier: 2
   canSpreadFire: 1
-  spreadRadius: 0.5
+  spreadRadius: 1
   spreadInterval: 0.5
   spreadIgniteDamagePerSecond: 3
   spreadLayers:
