@@ -94,7 +94,7 @@ LightmapSettings:
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
   m_LightingDataAsset: {fileID: 112000000, guid: 4e680b8adcd6cd24ab03942cdf9f36f3, type: 2}
-  m_LightingSettings: {fileID: 1613097957}
+  m_LightingSettings: {fileID: 4890085278179872738, guid: a65db77a3fbf97c428f26b90121b8c90, type: 2}
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -13888,7 +13888,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4210313444812635496, guid: 26574e2273ce3694cbd2f74b9919dc57, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 23.398003
+      value: 23.44
       objectReference: {fileID: 0}
     - target: {fileID: 4210313444812635496, guid: 26574e2273ce3694cbd2f74b9919dc57, type: 3}
       propertyPath: m_LocalPosition.y
@@ -13896,7 +13896,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4210313444812635496, guid: 26574e2273ce3694cbd2f74b9919dc57, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -1.3930004
+      value: -1.39
       objectReference: {fileID: 0}
     - target: {fileID: 4210313444812635496, guid: 26574e2273ce3694cbd2f74b9919dc57, type: 3}
       propertyPath: m_LocalRotation.w
@@ -14679,7 +14679,7 @@ ReflectionProbe:
   m_TimeSlicingMode: 0
   m_Resolution: 128
   m_UpdateFrequency: 0
-  m_BoxSize: {x: 5.8, y: 9.79, z: 12}
+  m_BoxSize: {x: 8.32, y: 9.79, z: 12}
   m_BoxOffset: {x: 0, y: 0, z: 0}
   m_NearClip: 0.3
   m_FarClip: 1000
@@ -18406,7 +18406,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1972404149789272052, guid: b676e499bd8cd704db12cf2c690f8133, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1972404149789272052, guid: b676e499bd8cd704db12cf2c690f8133, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -27089,7 +27089,7 @@ ReflectionProbe:
   m_TimeSlicingMode: 0
   m_Resolution: 128
   m_UpdateFrequency: 0
-  m_BoxSize: {x: 5, y: 10, z: 10}
+  m_BoxSize: {x: 6.59, y: 10, z: 10}
   m_BoxOffset: {x: 0, y: 0, z: 0}
   m_NearClip: 0.3
   m_FarClip: 1000
@@ -37455,7 +37455,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4210313444812635496, guid: 26574e2273ce3694cbd2f74b9919dc57, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 23.398003
+      value: 23.4
       objectReference: {fileID: 0}
     - target: {fileID: 4210313444812635496, guid: 26574e2273ce3694cbd2f74b9919dc57, type: 3}
       propertyPath: m_LocalPosition.y
@@ -37463,7 +37463,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4210313444812635496, guid: 26574e2273ce3694cbd2f74b9919dc57, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -4.3930006
+      value: -4.36
       objectReference: {fileID: 0}
     - target: {fileID: 4210313444812635496, guid: 26574e2273ce3694cbd2f74b9919dc57, type: 3}
       propertyPath: m_LocalRotation.w
@@ -40397,7 +40397,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6961042014341529433, guid: b4a4b1ad148c9524fb9f2a51a8da89d3, type: 3}
       propertyPath: m_OcclusionCulling
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6961042014341529433, guid: b4a4b1ad148c9524fb9f2a51a8da89d3, type: 3}
       propertyPath: m_projectionMatrixMode
@@ -47059,71 +47059,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 2298070413463408896, guid: b6b012f650cfac748951a8e2be164d8a, type: 3}
   m_PrefabInstance: {fileID: 1538177532}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &1546401786
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1546401787}
-  - component: {fileID: 1546401788}
-  m_Layer: 0
-  m_Name: Reflection Probe Solo
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1546401787
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1546401786}
-  serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 10.12, y: 1.5, z: 4.61}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 1804897360}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!215 &1546401788
-ReflectionProbe:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1546401786}
-  m_Enabled: 0
-  serializedVersion: 2
-  m_Type: 0
-  m_Mode: 0
-  m_RefreshMode: 2
-  m_TimeSlicingMode: 0
-  m_Resolution: 128
-  m_UpdateFrequency: 0
-  m_BoxSize: {x: 73.99, y: 9.79, z: 56}
-  m_BoxOffset: {x: 0, y: 0, z: 0}
-  m_NearClip: 0.3
-  m_FarClip: 1000
-  m_ShadowDistance: 100
-  m_ClearFlags: 1
-  m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
-  m_CullingMask:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_IntensityMultiplier: 1
-  m_BlendDistance: 0
-  m_HDR: 1
-  m_BoxProjection: 1
-  m_RenderDynamicObjects: 0
-  m_UseOcclusionCulling: 1
-  m_Importance: 1
-  m_CustomBakedTexture: {fileID: 0}
 --- !u!1001 &1547541152
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -49678,73 +49613,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 3401567716152952952, guid: 400db3d5a43624a4f9b39ca1ffff0591, type: 3}
   m_PrefabInstance: {fileID: 1612333563}
   m_PrefabAsset: {fileID: 0}
---- !u!850595691 &1613097957
-LightingSettings:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_Name: Settings.lighting
-  serializedVersion: 10
-  m_EnableBakedLightmaps: 1
-  m_EnableRealtimeLightmaps: 0
-  m_RealtimeEnvironmentLighting: 1
-  m_BounceScale: 1
-  m_AlbedoBoost: 1
-  m_IndirectOutputScale: 1
-  m_UsingShadowmask: 1
-  m_BakeBackend: 2
-  m_LightmapMaxSize: 4096
-  m_LightmapSizeFixed: 0
-  m_UseMipmapLimits: 1
-  m_BakeResolution: 80
-  m_Padding: 6
-  m_LightmapCompression: 0
-  m_LightmapPackingMode: 1
-  m_LightmapPackingMethod: 0
-  m_XAtlasPackingAttempts: 16384
-  m_XAtlasBruteForce: 0
-  m_XAtlasBlockAlign: 0
-  m_XAtlasRepackUnderutilizedLightmaps: 1
-  m_AO: 0
-  m_AOMaxDistance: 1
-  m_CompAOExponent: 1
-  m_CompAOExponentDirect: 0
-  m_ExtractAO: 0
-  m_MixedBakeMode: 2
-  m_LightmapsBakeMode: 1
-  m_FilterMode: 1
-  m_LightmapParameters: {fileID: 15204, guid: 0000000000000000f000000000000000, type: 0}
-  m_ExportTrainingData: 0
-  m_EnableWorkerProcessBaking: 1
-  m_TrainingDataDestination: TrainingData
-  m_RealtimeResolution: 2
-  m_ForceWhiteAlbedo: 0
-  m_ForceUpdates: 0
-  m_PVRCulling: 0
-  m_PVRSampling: 1
-  m_PVRDirectSampleCount: 256
-  m_PVRSampleCount: 2048
-  m_PVREnvironmentSampleCount: 2048
-  m_PVREnvironmentReferencePointCount: 2048
-  m_LightProbeSampleCountMultiplier: 4
-  m_PVRBounces: 4
-  m_PVRMinBounces: 2
-  m_PVREnvironmentImportanceSampling: 1
-  m_PVRFilteringMode: 2
-  m_PVRDenoiserTypeDirect: 0
-  m_PVRDenoiserTypeIndirect: 1
-  m_PVRDenoiserTypeAO: 1
-  m_PVRFilterTypeDirect: 0
-  m_PVRFilterTypeIndirect: 0
-  m_PVRFilterTypeAO: 0
-  m_PVRFilteringGaussRadiusDirect: 1
-  m_PVRFilteringGaussRadiusIndirect: 1
-  m_PVRFilteringGaussRadiusAO: 2
-  m_PVRFilteringAtrousPositionSigmaDirect: 0.5
-  m_PVRFilteringAtrousPositionSigmaIndirect: 2
-  m_PVRFilteringAtrousPositionSigmaAO: 1
-  m_RespectSceneVisibilityWhenBakingGI: 0
 --- !u!1 &1613981005
 GameObject:
   m_ObjectHideFlags: 0
@@ -56742,7 +56610,6 @@ Transform:
   m_Children:
   - {fileID: 792451370}
   - {fileID: 1684249161}
-  - {fileID: 1546401787}
   - {fileID: 186116717}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -60217,7 +60084,7 @@ ReflectionProbe:
   m_TimeSlicingMode: 0
   m_Resolution: 128
   m_UpdateFrequency: 0
-  m_BoxSize: {x: 4, y: 10, z: 12}
+  m_BoxSize: {x: 5.42, y: 10, z: 12}
   m_BoxOffset: {x: 0, y: 0, z: 0}
   m_NearClip: 0.3
   m_FarClip: 1000
