@@ -54,7 +54,7 @@ public class Item : MonoBehaviour, IPickupable
         }
     }
 
-    public void ChangeGravity()
+    public void ChangeRigidbodyState()
     {
         Rigidbody rb = gameObject.GetComponent<Rigidbody>();
         if(rb != null)
@@ -62,10 +62,12 @@ public class Item : MonoBehaviour, IPickupable
             if(rb.useGravity == false)
             {
                 rb.useGravity = true;
+                rb.constraints = RigidbodyConstraints.None;
             }
             else
             {
                 rb.useGravity = false;
+                rb.constraints = RigidbodyConstraints.FreezeAll;
             }
         }
     }

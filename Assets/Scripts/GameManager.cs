@@ -1,6 +1,7 @@
 using UnityEngine;
 using System.Collections.Generic;
 using TMPro;
+using System.Runtime.CompilerServices;
 public class GameManager : MonoBehaviour
 {
     [Header("Burns Completed")]
@@ -14,23 +15,25 @@ public class GameManager : MonoBehaviour
     [SerializeField] private TMP_Text timerText;
     private float timer;
     private bool gameOver = false;
+    private bool wentToGameOver = false;
     [Header("Player")]
     [SerializeField] private Transform playerSpawnPoint;
-    private Player player;
     private bool spawnPlayer = false;
     private bool dummybool = true;
+    [Header("Money")]
+    [SerializeField] private int maxAmountOfMoney;
     
     
     
     private void Awake()
     {
-        
-
-
         BurnableObject[] objects = FindObjectsByType<BurnableObject>(FindObjectsSortMode.None);
         for(int i = 0; i < objects.Length; i++)
         {
-            allBurnableObjects.Add(objects[i]);
+            if (objects[i].gameObject.GetComponent<WoodPlank>() == null)
+            {
+                allBurnableObjects.Add(objects[i]);
+            }
         }
         numberOfObjects = allBurnableObjects.Count;
         spawnPlayer = true;
@@ -38,7 +41,6 @@ public class GameManager : MonoBehaviour
 
     private void OnEnable()
     {
-        player = Player.instance;
         Player.instance.gameObject.transform.position = playerSpawnPoint.position;
     }
 
@@ -61,9 +63,10 @@ public class GameManager : MonoBehaviour
             CheckForBurns();
             percentBurned = PercentBurned(numberOfBurns, numberOfObjects);
         }
-        else
+        else if(wentToGameOver == false)
         {
             GameOver();
+            wentToGameOver = true;
         }
         percentBurnedText.text = percentBurned.ToString("F0") + "%";
 
@@ -103,8 +106,13 @@ public class GameManager : MonoBehaviour
     {
         Debug.Log("GAME IS OVER DUDE");
         Player.instance.ClearInventory();
+        Player.instance.gameObject.GetComponent<PlayerData>().AddMoney(MoneyMade());
     }
 
- 
+    private int MoneyMade()
+    {
+        int moneyMade = (int)Mathf.Lerp(0, maxAmountOfMoney, percentBurned / 100);
+        return moneyMade;
+    }
 
 }

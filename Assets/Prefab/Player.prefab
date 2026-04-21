@@ -156,6 +156,7 @@ GameObject:
   - component: {fileID: 3212859566087897257}
   - component: {fileID: 4292091903218352689}
   - component: {fileID: 7842793328727363585}
+  - component: {fileID: 7416240382771710183}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -224,12 +225,25 @@ MonoBehaviour:
   gravity: -12
   playerCamera: {fileID: 6961042014341529433}
   walkFOV: 70
-  sprintFOV: 90
+  sprintFOV: 75
   cc: {fileID: 4292091903218352689}
   inventorySize: 3
   inventory: []
   currentSlot: 0
   freezePlayer: 0
+--- !u!114 &7416240382771710183
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7961538665946744700}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 11f3a3cf949b9244c82eb0cfa0f74b0d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PlayerData
+  money: 0
 --- !u!1 &8800135068554256839
 GameObject:
   m_ObjectHideFlags: 0

@@ -22,6 +22,7 @@ public class Player : MonoBehaviour
     private float rotation = 0;
     private Vector3 move;
     private float ySpeed;
+    private bool currentlyMoving;
 
     [Header("Camera")]
     public Camera playerCamera;
@@ -95,7 +96,8 @@ public class Player : MonoBehaviour
             move = Vector3.zero;
 
             move += transform.right * Input.GetAxis("Horizontal") * walkSpeed;
-            if (Input.GetKey(KeyCode.LeftShift) && shouldSprint == true)
+
+            if (Input.GetKey(KeyCode.LeftShift) && shouldSprint == true && currentlyMoving == true)
             {
                 move += transform.forward * Input.GetAxis("Vertical") * sprintSpeed;
                 playerCamera.fieldOfView = sprintFOV;
@@ -106,6 +108,16 @@ public class Player : MonoBehaviour
                 playerCamera.fieldOfView = walkFOV;
 
             }
+
+            if(move.x != 0 || move.z != 0)
+            {
+                currentlyMoving = true;
+            }
+            else
+            {
+                currentlyMoving = false;
+            }
+
 
             if (cc.isGrounded == true)
             {
@@ -153,9 +165,16 @@ public class Player : MonoBehaviour
         {
             if (Input.GetKeyDown(KeyCode.E))
             {
-                RaycastHit[] hits = Physics.RaycastAll(playerCamera.transform.position, playerCamera.transform.forward, 4);
+                //RaycastHit[] hits = Physics.RaycastAll(playerCamera.transform.position, playerCamera.transform.forward, 4);
 
-                foreach (RaycastHit hit in hits)
+                //foreach (RaycastHit hit in hits)
+                //{
+                //    TryForEndCord(hit);
+                //    TryForPowerInlet(hit);
+                //    TryForObjects(hit);
+                //}
+
+                if(Physics.Raycast(playerCamera.transform.position, playerCamera.transform.forward, out RaycastHit hit, 4))
                 {
                     TryForEndCord(hit);
                     TryForPowerInlet(hit);
@@ -265,7 +284,7 @@ public class Player : MonoBehaviour
                 item.SetToHand();
                 inventory[emptyIndex] = item.OnPickup();
                 item.GetSlotNumber(emptyIndex + 1);
-                item.ChangeGravity();
+                item.ChangeRigidbodyState();
             }
         }
     }
@@ -322,7 +341,7 @@ public class Player : MonoBehaviour
             {
                 dropItem.transform.position = hit.point;
             }
-            dropItem.GetComponent<Item>().ChangeGravity();
+            dropItem.GetComponent<Item>().ChangeRigidbodyState();
             inventory[currentSlot - 1] = null;
             
         }

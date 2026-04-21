@@ -8,6 +8,6 @@ public interface IPickupable
 
     public GameObject OnPickup();
 
-    public void ChangeGravity();
+    public void ChangeRigidbodyState();
 
 }

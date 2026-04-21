@@ -1511,6 +1511,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Books_C
       objectReference: {fileID: 0}
+    - target: {fileID: 1240243528619851892, guid: cdf72caef777486438f10b1dbf1aca73, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 1908939410237119182, guid: cdf72caef777486438f10b1dbf1aca73, type: 3}
       propertyPath: m_RootOrder
       value: 157
@@ -5245,9 +5249,10 @@ MonoBehaviour:
   numberOfObjects: 0
   percentBurned: 0
   percentBurnedText: {fileID: 6564266}
-  burnTime: 90
+  burnTime: 60
   timerText: {fileID: 1504906984}
   playerSpawnPoint: {fileID: 541035306}
+  maxAmountOfMoney: 360
 --- !u!4 &176816025
 Transform:
   m_ObjectHideFlags: 0
@@ -49932,6 +49937,10 @@ PrefabInstance:
     - target: {fileID: 4626433637830160695, guid: a7f1d395bd860ae43a10123203a1ce91, type: 3}
       propertyPath: m_Name
       value: Books_E
+      objectReference: {fileID: 0}
+    - target: {fileID: 4626433637830160695, guid: a7f1d395bd860ae43a10123203a1ce91, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 5440265118455212941, guid: a7f1d395bd860ae43a10123203a1ce91, type: 3}
       propertyPath: m_RootOrder
