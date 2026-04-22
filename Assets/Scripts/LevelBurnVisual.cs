@@ -129,6 +129,7 @@ private void UpdateWallVisual(float levelBurnPercent01)
     {
         if (rawBurn01 <= darkeningStartPercent)
         {
+            Debug.Log(rawBurn01);
             return 0f;
         }
 
