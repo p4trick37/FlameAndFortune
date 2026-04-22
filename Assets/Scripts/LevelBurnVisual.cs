@@ -39,7 +39,8 @@ public class LevelBurnVisual : MonoBehaviour
             return;
         }
 
-        float percent01 = Mathf.Clamp01(gameManager.PercentBurnedValue / 100f);
+        float percent01 = Mathf.Clamp01((float)gameManager.PercentBurnedValue / 100f);
+        Debug.Log("Debug gmess" + gameManager.PercentBurnedValue);
         UpdateWallVisual(percent01);
     }
 
@@ -105,7 +106,7 @@ private void UpdateWallVisual(float levelBurnPercent01)
 
             Color startColor = originalColors[i][j];
             Color currentColor = Color.Lerp(startColor, burnedColor, mappedBurn);
-            Debug.Log("Updating wall material on renderer: " + targetRenderers[i].name + " | Material: " + mat.name);
+            //Debug.Log("Updating wall material on renderer: " + targetRenderers[i].name + " | Material: " + mat.name);
 
             if (mat.HasProperty("_BaseColor"))
             {
@@ -127,12 +128,12 @@ private void UpdateWallVisual(float levelBurnPercent01)
 
     private float RemapBurn(float rawBurn01)
     {
-        if (rawBurn01 <= darkeningStartPercent)
-        {
-            Debug.Log(rawBurn01);
-            return 0f;
-        }
-
+        // if (rawBurn01 <= darkeningStartPercent)
+        // {
+            
+        //     return 0f;
+        // }
+Debug.Log(rawBurn01);
         float range = Mathf.Max(0.0001f, fullDarkPercent - darkeningStartPercent);
         float mapped = (rawBurn01 - darkeningStartPercent) / range;
         return Mathf.Clamp01(mapped);
