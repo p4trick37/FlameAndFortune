@@ -39,7 +39,8 @@ public class LevelBurnVisual : MonoBehaviour
             return;
         }
 
-        float percent01 = Mathf.Clamp01(gameManager.PercentBurnedValue / 100f);
+        float percent01 = Mathf.Clamp01((float)gameManager.PercentBurnedValue / 100f);
+        Debug.Log("Debug gmess" + gameManager.PercentBurnedValue);
         UpdateWallVisual(percent01);
     }
 
@@ -82,53 +83,57 @@ public class LevelBurnVisual : MonoBehaviour
         }
     }
 
-    private void UpdateWallVisual(float levelBurnPercent01)
-    {
-        float mappedBurn = RemapBurn(levelBurnPercent01);
+private void UpdateWallVisual(float levelBurnPercent01)
+{
+    float mappedBurn = RemapBurn(levelBurnPercent01);
 
-        for (int i = 0; i < runtimeMaterials.Length; i++)
+    for (int i = 0; i < targetRenderers.Length; i++)
+    {
+        if (targetRenderers[i] == null)
         {
-            if (runtimeMaterials[i] == null || originalColors[i] == null)
+            continue;
+        }
+
+        Material[] mats = targetRenderers[i].materials;
+
+        for (int j = 0; j < mats.Length; j++)
+        {
+            Material mat = mats[j];
+            if (mat == null)
             {
                 continue;
             }
 
-            for (int j = 0; j < runtimeMaterials[i].Length; j++)
+            Color startColor = originalColors[i][j];
+            Color currentColor = Color.Lerp(startColor, burnedColor, mappedBurn);
+            //Debug.Log("Updating wall material on renderer: " + targetRenderers[i].name + " | Material: " + mat.name);
+
+            if (mat.HasProperty("_BaseColor"))
             {
-                Material mat = runtimeMaterials[i][j];
-                if (mat == null)
-                {
-                    continue;
-                }
+                mat.SetColor("_BaseColor", currentColor);
+            }
+            else if (mat.HasProperty("_Color"))
+            {
+                mat.SetColor("_Color", currentColor);
+            }
 
-                Color startColor = originalColors[i][j];
-                Color currentColor = Color.Lerp(startColor, burnedColor, mappedBurn);
-
-                if (mat.HasProperty("_BaseColor"))
-                {
-                    mat.SetColor("_BaseColor", currentColor);
-                }
-                else if (mat.HasProperty("_Color"))
-                {
-                    mat.SetColor("_Color", currentColor);
-                }
-
-                if (affectEmission && mat.HasProperty("_EmissionColor"))
-                {
-                    Color emission = Color.Lerp(Color.black, currentColor * 0.2f, 1f - mappedBurn);
-                    mat.SetColor("_EmissionColor", emission);
-                }
+            if (affectEmission && mat.HasProperty("_EmissionColor"))
+            {
+                Color emission = Color.Lerp(Color.black, currentColor * 0.2f, 1f - mappedBurn);
+                mat.SetColor("_EmissionColor", emission);
             }
         }
     }
+}
 
     private float RemapBurn(float rawBurn01)
     {
-        if (rawBurn01 <= darkeningStartPercent)
-        {
-            return 0f;
-        }
-
+        // if (rawBurn01 <= darkeningStartPercent)
+        // {
+            
+        //     return 0f;
+        // }
+Debug.Log(rawBurn01);
         float range = Mathf.Max(0.0001f, fullDarkPercent - darkeningStartPercent);
         float mapped = (rawBurn01 - darkeningStartPercent) / range;
         return Mathf.Clamp01(mapped);
