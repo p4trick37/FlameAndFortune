@@ -1,3 +1,4 @@
+using System.Threading;
 using UnityEngine;
 
 public class TorchFireTool : Item
@@ -37,6 +38,11 @@ public class TorchFireTool : Item
     [SerializeField] private bool drawDebugRay = true;
     [SerializeField] private bool logHoverName = false;
 
+    [Header("Health")]
+    [SerializeField] private float maxHealth;
+    [SerializeField] private float currentHealth;
+    [SerializeField] private float drainPerSecond;
+    private float healthTimer;
     
 
     private BurnableObject currentHovered;
@@ -55,7 +61,8 @@ public class TorchFireTool : Item
         {
             playerCamera = Camera.main;
         }
-
+        currentHealth = maxHealth;
+        healthTimer = 1;
         hoveredLayer = LayerMask.NameToLayer(hoveredLayerName);
         if (hoveredLayer < 0)
         {
@@ -78,6 +85,12 @@ public class TorchFireTool : Item
         if (Input.GetMouseButton(0) && currentlySelecting == true)
         {
             TryIgniteHeldTarget();
+        }
+
+        if(currentHealth <= 0)
+        {
+            torchIsLit = false;
+            litTorchVisual.SetActive(false);
         }
 
         UpdateProgressUI();
@@ -151,56 +164,58 @@ if (Physics.Raycast(ray, out RaycastHit hit, hoverDistance, interactLayers))
         }
     }
 
-private void TryIgniteHeldTarget()
-{
-    if (currentHovered == null)
+    private void TryIgniteHeldTarget()
     {
-        Debug.Log("No hovered object.");
-        return;
+        if (currentHovered == null)
+        {
+            Debug.Log("No hovered object.");
+            return;
+        }
+
+        if (currentHovered.IsBurnedOut)
+        {
+            Debug.Log("Target is already burned out.");
+            return;
+        }
+
+        // // Optional: block ignition while already burning
+        // if (currentHovered.IsBurning)
+        // {
+        //     Debug.Log("Target is already burning.");
+        //     return;
+        // }
+
+        if (!torchIsLit)
+        {
+            Debug.Log("Torch is not lit.");
+            return;
+        }
+
+        if (!currentHovered.CanBeIgnitedByTorch())
+        {
+            Debug.Log("Target cannot be ignited by torch. Type = " + currentHovered.Type);
+            return;
+        }
+
+        float distanceToTarget = Vector3.Distance(playerCamera.transform.position, currentHovered.GetUIWorldPosition());
+        if (distanceToTarget > igniteDistance)
+        {
+            Debug.Log("Too far away. Distance = " + distanceToTarget + " | Ignite Distance = " + igniteDistance);
+            return;
+        }
+
+        float igniteDamage = torchIgniteDamagePerSecond * Time.deltaTime;
+
+        if (IsBoostActive())
+        {
+            igniteDamage *= hairsprayIgniteMultiplier;
+        }
+        UpdateHealth();
+        Debug.Log("Applying ignite damage: " + igniteDamage + " to " + currentHovered.name);
+        currentHovered.AddIgniteDamage(igniteDamage);
+
+        
     }
-
-    if (currentHovered.IsBurnedOut)
-    {
-        Debug.Log("Target is already burned out.");
-        return;
-    }
-
-    // // Optional: block ignition while already burning
-    // if (currentHovered.IsBurning)
-    // {
-    //     Debug.Log("Target is already burning.");
-    //     return;
-    // }
-
-    if (!torchIsLit)
-    {
-        Debug.Log("Torch is not lit.");
-        return;
-    }
-
-    if (!currentHovered.CanBeIgnitedByTorch())
-    {
-        Debug.Log("Target cannot be ignited by torch. Type = " + currentHovered.Type);
-        return;
-    }
-
-    float distanceToTarget = Vector3.Distance(playerCamera.transform.position, currentHovered.GetUIWorldPosition());
-    if (distanceToTarget > igniteDistance)
-    {
-        Debug.Log("Too far away. Distance = " + distanceToTarget + " | Ignite Distance = " + igniteDistance);
-        return;
-    }
-
-    float igniteDamage = torchIgniteDamagePerSecond * Time.deltaTime;
-
-    if (IsBoostActive())
-    {
-        igniteDamage *= hairsprayIgniteMultiplier;
-    }
-
-    Debug.Log("Applying ignite damage: " + igniteDamage + " to " + currentHovered.name);
-    currentHovered.AddIgniteDamage(igniteDamage);
-}
 
     private bool IsBoostActive()
     {
@@ -320,5 +335,17 @@ private void TryIgniteHeldTarget()
     {
         Gizmos.color = torchIsLit ? Color.yellow : Color.gray;
         Gizmos.DrawWireSphere(transform.position, relightRadius);
+    }
+
+    private void UpdateHealth()
+    {
+        healthTimer -= Time.deltaTime;
+        if(healthTimer <= 0)
+        {
+            currentHealth -= drainPerSecond;
+            healthTimer = 1;
+            Debug.Log("health drain");
+        }
+        Debug.Log(healthTimer);
     }
 }

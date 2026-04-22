@@ -3,18 +3,13 @@ using UnityEngine.SceneManagement;
 
 public class SceneSwitcher : MonoBehaviour
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    public void SwitchToScene(string sceneName)
     {
-        
+        SceneManager.LoadScene(sceneName);
     }
 
-    // Update is called once per frame
-    void Update()
+    public void Quit()
     {
-        if(Input.GetKeyDown(KeyCode.X))
-        {
-            SceneManager.LoadScene("Level1");
-        }
+        Application.Quit();
     }
 }

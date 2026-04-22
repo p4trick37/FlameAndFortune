@@ -36,6 +36,9 @@ public class Player : MonoBehaviour
     public int CurrentSlot => currentSlot;
     [SerializeField] private int currentSlot;
 
+    [Header("Open World Manager")]
+    [SerializeField] private OpenWorldManager openWorldManager;
+
     public bool freezePlayer = false;
 
     private bool moveAppliance;
@@ -69,14 +72,14 @@ public class Player : MonoBehaviour
         {
 
             Movement(false);
-            EInteraction(false);
+            //EInteraction(false);
             LeftClickInteractioni(false);
             RightClickInteraction(false);
         }
         else
         {
             Movement(true);
-            EInteraction(true);
+            //EInteraction(true);
             LeftClickInteractioni(true);
             RightClickInteraction(true);
         }
@@ -187,13 +190,24 @@ public class Player : MonoBehaviour
     {
         if (shouldInteract == true)
         {
+            if(Input.GetMouseButtonDown(0))
+            {
+                if (Physics.Raycast(playerCamera.transform.position, playerCamera.transform.forward, out RaycastHit hit, 4))
+                {
+                    TryForEndCord(hit);
+                    TryForPowerInlet(hit);
+                    TryForObjects(hit);
+                }
+            }
 
             if (Input.GetMouseButton(0))
             {
                 if (Physics.Raycast(playerCamera.transform.position, playerCamera.transform.forward, out RaycastHit hit, 4))
                 {
                     moveAppliance = true;
+                    
                     TryForMovableAppliance(hit);
+                    TryForRotationObject(hit);
                 }
             }
 
@@ -203,7 +217,7 @@ public class Player : MonoBehaviour
                 if (Physics.Raycast(playerCamera.transform.position, playerCamera.transform.forward, out RaycastHit hit, 4))
                 {
                     moveAppliance = false;
-                    TryForMovableAppliance(hit);
+                    //TryForMovableAppliance(hit);
                 }
             }
         }
@@ -289,6 +303,22 @@ public class Player : MonoBehaviour
         }
     }
 
+    private void TryForRotationObject(RaycastHit hit)
+    {
+        RotateObject rotateObject = hit.transform.gameObject.GetComponent<RotateObject>();
+        if(rotateObject != null)
+        {
+            if(rotateObject.InOpenState == true)
+            {
+                rotateObject.CloseObject();
+            }
+            else
+            {
+                rotateObject.OpenObject();
+            }
+        }
+    }
+
 
     private GameObject[] SetInventory(int size)
     {
@@ -367,6 +397,25 @@ public class Player : MonoBehaviour
             inventory[i] = null;
         }
     }
-    
-    
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if(openWorldManager != null)
+        {
+            if(other.gameObject == openWorldManager.LevelCollider())
+            {
+                Debug.Log("WE HIT DOOR");
+                openWorldManager.PlayerEnterLevel();
+            }
+        }
+        Debug.Log("Something happe ned");
+        
+    }
+
+    public void FindObjectsinScene()
+    {
+        openWorldManager = FindAnyObjectByType<OpenWorldManager>();
+    }
+
+
 }

@@ -8,6 +8,7 @@ TagManager:
   - Wire End
   - Wire Image
   - Gas
+  - LevelDoor
   layers:
   - Default
   - TransparentFX

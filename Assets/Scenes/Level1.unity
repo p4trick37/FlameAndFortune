@@ -6061,7 +6061,7 @@ MonoBehaviour:
   numberOfObjects: 0
   percentBurned: 0
   percentBurnedText: {fileID: 6564266}
-  burnTime: 60
+  burnTime: 12412
   timerText: {fileID: 1504906984}
   playerSpawnPoint: {fileID: 541035306}
   maxAmountOfMoney: 360
@@ -29807,10 +29807,6 @@ PrefabInstance:
     m_TransformParent: {fileID: 1513937324}
     m_Modifications:
     - target: {fileID: 2360448951325003040, guid: 699d05550aa356b43a052438a558c0c2, type: 3}
-      propertyPath: m_RootOrder
-      value: 52
-      objectReference: {fileID: 0}
-    - target: {fileID: 2360448951325003040, guid: 699d05550aa356b43a052438a558c0c2, type: 3}
       propertyPath: m_LocalPosition.x
       value: -1.6852357
       objectReference: {fileID: 0}
@@ -29853,22 +29849,6 @@ PrefabInstance:
     - target: {fileID: 3137372301056268186, guid: 699d05550aa356b43a052438a558c0c2, type: 3}
       propertyPath: m_Name
       value: Bookshelf
-      objectReference: {fileID: 0}
-    - target: {fileID: 4813669373001066174, guid: 699d05550aa356b43a052438a558c0c2, type: 3}
-      propertyPath: m_Layer
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5288343694954110704, guid: 699d05550aa356b43a052438a558c0c2, type: 3}
-      propertyPath: isBurning
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6234152138024770648, guid: 699d05550aa356b43a052438a558c0c2, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7427470756966844476, guid: 699d05550aa356b43a052438a558c0c2, type: 3}
-      propertyPath: m_IsActive
-      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
