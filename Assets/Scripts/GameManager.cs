@@ -22,6 +22,8 @@ public class GameManager : MonoBehaviour
     private bool dummybool = true;
     [Header("Money")]
     [SerializeField] private int maxAmountOfMoney;
+
+    public float PercentBurnedValue => percentBurned;
     
     
     
@@ -73,17 +75,17 @@ public class GameManager : MonoBehaviour
         spawnPlayer = true;
     }
 
-    private void CheckForBurns()
+  private void CheckForBurns()
+{
+    for (int i = allBurnableObjects.Count - 1; i >= 0; i--)
     {
-        for(int i = 0; i < allBurnableObjects.Count; i++)
+        if (allBurnableObjects[i].CurrentHealth <= 0)
         {
-            if (allBurnableObjects[i].CurrentHealth <= 0)
-            {
-                numberOfBurns++;
-                allBurnableObjects.Remove(allBurnableObjects[i]);
-            }
+            numberOfBurns++;
+            allBurnableObjects.RemoveAt(i);
         }
     }
+}
 
     private float PercentBurned(int currentBurns, int numOfBurnObj)
     {

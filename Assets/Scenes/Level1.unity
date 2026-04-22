@@ -38344,6 +38344,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1242408357}
+  - component: {fileID: 1242408358}
   m_Layer: 0
   m_Name: Building
   m_TagString: Untagged
@@ -38488,6 +38489,24 @@ Transform:
   - {fileID: 119215988}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1242408358
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1242408356}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1b82a825329fa184ebddfe992be2e049, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::LevelBurnVisual
+  gameManager: {fileID: 176816024}
+  targetRenderers: []
+  burnedColor: {r: 0.12, g: 0.12, b: 0.12, a: 1}
+  affectEmission: 0
+  darkeningStartPercent: 0.758
+  fullDarkPercent: 1
 --- !u!1 &1243911439 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 2649035483621090611, guid: 75e2be6871e15f744837e21f939b1d7f, type: 3}
