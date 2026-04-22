@@ -5384,9 +5384,13 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 923674999945101057, guid: 401dc2f840e03844f8b386da355c2b2b, type: 3}
+      propertyPath: torchIsLit
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8535846166511202148, guid: 401dc2f840e03844f8b386da355c2b2b, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 331.1992
+      value: 331.975
       objectReference: {fileID: 0}
     - target: {fileID: 8535846166511202148, guid: 401dc2f840e03844f8b386da355c2b2b, type: 3}
       propertyPath: m_LocalPosition.y
@@ -5394,7 +5398,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8535846166511202148, guid: 401dc2f840e03844f8b386da355c2b2b, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 457.3659
+      value: 456.632
       objectReference: {fileID: 0}
     - target: {fileID: 8535846166511202148, guid: 401dc2f840e03844f8b386da355c2b2b, type: 3}
       propertyPath: m_LocalRotation.w
@@ -10253,9 +10257,13 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 923674999945101057, guid: 401dc2f840e03844f8b386da355c2b2b, type: 3}
+      propertyPath: torchIsLit
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8535846166511202148, guid: 401dc2f840e03844f8b386da355c2b2b, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 329.81595
+      value: 329.14
       objectReference: {fileID: 0}
     - target: {fileID: 8535846166511202148, guid: 401dc2f840e03844f8b386da355c2b2b, type: 3}
       propertyPath: m_LocalPosition.y
@@ -10263,7 +10271,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8535846166511202148, guid: 401dc2f840e03844f8b386da355c2b2b, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 456.39706
+      value: 456.1
       objectReference: {fileID: 0}
     - target: {fileID: 8535846166511202148, guid: 401dc2f840e03844f8b386da355c2b2b, type: 3}
       propertyPath: m_LocalRotation.w
