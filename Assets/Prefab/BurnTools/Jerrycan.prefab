@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 4320099494637819175}
   - component: {fileID: 3971460936661573045}
   - component: {fileID: 4214853400359785171}
-  - component: {fileID: 1018407822994308182}
+  - component: {fileID: -8221776117463668996}
   m_Layer: 0
   m_Name: Jerrycan
   m_TagString: Untagged
@@ -135,7 +135,7 @@ MonoBehaviour:
   spawnTimer: 0.5
   health: 1000
   pourRange: 1
---- !u!54 &1018407822994308182
+--- !u!54 &-8221776117463668996
 Rigidbody:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}

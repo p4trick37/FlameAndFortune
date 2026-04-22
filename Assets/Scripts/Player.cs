@@ -299,6 +299,7 @@ public class Player : MonoBehaviour
                 inventory[emptyIndex] = item.OnPickup();
                 item.GetSlotNumber(emptyIndex + 1);
                 item.ChangeRigidbodyState();
+                
             }
         }
     }
@@ -373,7 +374,7 @@ public class Player : MonoBehaviour
             }
             dropItem.GetComponent<Item>().ChangeRigidbodyState();
             inventory[currentSlot - 1] = null;
-            
+            dropItem.GetComponent<Item>().OnDrop();
         }
     }
     

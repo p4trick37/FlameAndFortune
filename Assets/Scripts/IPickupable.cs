@@ -10,4 +10,6 @@ public interface IPickupable
 
     public void ChangeRigidbodyState();
 
+    public void OnDrop();
+
 }

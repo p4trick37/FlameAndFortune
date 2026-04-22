@@ -1,3 +1,4 @@
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class Item : MonoBehaviour, IPickupable
@@ -44,7 +45,7 @@ public class Item : MonoBehaviour, IPickupable
 
     protected void CheckForSelection()
     {
-        if (gameObject.activeSelf == true && inInventory == true)
+        if (gameObject.activeInHierarchy == true && inInventory == true)
         {
             currentlySelecting = true;
         }
@@ -70,5 +71,10 @@ public class Item : MonoBehaviour, IPickupable
                 rb.constraints = RigidbodyConstraints.FreezeAll;
             }
         }
+    }
+
+    public void OnDrop()
+    {
+        inInventory = false;
     }
 }

@@ -73,7 +73,7 @@ MonoBehaviour:
   micThreshold: 0.02
   drawDebugRay: 1
   logHoverName: 0
-  maxHealth: 20
+  maxHealth: 12
   currentHealth: 0
   drainPerSecond: 3
 --- !u!65 &2223729465300215322

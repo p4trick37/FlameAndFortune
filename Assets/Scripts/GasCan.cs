@@ -47,6 +47,8 @@ public class GasCan : Item
             }
         }
 
+        Debug.Log(currentlySelecting);
+
     }
 
 
