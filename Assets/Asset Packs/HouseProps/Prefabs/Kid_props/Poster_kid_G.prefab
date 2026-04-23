@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 6798105495465847597}
   - component: {fileID: 8769440481467670503}
   - component: {fileID: 1308610353657442856}
+  - component: {fileID: 7096121901829202882}
   m_Layer: 0
   m_Name: Poster_kid_G
   m_TagString: Untagged
@@ -26,13 +27,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7112225976815205938}
+  serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &6798105495465847597
 MeshFilter:
@@ -59,6 +60,11 @@ MeshRenderer:
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 2
   m_RayTraceProcedural: 0
+  m_RayTracingAccelStructBuildFlagsOverride: 0
+  m_RayTracingAccelStructBuildFlags: 1
+  m_SmallMeshCulling: 1
+  m_ForceMeshLod: -1
+  m_MeshLodSelectionBias: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -80,9 +86,11 @@ MeshRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
+  m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+  m_MaskInteraction: 0
   m_AdditionalVertexStreams: {fileID: 0}
 --- !u!65 &1308610353657442856
 BoxCollider:
@@ -92,8 +100,54 @@ BoxCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7112225976815205938}
   m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
   m_IsTrigger: 0
+  m_ProvidesContacts: 0
   m_Enabled: 1
-  serializedVersion: 2
+  serializedVersion: 3
   m_Size: {x: 0.37282744, y: 0.26546246, z: 0.008742782}
   m_Center: {x: -0.00000003725291, y: -0.018133532, z: 0.0043436033}
+--- !u!114 &7096121901829202882
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7112225976815205938}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4b234415ec5b9f948896c680264c7815, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::BurnableObject
+  fireType: 0
+  maxHealth: 100
+  currentHealth: 100
+  igniteDamagePercentToStartBurning: 0.1
+  burnDamagePerSecond: 10
+  isBurning: 0
+  isBurnedOut: 0
+  isGasSoaked: 0
+  gasIgniteMultiplier: 2
+  gasBurnMultiplier: 2
+  canSpreadFire: 1
+  spreadRadius: 0.5
+  spreadInterval: 0.5
+  spreadIgniteDamagePerSecond: 3
+  spreadLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  targetRenderers: []
+  burnedColor: {r: 0.1, g: 0.1, b: 0.1, a: 1}
+  affectEmission: 0
+  fireParticlePrefab: {fileID: 0}
+  particleSpawnPoint: {fileID: 0}
+  particleOffset: {x: 0, y: 0, z: 0}
+  TargetMeshFilter: {fileID: 0}
+  uiAnchorOverride: {fileID: 0}
+  uiOffset: {x: 0, y: 1.2, z: 0}

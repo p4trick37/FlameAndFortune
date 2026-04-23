@@ -16,6 +16,7 @@ GameObject:
   - component: {fileID: 4690093358624407281}
   - component: {fileID: 4230850292959520648}
   - component: {fileID: 2066628063366711380}
+  - component: {fileID: 7888147461608236256}
   m_Layer: 0
   m_Name: Toy_teddy
   m_TagString: Untagged
@@ -30,13 +31,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5125128875247534013}
+  serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &8918278137495071394
 MeshFilter:
@@ -63,6 +64,11 @@ MeshRenderer:
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 2
   m_RayTraceProcedural: 0
+  m_RayTracingAccelStructBuildFlagsOverride: 0
+  m_RayTracingAccelStructBuildFlags: 1
+  m_SmallMeshCulling: 1
+  m_ForceMeshLod: -1
+  m_MeshLodSelectionBias: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -84,9 +90,11 @@ MeshRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
+  m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+  m_MaskInteraction: 0
   m_AdditionalVertexStreams: {fileID: 0}
 --- !u!65 &1678098710536110887
 BoxCollider:
@@ -96,9 +104,17 @@ BoxCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5125128875247534013}
   m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
   m_IsTrigger: 0
+  m_ProvidesContacts: 0
   m_Enabled: 1
-  serializedVersion: 2
+  serializedVersion: 3
   m_Size: {x: 0.16468239, y: 0.19421391, z: 0.44932365}
   m_Center: {x: 0.12013435, y: 0.09520941, z: 0.1272974}
 --- !u!65 &8878758554524809005
@@ -109,9 +125,17 @@ BoxCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5125128875247534013}
   m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
   m_IsTrigger: 0
+  m_ProvidesContacts: 0
   m_Enabled: 1
-  serializedVersion: 2
+  serializedVersion: 3
   m_Size: {x: 0.16281033, y: 0.19255605, z: 0.38698268}
   m_Center: {x: -0.11919832, y: 0.09481177, z: 0.15519845}
 --- !u!65 &4690093358624407281
@@ -122,9 +146,17 @@ BoxCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5125128875247534013}
   m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
   m_IsTrigger: 0
+  m_ProvidesContacts: 0
   m_Enabled: 1
-  serializedVersion: 2
+  serializedVersion: 3
   m_Size: {x: 0.44320107, y: 0.31183234, z: 0.33285928}
   m_Center: {x: 0.0048942566, y: 0.17405312, z: 0.007973067}
 --- !u!65 &4230850292959520648
@@ -135,9 +167,17 @@ BoxCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5125128875247534013}
   m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
   m_IsTrigger: 0
+  m_ProvidesContacts: 0
   m_Enabled: 1
-  serializedVersion: 2
+  serializedVersion: 3
   m_Size: {x: 0.41736984, y: 0.081968844, z: 0.2486732}
   m_Center: {x: 0, y: 0.37138423, z: 0.001015529}
 --- !u!135 &2066628063366711380
@@ -148,8 +188,54 @@ SphereCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5125128875247534013}
   m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
   m_IsTrigger: 0
+  m_ProvidesContacts: 0
   m_Enabled: 1
-  serializedVersion: 2
+  serializedVersion: 3
   m_Radius: 0.16
   m_Center: {x: 0, y: 0.56545687, z: 0.02}
+--- !u!114 &7888147461608236256
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5125128875247534013}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4b234415ec5b9f948896c680264c7815, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::BurnableObject
+  fireType: 0
+  maxHealth: 100
+  currentHealth: 100
+  igniteDamagePercentToStartBurning: 0.1
+  burnDamagePerSecond: 10
+  isBurning: 0
+  isBurnedOut: 0
+  isGasSoaked: 0
+  gasIgniteMultiplier: 2
+  gasBurnMultiplier: 2
+  canSpreadFire: 1
+  spreadRadius: 0.5
+  spreadInterval: 0.5
+  spreadIgniteDamagePerSecond: 3
+  spreadLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  targetRenderers: []
+  burnedColor: {r: 0.1, g: 0.1, b: 0.1, a: 1}
+  affectEmission: 0
+  fireParticlePrefab: {fileID: 0}
+  particleSpawnPoint: {fileID: 0}
+  particleOffset: {x: 0, y: 0, z: 0}
+  TargetMeshFilter: {fileID: 0}
+  uiAnchorOverride: {fileID: 0}
+  uiOffset: {x: 0, y: 1.2, z: 0}
