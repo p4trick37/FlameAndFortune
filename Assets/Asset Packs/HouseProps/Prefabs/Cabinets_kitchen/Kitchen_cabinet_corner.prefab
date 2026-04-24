@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8735066750711707007}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Kitchen_cabinet_corner_door_parent
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -52,7 +52,8 @@ GameObject:
   - component: {fileID: 3042648479872268056}
   - component: {fileID: 3562567330018002074}
   - component: {fileID: 2272056896290245754}
-  m_Layer: 0
+  - component: {fileID: -6685907914963957848}
+  m_Layer: 6
   m_Name: Kitchen_cabinet_corner
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -334,6 +335,44 @@ MonoBehaviour:
   affectEmission: 0
   fireParticlePrefab: {fileID: 1781949194303238870, guid: dd986d04bcc6dc748a53d8c3d1d42a6d, type: 3}
   particleSpawnPoint: {fileID: 0}
+  particleOffset: {x: 0, y: 1.82, z: 0}
+  TargetMeshFilter: {fileID: 4692920320403366935}
+  uiAnchorOverride: {fileID: 0}
+  uiOffset: {x: 0, y: 1.2, z: 0}
+--- !u!114 &-6685907914963957848
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9062527861174677768}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4b234415ec5b9f948896c680264c7815, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::BurnableObject
+  fireType: 0
+  maxHealth: 100
+  currentHealth: 100
+  igniteDamagePercentToStartBurning: 0.1
+  burnDamagePerSecond: 10
+  isBurning: 0
+  isBurnedOut: 0
+  isGasSoaked: 0
+  gasIgniteMultiplier: 2
+  gasBurnMultiplier: 2
+  canSpreadFire: 1
+  spreadRadius: 2
+  spreadInterval: 0.5
+  spreadIgniteDamagePerSecond: 3
+  spreadLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  targetRenderers: []
+  burnedColor: {r: 0.1, g: 0.1, b: 0.1, a: 1}
+  affectEmission: 0
+  fireParticlePrefab: {fileID: 0}
+  particleSpawnPoint: {fileID: 0}
   particleOffset: {x: 0, y: 0, z: 0}
   TargetMeshFilter: {fileID: 0}
   uiAnchorOverride: {fileID: 0}
@@ -349,6 +388,10 @@ PrefabInstance:
     - target: {fileID: 260061905430875242, guid: 50fbdfd6fec08494b88eb8ad01c4cf6c, type: 3}
       propertyPath: m_Name
       value: Kitchen_cabinet_corner_door_A
+      objectReference: {fileID: 0}
+    - target: {fileID: 260061905430875242, guid: 50fbdfd6fec08494b88eb8ad01c4cf6c, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 260061905430875242, guid: 50fbdfd6fec08494b88eb8ad01c4cf6c, type: 3}
       propertyPath: m_StaticEditorFlags

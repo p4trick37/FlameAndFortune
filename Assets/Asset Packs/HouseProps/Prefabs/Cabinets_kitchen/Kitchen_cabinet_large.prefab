@@ -20,7 +20,8 @@ GameObject:
   - component: {fileID: 1246573219073725485}
   - component: {fileID: 6330309995131802128}
   - component: {fileID: 2548979351192512559}
-  m_Layer: 0
+  - component: {fileID: 640089364530967695}
+  m_Layer: 6
   m_Name: Kitchen_cabinet_large
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -305,6 +306,44 @@ MonoBehaviour:
   affectEmission: 0
   fireParticlePrefab: {fileID: 1781949194303238870, guid: dd986d04bcc6dc748a53d8c3d1d42a6d, type: 3}
   particleSpawnPoint: {fileID: 0}
+  particleOffset: {x: 0, y: 1.82, z: 0}
+  TargetMeshFilter: {fileID: 2964235271902541022}
+  uiAnchorOverride: {fileID: 0}
+  uiOffset: {x: 0, y: 1.2, z: 0}
+--- !u!114 &640089364530967695
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1569257627912790465}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4b234415ec5b9f948896c680264c7815, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::BurnableObject
+  fireType: 0
+  maxHealth: 100
+  currentHealth: 100
+  igniteDamagePercentToStartBurning: 0.1
+  burnDamagePerSecond: 10
+  isBurning: 0
+  isBurnedOut: 0
+  isGasSoaked: 0
+  gasIgniteMultiplier: 2
+  gasBurnMultiplier: 2
+  canSpreadFire: 1
+  spreadRadius: 2
+  spreadInterval: 0.5
+  spreadIgniteDamagePerSecond: 3
+  spreadLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  targetRenderers: []
+  burnedColor: {r: 0.1, g: 0.1, b: 0.1, a: 1}
+  affectEmission: 0
+  fireParticlePrefab: {fileID: 0}
+  particleSpawnPoint: {fileID: 0}
   particleOffset: {x: 0, y: 0, z: 0}
   TargetMeshFilter: {fileID: 0}
   uiAnchorOverride: {fileID: 0}
@@ -364,6 +403,10 @@ PrefabInstance:
     - target: {fileID: 3280331817227312133, guid: 1bd723808bca1b7419ca8ed99e59e263, type: 3}
       propertyPath: m_Name
       value: Kitchen_cabinet_large_door_A
+      objectReference: {fileID: 0}
+    - target: {fileID: 3280331817227312133, guid: 1bd723808bca1b7419ca8ed99e59e263, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 3280331817227312133, guid: 1bd723808bca1b7419ca8ed99e59e263, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -436,6 +479,10 @@ PrefabInstance:
       value: Kitchen_cabinet_large_door_A (1)
       objectReference: {fileID: 0}
     - target: {fileID: 3280331817227312133, guid: 1bd723808bca1b7419ca8ed99e59e263, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 3280331817227312133, guid: 1bd723808bca1b7419ca8ed99e59e263, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 4294967295
       objectReference: {fileID: 0}
@@ -460,6 +507,10 @@ PrefabInstance:
     - target: {fileID: 1192296565346861954, guid: 1c4fbc884e19087438b6b57504486289, type: 3}
       propertyPath: m_Name
       value: Kitchen_cabinet_large_door_B
+      objectReference: {fileID: 0}
+    - target: {fileID: 1192296565346861954, guid: 1c4fbc884e19087438b6b57504486289, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 1192296565346861954, guid: 1c4fbc884e19087438b6b57504486289, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -574,6 +625,10 @@ PrefabInstance:
     - target: {fileID: 1989857154351274068, guid: 724625b90ee7dfa4ea76f59c6659afa0, type: 3}
       propertyPath: m_Name
       value: Kitchen_cabinet_large_door_C
+      objectReference: {fileID: 0}
+    - target: {fileID: 1989857154351274068, guid: 724625b90ee7dfa4ea76f59c6659afa0, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 1989857154351274068, guid: 724625b90ee7dfa4ea76f59c6659afa0, type: 3}
       propertyPath: m_StaticEditorFlags
