@@ -33,7 +33,7 @@ public class BurnableObject : MonoBehaviour
 
     [Header("Spread")]
     [SerializeField] private bool canSpreadFire = true;
-    [SerializeField] private float spreadRadius = 2f;
+    [SerializeField] private float spreadRadius = .3f;
     [SerializeField] private float spreadInterval = 0.5f;
     [SerializeField] private float spreadIgniteDamagePerSecond = 3f;
     [SerializeField] private LayerMask spreadLayers = ~0;
