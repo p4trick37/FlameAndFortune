@@ -10703,6 +10703,37 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 2203045397639614508, guid: b40a8dace17ea0a448f76da47ff6aa5b, type: 3}
   m_PrefabInstance: {fileID: 340048103}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &343322445
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 343322446}
+  m_Layer: 6
+  m_Name: FireSpawn
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &343322446
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 343322445}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.457, y: 0.868, z: 0.317}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 452866923}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &343477515
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -14589,6 +14620,10 @@ PrefabInstance:
       propertyPath: spreadRadius
       value: 0.74
       objectReference: {fileID: 0}
+    - target: {fileID: 6959706913193531338, guid: e50131c582a0e894f8cd47dff29cd7df, type: 3}
+      propertyPath: particleSpawnPoint
+      value: 
+      objectReference: {fileID: 343322446}
     - target: {fileID: 7320509460767854873, guid: e50131c582a0e894f8cd47dff29cd7df, type: 3}
       propertyPath: m_Name
       value: Kitchen_counter_A (6)
@@ -14644,7 +14679,10 @@ PrefabInstance:
     m_RemovedComponents:
     - {fileID: -6261762835967085654, guid: e50131c582a0e894f8cd47dff29cd7df, type: 3}
     m_RemovedGameObjects: []
-    m_AddedGameObjects: []
+    m_AddedGameObjects:
+    - targetCorrespondingSourceObject: {fileID: 7988396440571612067, guid: e50131c582a0e894f8cd47dff29cd7df, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 343322446}
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e50131c582a0e894f8cd47dff29cd7df, type: 3}
 --- !u!4 &452866923 stripped
@@ -25267,7 +25305,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: -6261762835967085654, guid: e50131c582a0e894f8cd47dff29cd7df, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -37331,6 +37370,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1513937324}
     m_Modifications:
+    - target: {fileID: -6261762835967085654, guid: e50131c582a0e894f8cd47dff29cd7df, type: 3}
+      propertyPath: spreadRadius
+      value: 0.5
+      objectReference: {fileID: 0}
     - target: {fileID: 3992609394540405328, guid: e50131c582a0e894f8cd47dff29cd7df, type: 3}
       propertyPath: m_LocalRotation.w
       value: 0.999662
@@ -37407,7 +37450,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: -6261762835967085654, guid: e50131c582a0e894f8cd47dff29cd7df, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -53479,7 +53523,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: -6261762835967085654, guid: e50131c582a0e894f8cd47dff29cd7df, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -62535,7 +62580,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: Kitchen_counter_corner (1)
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 3659011882225765266, guid: 255c85af4130f82459b6546761048633, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
