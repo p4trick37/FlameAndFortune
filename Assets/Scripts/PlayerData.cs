@@ -2,6 +2,7 @@ using UnityEngine;
 
 public class PlayerData : MonoBehaviour
 {
+    public int Money => money;
     [SerializeField] private int money;
 
     public void AddMoney(int amount)
@@ -11,7 +12,7 @@ public class PlayerData : MonoBehaviour
 
     public void RemoveMoney(int amount)
     {
-        if(money >= amount)
+        if (money >= amount)
         {
             money -= amount;
         }

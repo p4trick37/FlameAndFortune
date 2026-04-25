@@ -2,6 +2,7 @@ using UnityEngine;
 using System.Collections.Generic;
 using TMPro;
 using System.Runtime.CompilerServices;
+using UnityEditor.UIElements;
 public class GameManager : MonoBehaviour
 {
     [Header("Burns Completed")]
@@ -39,6 +40,8 @@ public class GameManager : MonoBehaviour
         }
         numberOfObjects = allBurnableObjects.Count;
         spawnPlayer = true;
+
+
     }
 
     private void OnEnable()
@@ -49,7 +52,8 @@ public class GameManager : MonoBehaviour
     private void Start()
     {
         timer = burnTime;
-        
+        Player.instance.FindObjectsInScene();
+        FindUIElements();
     }
 
     private void Update()
@@ -115,6 +119,12 @@ public class GameManager : MonoBehaviour
     {
         int moneyMade = (int)Mathf.Lerp(0, maxAmountOfMoney, percentBurned / 100);
         return moneyMade;
+    }
+
+    private void FindUIElements()
+    {
+        percentBurnedText = Player.instance.PercentCompleteTxt;
+        timerText = Player.instance.InGameTimerTxt;
     }
 
 }

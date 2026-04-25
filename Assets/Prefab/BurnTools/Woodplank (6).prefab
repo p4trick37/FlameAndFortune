@@ -30,13 +30,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5150911654421134079}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.8466905, y: 0.00000015854576, z: -0.53208584, w: -0.00000009963493}
+  m_LocalRotation: {x: 0, y: 0.38268343, z: 0, w: 0.92387956}
   m_LocalPosition: {x: 37.882, y: 0.0219, z: 4.025}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 180, y: 64.29299, z: -0.000015258789}
+  m_LocalEulerAnglesHint: {x: 0, y: 45, z: 0}
 --- !u!33 &9007978446055620342
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -129,6 +129,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::WoodPlank
   slotNumber: 0
   playerHand: {fileID: 0}
+  image: {fileID: 0}
   timeInHand: 5
 --- !u!114 &874484971968384758
 MonoBehaviour:

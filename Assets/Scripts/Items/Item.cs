@@ -1,6 +1,6 @@
 using Unity.VisualScripting;
 using UnityEngine;
-
+using UnityEngine.UI;
 public class Item : MonoBehaviour, IPickupable
 {
     [Header("Inventory Management")]
@@ -9,6 +9,7 @@ public class Item : MonoBehaviour, IPickupable
     [SerializeField] private GameObject playerHand;
     protected bool inInventory = false;
     protected bool currentlySelecting = false;
+    [SerializeField] private Sprite image;
 
     private void OnEnable()
     {
@@ -76,5 +77,10 @@ public class Item : MonoBehaviour, IPickupable
     public void OnDrop()
     {
         inInventory = false;
+    }
+
+    public virtual Sprite GetImage()
+    {
+        return image;
     }
 }

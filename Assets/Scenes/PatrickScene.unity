@@ -344,6 +344,7 @@ MonoBehaviour:
   burnTime: 60
   timerText: {fileID: 2048415864}
   playerSpawnPoint: {fileID: 0}
+  maxAmountOfMoney: 0
 --- !u!4 &355158762
 Transform:
   m_ObjectHideFlags: 0
@@ -1321,6 +1322,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::TorchFireTool
   slotNumber: 0
   playerHand: {fileID: 1550188489}
+  image: {fileID: 0}
   playerCamera: {fileID: 0}
   progressUI: {fileID: 971522140}
   litTorchVisual: {fileID: 0}
@@ -1344,6 +1346,9 @@ MonoBehaviour:
   micThreshold: 0.02
   drawDebugRay: 1
   logHoverName: 0
+  maxHealth: 0
+  currentHealth: 0
+  drainPerSecond: 0
 --- !u!4 &1020114922
 Transform:
   m_ObjectHideFlags: 0
@@ -2365,6 +2370,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::TorchFireTool
   slotNumber: 0
   playerHand: {fileID: 1550188489}
+  image: {fileID: 0}
   playerCamera: {fileID: 0}
   progressUI: {fileID: 971522140}
   litTorchVisual: {fileID: 0}
@@ -2388,6 +2394,9 @@ MonoBehaviour:
   micThreshold: 0.02
   drawDebugRay: 1
   logHoverName: 0
+  maxHealth: 0
+  currentHealth: 0
+  drainPerSecond: 0
 --- !u!4 &1752281794
 Transform:
   m_ObjectHideFlags: 0

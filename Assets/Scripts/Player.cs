@@ -1,5 +1,7 @@
+using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Player : MonoBehaviour
 {
@@ -33,11 +35,23 @@ public class Player : MonoBehaviour
     [Header("Inventory")]
     [SerializeField] private int inventorySize;
     [SerializeField] private GameObject[] inventory;
+    [SerializeField] private Image[] hudSlots;
     public int CurrentSlot => currentSlot;
     [SerializeField] private int currentSlot;
+    [Header("HUD")]
+    [SerializeField] private GameObject openWorldHUD;
+    [SerializeField] private GameObject gameHUD;
+    public TMP_Text MoneyTxt => moneyTxt;
+    public TMP_Text InGameTimerTxt => inGameTimerTxt;
+    public TMP_Text PercentCompleteTxt => percentCompleteTxt;
 
-    [Header("Open World Manager")]
+    [SerializeField] private TMP_Text moneyTxt;
+    [SerializeField] private TMP_Text inGameTimerTxt;
+    [SerializeField] private TMP_Text percentCompleteTxt;
+
+    [Header("Managers")]
     [SerializeField] private OpenWorldManager openWorldManager;
+    [SerializeField] private GameManager gameManager;
 
     public bool freezePlayer = false;
 
@@ -84,6 +98,7 @@ public class Player : MonoBehaviour
             RightClickInteraction(true);
         }
         InventorySelect();
+        UpdateInventoryHUD();
     }
 
     private void Movement(bool shouldMove)
@@ -377,16 +392,34 @@ public class Player : MonoBehaviour
             dropItem.GetComponent<Item>().OnDrop();
         }
     }
-    
+
     public void DestroyCertainItem(GameObject item)
     {
-        for(int i = 0; i < inventory.Length; i++)
+        for (int i = 0; i < inventory.Length; i++)
         {
-            if(inventory[i] == item)
+            if (inventory[i] == item)
             {
                 inventory[i] = null;
                 Destroy(item);
             }
+        }
+    }
+
+    private void UpdateInventoryHUD()
+    {
+        for (int i = 0; i < inventory.Length; i++)
+        {
+            if(inventory[i] == null)
+            {
+                hudSlots[i].sprite = null;
+                hudSlots[i].color = new Color(255, 255, 255, 0);
+            }
+            else
+            {
+                hudSlots[i].sprite = inventory[i].GetComponent<Item>().GetImage();
+                hudSlots[i].color = new Color(255, 255, 255, 255);
+            }
+                
         }
     }
 
@@ -405,18 +438,30 @@ public class Player : MonoBehaviour
         {
             if(other.gameObject == openWorldManager.LevelCollider())
             {
-                Debug.Log("WE HIT DOOR");
                 openWorldManager.PlayerEnterLevel();
+                ChangeHUD();
             }
         }
-        Debug.Log("Something happe ned");
-        
     }
 
-    public void FindObjectsinScene()
+    public void FindObjectsInScene()
     {
         openWorldManager = FindAnyObjectByType<OpenWorldManager>();
+        gameManager = FindAnyObjectByType<GameManager>();
     }
-
+  
+    public void ChangeHUD()
+    {
+        if(openWorldHUD.activeInHierarchy == true)
+        {
+            openWorldHUD.SetActive(false);
+            gameHUD.SetActive(true);
+        }
+        else
+        {
+            openWorldHUD.SetActive(true);
+            gameHUD.SetActive(false);
+        }
+    }
 
 }

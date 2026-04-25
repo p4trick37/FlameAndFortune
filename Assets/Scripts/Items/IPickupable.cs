@@ -1,5 +1,5 @@
 using UnityEngine;
-
+using UnityEngine.UI;
 public interface IPickupable 
 {
     public void SetToHand();
@@ -11,5 +11,7 @@ public interface IPickupable
     public void ChangeRigidbodyState();
 
     public void OnDrop();
+
+    public Sprite GetImage();
 
 }

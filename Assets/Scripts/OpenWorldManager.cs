@@ -1,4 +1,5 @@
 using System.Runtime.CompilerServices;
+using TMPro;
 using UnityEngine;
 
 public class OpenWorldManager : MonoBehaviour
@@ -11,11 +12,13 @@ public class OpenWorldManager : MonoBehaviour
     [Header("Level Manager")]
     [SerializeField] private SceneSwitcher sceneSwitcher;
     [SerializeField] private GameObject level1Door;
+    [SerializeField] private TMP_Text moneyText;
     private bool playerEnterLevel;
 
     private void Start()
     {
-        Player.instance.FindObjectsinScene();
+        Player.instance.FindObjectsInScene();
+        FindUIElements();
     }
 
     private void Update()
@@ -24,6 +27,8 @@ public class OpenWorldManager : MonoBehaviour
         {
             sceneSwitcher.SwitchToScene("Level1");
         }
+
+        UpdateMoneyText();
     }
     private void LateUpdate()
     {
@@ -62,5 +67,16 @@ public class OpenWorldManager : MonoBehaviour
     public void PlayerEnterLevel()
     {
         playerEnterLevel = true;
+    }
+
+    private void FindUIElements()
+    {
+        moneyText = Player.instance.MoneyTxt;
+    }
+
+    private void UpdateMoneyText()
+    {
+        string text = "$" + Player.instance.gameObject.GetComponent<PlayerData>().Money;
+        moneyText.text = text;
     }
 }
