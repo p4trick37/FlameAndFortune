@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 6572045506949107938}
   - component: {fileID: 5545353017391696996}
   - component: {fileID: -4048961667451134269}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Books_E
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -136,7 +136,7 @@ MonoBehaviour:
   gasIgniteMultiplier: 2
   gasBurnMultiplier: 2
   canSpreadFire: 1
-  spreadRadius: 2
+  spreadRadius: 0.4
   spreadInterval: 0.5
   spreadIgniteDamagePerSecond: 3
   spreadLayers:

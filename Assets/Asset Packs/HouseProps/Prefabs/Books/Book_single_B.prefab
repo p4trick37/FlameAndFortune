@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 8916031078622197892}
   - component: {fileID: 9028077598120180153}
   - component: {fileID: 7979766180833032280}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Book_single_B_LOD01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -124,7 +124,7 @@ GameObject:
   - component: {fileID: 1618772401494979071}
   - component: {fileID: 5575566495710233151}
   - component: {fileID: 7979766180833032281}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Book_single_B_LOD00
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -235,7 +235,7 @@ GameObject:
   - component: {fileID: 7581645515855962046}
   - component: {fileID: 3417517177761802447}
   - component: {fileID: -5490984333130144377}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Book_single_B
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -305,7 +305,7 @@ MonoBehaviour:
   gasIgniteMultiplier: 2
   gasBurnMultiplier: 2
   canSpreadFire: 1
-  spreadRadius: 2
+  spreadRadius: 0.4
   spreadInterval: 0.5
   spreadIgniteDamagePerSecond: 3
   spreadLayers:

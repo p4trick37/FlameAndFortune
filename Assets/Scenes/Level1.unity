@@ -1603,6 +1603,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 127850807}
     m_Modifications:
+    - target: {fileID: -27340814547134672, guid: cdf72caef777486438f10b1dbf1aca73, type: 3}
+      propertyPath: spreadRadius
+      value: 0.4
+      objectReference: {fileID: 0}
     - target: {fileID: 1240243528619851892, guid: cdf72caef777486438f10b1dbf1aca73, type: 3}
       propertyPath: m_Name
       value: Books_C
@@ -8056,6 +8060,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1513937324}
     m_Modifications:
+    - target: {fileID: -8348062836146539112, guid: da4e4facdf8ac0d499f62d65d71b8f48, type: 3}
+      propertyPath: spreadRadius
+      value: 0.4
+      objectReference: {fileID: 0}
+    - target: {fileID: -8348062836146539112, guid: da4e4facdf8ac0d499f62d65d71b8f48, type: 3}
+      propertyPath: canSpreadFire
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5081666792890487201, guid: da4e4facdf8ac0d499f62d65d71b8f48, type: 3}
       propertyPath: m_Name
       value: Book_single_A
@@ -9701,6 +9713,42 @@ PrefabInstance:
       propertyPath: m_Name
       value: Bookshelf (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 3787341373413740139, guid: 699d05550aa356b43a052438a558c0c2, type: 3}
+      propertyPath: spreadRadius
+      value: 0.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 3787341374630590933, guid: 699d05550aa356b43a052438a558c0c2, type: 3}
+      propertyPath: spreadRadius
+      value: 0.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 4077656167002899249, guid: 699d05550aa356b43a052438a558c0c2, type: 3}
+      propertyPath: spreadRadius
+      value: 0.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 5174410368634818330, guid: 699d05550aa356b43a052438a558c0c2, type: 3}
+      propertyPath: spreadRadius
+      value: 0.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 5174410368875708114, guid: 699d05550aa356b43a052438a558c0c2, type: 3}
+      propertyPath: spreadRadius
+      value: 0.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 5174410369397499559, guid: 699d05550aa356b43a052438a558c0c2, type: 3}
+      propertyPath: spreadRadius
+      value: 0.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 5288343694627700537, guid: 699d05550aa356b43a052438a558c0c2, type: 3}
+      propertyPath: spreadRadius
+      value: 0.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 5288343694954110704, guid: 699d05550aa356b43a052438a558c0c2, type: 3}
+      propertyPath: spreadRadius
+      value: 0.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 5288343695335422890, guid: 699d05550aa356b43a052438a558c0c2, type: 3}
+      propertyPath: spreadRadius
+      value: 0.4
+      objectReference: {fileID: 0}
     - target: {fileID: 5439607147438025271, guid: 699d05550aa356b43a052438a558c0c2, type: 3}
       propertyPath: m_LocalRotation.w
       value: 0.6402495
@@ -9712,6 +9760,14 @@ PrefabInstance:
     - target: {fileID: 5439607147438025271, guid: 699d05550aa356b43a052438a558c0c2, type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
       value: 100.379005
+      objectReference: {fileID: 0}
+    - target: {fileID: 5713328130684952667, guid: 699d05550aa356b43a052438a558c0c2, type: 3}
+      propertyPath: spreadRadius
+      value: 0.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 5713328130758381223, guid: 699d05550aa356b43a052438a558c0c2, type: 3}
+      propertyPath: spreadRadius
+      value: 0.4
       objectReference: {fileID: 0}
     - target: {fileID: 7807128361686012550, guid: 699d05550aa356b43a052438a558c0c2, type: 3}
       propertyPath: m_LocalRotation.w
@@ -9732,6 +9788,10 @@ PrefabInstance:
     - target: {fileID: 7807128361686012550, guid: 699d05550aa356b43a052438a558c0c2, type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
       value: -62.275
+      objectReference: {fileID: 0}
+    - target: {fileID: 9196031222432607891, guid: 699d05550aa356b43a052438a558c0c2, type: 3}
+      propertyPath: spreadRadius
+      value: 0.4
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -11245,6 +11305,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1513937324}
     m_Modifications:
+    - target: {fileID: -501002109859977800, guid: 7348a8e11da232946b810f8feb0446fa, type: 3}
+      propertyPath: spreadRadius
+      value: 0.4
+      objectReference: {fileID: 0}
     - target: {fileID: 7481049125758206480, guid: 7348a8e11da232946b810f8feb0446fa, type: 3}
       propertyPath: m_RootOrder
       value: 418
@@ -20683,6 +20747,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 127850807}
     m_Modifications:
+    - target: {fileID: 2457403319597946814, guid: fa680e10b9456a7439651fea649c4e78, type: 3}
+      propertyPath: spreadRadius
+      value: 0.2
+      objectReference: {fileID: 0}
     - target: {fileID: 4735613255457760670, guid: fa680e10b9456a7439651fea649c4e78, type: 3}
       propertyPath: m_RootOrder
       value: 226
@@ -23987,6 +24055,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1513937324}
     m_Modifications:
+    - target: {fileID: -5490984333130144377, guid: 177787a19578a7049a8c57218d053164, type: 3}
+      propertyPath: spreadRadius
+      value: 0.4
+      objectReference: {fileID: 0}
     - target: {fileID: 7096752455000999172, guid: 177787a19578a7049a8c57218d053164, type: 3}
       propertyPath: m_Name
       value: Book_single_B
@@ -27207,7 +27279,7 @@ Transform:
   m_GameObject: {fileID: 829520561}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -8.736, y: 1.428, z: 6.919}
+  m_LocalPosition: {x: -8.736, y: 1.428, z: 6.91}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -46590,6 +46662,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 127850807}
     m_Modifications:
+    - target: {fileID: 2457403319597946814, guid: fa680e10b9456a7439651fea649c4e78, type: 3}
+      propertyPath: spreadRadius
+      value: 0.2
+      objectReference: {fileID: 0}
     - target: {fileID: 4735613255457760670, guid: fa680e10b9456a7439651fea649c4e78, type: 3}
       propertyPath: m_RootOrder
       value: 93
@@ -46641,6 +46717,10 @@ PrefabInstance:
     - target: {fileID: 5400826983275872036, guid: fa680e10b9456a7439651fea649c4e78, type: 3}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6686446196850215748, guid: fa680e10b9456a7439651fea649c4e78, type: 3}
+      propertyPath: gasIgniteMultiplier
+      value: 0.3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -59152,6 +59232,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 127850807}
     m_Modifications:
+    - target: {fileID: -4048961667451134269, guid: a7f1d395bd860ae43a10123203a1ce91, type: 3}
+      propertyPath: spreadRadius
+      value: 0.4
+      objectReference: {fileID: 0}
     - target: {fileID: 4626433637830160695, guid: a7f1d395bd860ae43a10123203a1ce91, type: 3}
       propertyPath: m_Name
       value: Books_E
@@ -60279,6 +60363,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 720889956}
     m_Modifications:
+    - target: {fileID: 752541350162350973, guid: e0a99130bbe854f408b2f582d294e697, type: 3}
+      propertyPath: spreadRadius
+      value: 0.4
+      objectReference: {fileID: 0}
     - target: {fileID: 4742151040225359475, guid: e0a99130bbe854f408b2f582d294e697, type: 3}
       propertyPath: m_RootOrder
       value: 535
