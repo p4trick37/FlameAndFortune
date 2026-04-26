@@ -41,6 +41,7 @@ public class Item : MonoBehaviour, IPickupable
     public virtual GameObject OnPickup()
     {
         inInventory = true;
+        ChangeLayerMask(gameObject, "MaskObject");
         return gameObject;
     }
 
@@ -74,13 +75,31 @@ public class Item : MonoBehaviour, IPickupable
         }
     }
 
-    public void OnDrop()
+    public virtual void OnDrop()
     {
         inInventory = false;
+        ChangeLayerMask(gameObject, "Default");
     }
 
     public virtual Sprite GetImage()
     {
         return image;
     }
+
+    protected virtual void ChangeLayerMask(GameObject obj, string maskName)
+    {
+        if(obj == null)
+        {
+            return;
+        }
+
+        obj.layer = LayerMask.NameToLayer(maskName);
+        foreach(Transform childInObj in obj.transform)
+        {
+            ChangeLayerMask(childInObj.gameObject, maskName);
+        }
+
+
+    }
+
 }

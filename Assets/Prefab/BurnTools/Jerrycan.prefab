@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 3971460936661573045}
   - component: {fileID: 4214853400359785171}
   - component: {fileID: -8221776117463668996}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Jerrycan
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -128,12 +128,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::GasCan
   slotNumber: 0
   playerHand: {fileID: 0}
+  image: {fileID: 21300000, guid: 51c03277b48fe404ea7c241195c382d0, type: 3}
   usingGasCan: 0
   gasSprite: {fileID: 3717851817084011257, guid: c7d4f1609a0eaf34fa73b5369179a7d9, type: 3}
   slowMoveSpeed: 1
   canCollider: {fileID: 0}
   spawnTimer: 0.5
-  health: 1000
+  health: 100
   pourRange: 1
 --- !u!54 &-8221776117463668996
 Rigidbody:

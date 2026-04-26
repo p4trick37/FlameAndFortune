@@ -5,7 +5,6 @@ using UnityEngine.UI;
 
 public class Player : MonoBehaviour
 {
-
     public static Player instance;
     [Header("Player Movement")]
     [SerializeField] private float mouseSens;
@@ -57,6 +56,10 @@ public class Player : MonoBehaviour
 
     private bool moveAppliance;
 
+    public bool StopOtherInteractions => stopOtherInteractions;
+    private bool stopOtherInteractions;
+
+    private bool waitOneFrame;
     private void Awake()
     {
         if (instance == null)
@@ -99,6 +102,11 @@ public class Player : MonoBehaviour
         }
         InventorySelect();
         UpdateInventoryHUD();
+        if(stopOtherInteractions == true && waitOneFrame == true)
+        {
+            stopOtherInteractions = false;
+        }
+        waitOneFrame = true;
     }
 
     private void Movement(bool shouldMove)
@@ -177,30 +185,6 @@ public class Player : MonoBehaviour
         }
     }
 
-    private void EInteraction(bool useInteraction)
-    {
-        if (useInteraction == true)
-        {
-            if (Input.GetKeyDown(KeyCode.E))
-            {
-                //RaycastHit[] hits = Physics.RaycastAll(playerCamera.transform.position, playerCamera.transform.forward, 4);
-
-                //foreach (RaycastHit hit in hits)
-                //{
-                //    TryForEndCord(hit);
-                //    TryForPowerInlet(hit);
-                //    TryForObjects(hit);
-                //}
-
-                if(Physics.Raycast(playerCamera.transform.position, playerCamera.transform.forward, out RaycastHit hit, 4))
-                {
-                    TryForEndCord(hit);
-                    TryForPowerInlet(hit);
-                    TryForObjects(hit);
-                }
-            }
-        }
-    }
     private void LeftClickInteractioni(bool shouldInteract)
     {
         if (shouldInteract == true)
@@ -232,7 +216,6 @@ public class Player : MonoBehaviour
                 if (Physics.Raycast(playerCamera.transform.position, playerCamera.transform.forward, out RaycastHit hit, 4))
                 {
                     moveAppliance = false;
-                    //TryForMovableAppliance(hit);
                 }
             }
         }
@@ -254,6 +237,8 @@ public class Player : MonoBehaviour
         EndCord endCord = hit.transform.GetComponent<EndCord>();
         if(endCord != null)
         {
+            stopOtherInteractions = true;
+            waitOneFrame = false;
             if (endCord.IsPluggedIn == true)
             {
                 endCord.UnPlug();
@@ -270,6 +255,8 @@ public class Player : MonoBehaviour
         PowerInlet inlet = hit.transform.GetComponent<PowerInlet>();
         if(inlet != null)
         {
+            stopOtherInteractions = true;
+            waitOneFrame = false;
             inlet.Activate();
         }
     }
@@ -279,6 +266,8 @@ public class Player : MonoBehaviour
         MoveAppliance appliance = hit.transform.GetComponent<MoveAppliance>();
         if(appliance != null)
         {
+            stopOtherInteractions = true;
+            waitOneFrame = false;
             if (moveAppliance == true)
             {
                 appliance.moveObject = true;
@@ -296,7 +285,8 @@ public class Player : MonoBehaviour
     {
         if(hit.transform.TryGetComponent<IPickupable>(out IPickupable item))
         {
-            Debug.Log("Ran");
+            stopOtherInteractions = true;
+            waitOneFrame = false;
             bool emptySlot = false;
             int emptyIndex = 0;
             for(int i = 0; i < inventory.Length; i++)
@@ -324,7 +314,9 @@ public class Player : MonoBehaviour
         RotateObject rotateObject = hit.transform.gameObject.GetComponent<RotateObject>();
         if(rotateObject != null)
         {
-            if(rotateObject.InOpenState == true)
+            stopOtherInteractions = true;
+            waitOneFrame = false;
+            if (rotateObject.InOpenState == true)
             {
                 rotateObject.CloseObject();
             }
@@ -463,5 +455,4 @@ public class Player : MonoBehaviour
             gameHUD.SetActive(false);
         }
     }
-
 }

@@ -14,10 +14,12 @@ public class OpenWorldManager : MonoBehaviour
     [SerializeField] private GameObject level1Door;
     [SerializeField] private TMP_Text moneyText;
     private bool playerEnterLevel;
+    [SerializeField] private Transform playerSpawnPoint;
 
     private void Start()
     {
         Player.instance.FindObjectsInScene();
+        Player.instance.gameObject.transform.position = playerSpawnPoint.position;
         FindUIElements();
     }
 
@@ -76,7 +78,7 @@ public class OpenWorldManager : MonoBehaviour
 
     private void UpdateMoneyText()
     {
-        string text = "$" + Player.instance.gameObject.GetComponent<PlayerData>().Money;
+        string text = "$" + Player.instance.gameObject.GetComponent<PlayerData>().Money.ToString("N0");
         moneyText.text = text;
     }
 }

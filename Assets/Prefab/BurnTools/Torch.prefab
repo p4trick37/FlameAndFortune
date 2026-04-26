@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 923674999945101057}
   - component: {fileID: 2223729465300215322}
   - component: {fileID: -1761866609661021003}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Torch
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -27,7 +27,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8717876266789134144}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -7.851497e-11, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 2.822, y: 1.6010001, z: 10.27}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -50,7 +50,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::TorchFireTool
   slotNumber: 0
   playerHand: {fileID: 0}
-  image: {fileID: 0}
+  image: {fileID: 21300000, guid: 04289f073e0d5694d88417ae885d7102, type: 3}
   playerCamera: {fileID: 0}
   progressUI: {fileID: 0}
   litTorchVisual: {fileID: 4665717700824752005}
@@ -137,6 +137,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Torch
       objectReference: {fileID: 0}
+    - target: {fileID: 5900178563131365388, guid: 46e0dd6cc8d71ef4bb28edb7c4e07b15, type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6533163436906480310, guid: 46e0dd6cc8d71ef4bb28edb7c4e07b15, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -195,6 +199,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 8535846166511202148}
     m_Modifications:
+    - target: {fileID: 434770577965505361, guid: dd986d04bcc6dc748a53d8c3d1d42a6d, type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 517059092229267012, guid: dd986d04bcc6dc748a53d8c3d1d42a6d, type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1781949194303238865, guid: dd986d04bcc6dc748a53d8c3d1d42a6d, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -240,8 +252,20 @@ PrefabInstance:
       value: VFX_Fire_01_Small_Simple
       objectReference: {fileID: 0}
     - target: {fileID: 1781949194303238870, guid: dd986d04bcc6dc748a53d8c3d1d42a6d, type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1781949194303238870, guid: dd986d04bcc6dc748a53d8c3d1d42a6d, type: 3}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4011211046309551372, guid: dd986d04bcc6dc748a53d8c3d1d42a6d, type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4397477349110433957, guid: dd986d04bcc6dc748a53d8c3d1d42a6d, type: 3}
+      propertyPath: m_Layer
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

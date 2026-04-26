@@ -47,7 +47,6 @@ public class GasCan : Item
             }
         }
 
-        Debug.Log(currentlySelecting);
 
     }
 
@@ -161,18 +160,17 @@ public class GasCan : Item
 
     private void UserInput()
     {
-        if (Input.GetMouseButtonDown(0) && currentlySelecting == true)
+        if (Input.GetMouseButtonDown(0) && currentlySelecting == true && Player.instance.StopOtherInteractions == false)
         {
             changeSpeed = true;
-            Debug.Log("Pressed");
         }
 
-        if (Input.GetMouseButton(0) && currentlySelecting == true)
+        if (Input.GetMouseButton(0) && currentlySelecting == true && Player.instance.StopOtherInteractions == false) 
         {
             usingGasCan = true;
         }
 
-        if (Input.GetMouseButtonUp(0) && currentlySelecting == true)
+        if (Input.GetMouseButtonUp(0) && currentlySelecting == true && Player.instance.StopOtherInteractions == false)
         {
             usingGasCan = false;
             changeSpeed = true;

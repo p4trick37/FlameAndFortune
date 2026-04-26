@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using TMPro;
 using System.Runtime.CompilerServices;
 using UnityEditor.UIElements;
+using System.Collections;
+using UnityEngine.SceneManagement;
 public class GameManager : MonoBehaviour
 {
     [Header("Burns Completed")]
@@ -17,6 +19,7 @@ public class GameManager : MonoBehaviour
     private float timer;
     private bool gameOver = false;
     private bool wentToGameOver = false;
+    [SerializeField] private float timeToSwitchScene;
     [Header("Player")]
     [SerializeField] private Transform playerSpawnPoint;
     private bool spawnPlayer = false;
@@ -71,7 +74,7 @@ public class GameManager : MonoBehaviour
         }
         else if(wentToGameOver == false)
         {
-            GameOver();
+            StartCoroutine(GameOver());
             wentToGameOver = true;
         }
         percentBurnedText.text = percentBurned.ToString("F0") + "%";
@@ -105,14 +108,16 @@ public class GameManager : MonoBehaviour
             gameOver = true;
             timer = 0;
         }
-        timerText.text = timer.ToString("F2");
+        timerText.text = TimerDisplay(timer);
     }
 
-    private void GameOver()
+    private IEnumerator GameOver()
     {
-        Debug.Log("GAME IS OVER DUDE");
         Player.instance.ClearInventory();
         Player.instance.gameObject.GetComponent<PlayerData>().AddMoney(MoneyMade());
+        yield return new WaitForSeconds(timeToSwitchScene);
+        SceneManager.LoadScene("OpenWorld");
+        Player.instance.ChangeHUD();
     }
 
     private int MoneyMade()
@@ -127,4 +132,11 @@ public class GameManager : MonoBehaviour
         timerText = Player.instance.InGameTimerTxt;
     }
 
+    private string TimerDisplay(float timer)
+    {
+        int seconds = (int)timer % 60;
+        int minutes = (int)timer / 60;
+        string timerDisplay = minutes + ":" + seconds.ToString("D2");
+        return timerDisplay;
+    }
 }

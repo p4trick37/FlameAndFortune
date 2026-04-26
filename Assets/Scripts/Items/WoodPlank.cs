@@ -34,5 +34,10 @@ public class WoodPlank : Item
         timer = timeInHand;
     }
 
+    public override void OnDrop()
+    {
+        inInventory = false;
+        ChangeLayerMask(gameObject, "Burnable");
+    }
 
 }

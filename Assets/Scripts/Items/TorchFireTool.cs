@@ -82,7 +82,7 @@ public class TorchFireTool : Item
             TryRelightTorch();
         }
 
-        if (Input.GetMouseButton(0) && currentlySelecting == true)
+        if (Input.GetMouseButton(0) && currentlySelecting == true && Player.instance.StopOtherInteractions == false)
         {
             TryIgniteHeldTarget();
         }
