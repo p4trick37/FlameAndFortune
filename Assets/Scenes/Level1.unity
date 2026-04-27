@@ -33988,6 +33988,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1513937324}
     m_Modifications:
+    - target: {fileID: 7041785646731035755, guid: 10214edd02bf73d4aae8badfd60cf0ba, type: 3}
+      propertyPath: m_Size.y
+      value: 0.04
+      objectReference: {fileID: 0}
     - target: {fileID: 8560594935508107483, guid: 10214edd02bf73d4aae8badfd60cf0ba, type: 3}
       propertyPath: m_Name
       value: Carpet_C
@@ -36388,6 +36392,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Carpet_B
       objectReference: {fileID: 0}
+    - target: {fileID: 1636495244379539676, guid: 1bab815708d578b4189e1f2e6c5196cf, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2161217018788549222, guid: 1bab815708d578b4189e1f2e6c5196cf, type: 3}
       propertyPath: m_RootOrder
       value: 265
@@ -36443,6 +36451,10 @@ PrefabInstance:
     - target: {fileID: 2161217018788549222, guid: 1bab815708d578b4189e1f2e6c5196cf, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3948333264284142068, guid: 1bab815708d578b4189e1f2e6c5196cf, type: 3}
+      propertyPath: m_Size.y
+      value: 0.04
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -41843,6 +41855,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 4273193070050013218, guid: bdbdc2324c25bb74f80d736780d7cd6f, type: 3}
+      propertyPath: m_Size.y
+      value: 0.04
+      objectReference: {fileID: 0}
     - target: {fileID: 4379705598615263183, guid: bdbdc2324c25bb74f80d736780d7cd6f, type: 3}
       propertyPath: m_RootOrder
       value: 83
@@ -46716,6 +46732,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8164149682140197469, guid: e855b004e2c105944bfdb302fba6639a, type: 3}
+      propertyPath: m_Size.y
+      value: 0.04
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -48712,6 +48732,10 @@ PrefabInstance:
     - target: {fileID: 2161217018788549222, guid: 1bab815708d578b4189e1f2e6c5196cf, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3948333264284142068, guid: 1bab815708d578b4189e1f2e6c5196cf, type: 3}
+      propertyPath: m_Size.y
+      value: 0.04
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -58654,6 +58678,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Carpet_A (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 4273193070050013218, guid: bdbdc2324c25bb74f80d736780d7cd6f, type: 3}
+      propertyPath: m_Size.y
+      value: 0.04
+      objectReference: {fileID: 0}
     - target: {fileID: 4379705598615263183, guid: bdbdc2324c25bb74f80d736780d7cd6f, type: 3}
       propertyPath: m_RootOrder
       value: 88
@@ -59454,6 +59482,10 @@ PrefabInstance:
     - target: {fileID: 2161217018788549222, guid: 1bab815708d578b4189e1f2e6c5196cf, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3948333264284142068, guid: 1bab815708d578b4189e1f2e6c5196cf, type: 3}
+      propertyPath: m_Size.y
+      value: 0.04
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
