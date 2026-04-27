@@ -1,4 +1,6 @@
 using System.Collections;
+
+//using System.Diagnostics;
 using UnityEngine;
 
 public class BurnableObject : MonoBehaviour
@@ -47,10 +49,12 @@ public class BurnableObject : MonoBehaviour
 private static readonly int OutlineColorID = Shader.PropertyToID("_OutlineColor");
 
     [Header("Particles")]
+    
     [SerializeField] private GameObject fireParticlePrefab;
     [SerializeField] private Transform particleSpawnPoint;
     [SerializeField] private Vector3 particleOffset = Vector3.zero;
     [SerializeField] private MeshFilter TargetMeshFilter;
+    ParticleSystem.ShapeModule shape;
 
     [Header("UI Anchor")]
     [SerializeField] private Transform uiAnchorOverride;
@@ -411,8 +415,21 @@ private void SpawnFireEffect()
     Vector3 spawnPosition = spawnTransform.position + particleOffset;
 
     spawnedFireEffect = Instantiate(fireParticlePrefab, spawnPosition, Quaternion.identity, transform);
-
+    ParticleSystem[] childParticles = spawnedFireEffect.GetComponentsInChildren<ParticleSystem>();
+    
     PSMesh psMesh = spawnedFireEffect.GetComponent<PSMesh>();
+    shape = spawnedFireEffect.GetComponent<ParticleSystem>().shape;
+    shape.mesh = TargetMeshFilter.mesh;
+    Vector3 rotation = transform.rotation.eulerAngles;
+    shape.rotation = rotation;
+    foreach(ParticleSystem particle in childParticles)
+    {
+        PSMesh childPsMesh = particle.GetComponent<PSMesh>();
+        ParticleSystem.ShapeModule shapeMesh = particle.shape;
+        shapeMesh.mesh = TargetMeshFilter.mesh;
+        shapeMesh.rotation = rotation;
+    }
+    
 
     if (psMesh == null)
     {
