@@ -58,7 +58,7 @@ private static readonly int OutlineColorID = Shader.PropertyToID("_OutlineColor"
 
     [Header("UI Anchor")]
     [SerializeField] private Transform uiAnchorOverride;
-    [SerializeField] private Vector3 uiOffset = new Vector3(0f, 1.2f, 0f);
+    [SerializeField] private Vector3 uiOffset = new Vector3(0f, 0f, 0f);
 
     private GameObject spawnedFireEffect;
     private Material[][] runtimeMaterials;
