@@ -698,7 +698,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: -9.9999695}
+  m_AnchoredPosition: {x: 0, y: -10}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &635453037
@@ -2134,9 +2134,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::UpgradeManager
   moneyText: {fileID: 929405297}
-  gasPrice: 100
-  torchPrice: 100
-  woodPrice: 100
+  gasPrice: 200
+  torchPrice: 200
+  woodPrice: 200
 --- !u!4 &1401241526
 Transform:
   m_ObjectHideFlags: 0

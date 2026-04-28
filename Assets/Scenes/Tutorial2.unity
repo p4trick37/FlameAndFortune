@@ -18046,7 +18046,7 @@ Transform:
   m_GameObject: {fileID: 541035305}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -3.25, y: 1.35, z: 6.3}
+  m_LocalPosition: {x: -9.04, y: 1.35, z: 7.1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -42565,10 +42565,6 @@ PrefabInstance:
     - target: {fileID: 6457867792816267295, guid: b4a4b1ad148c9524fb9f2a51a8da89d3, type: 3}
       propertyPath: m_IsActive
       value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6961042014341529433, guid: b4a4b1ad148c9524fb9f2a51a8da89d3, type: 3}
-      propertyPath: m_CullingMask.m_Bits
-      value: 4294967295
       objectReference: {fileID: 0}
     - target: {fileID: 7842793328727363585, guid: b4a4b1ad148c9524fb9f2a51a8da89d3, type: 3}
       propertyPath: playerHand
