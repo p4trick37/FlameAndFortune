@@ -1,8 +1,6 @@
 using UnityEngine;
 using System.Collections.Generic;
 using UnityEngine.UI;
-using UnityEditor.Rendering;
-using JetBrains.Annotations;
 
 public class WirePanel : MonoBehaviour
 {
