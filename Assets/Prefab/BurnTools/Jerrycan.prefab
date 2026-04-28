@@ -134,7 +134,7 @@ MonoBehaviour:
   slowMoveSpeed: 1
   canCollider: {fileID: 0}
   spawnTimer: 0.5
-  health: 100
+  health: 5
   pourRange: 1
 --- !u!54 &-8221776117463668996
 Rigidbody:

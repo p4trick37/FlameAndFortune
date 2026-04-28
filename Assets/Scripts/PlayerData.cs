@@ -12,9 +12,6 @@ public class PlayerData : MonoBehaviour
 
     public void RemoveMoney(int amount)
     {
-        if (money >= amount)
-        {
-            money -= amount;
-        }
+        money -= amount;
     }
 }

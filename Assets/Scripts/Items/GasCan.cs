@@ -8,6 +8,7 @@ public class GasCan : Item
     [SerializeField] private float slowMoveSpeed;
     [SerializeField] private BoxCollider canCollider;
     [SerializeField] private float spawnTimer;
+    private static float addHealth;
     [SerializeField] private float health;
     [SerializeField] private float pourRange;
     private bool changeSpeed;
@@ -15,6 +16,9 @@ public class GasCan : Item
     private void Awake()
     {
         canCollider = GetComponent<BoxCollider>();
+        health += addHealth;
+        addHealth = 0;
+
     }
 
     private void OnDisable()
@@ -46,7 +50,8 @@ public class GasCan : Item
                 changeSpeed = false;
             }
         }
-
+        Debug.Log("Stopping interacfg " + Player.instance.StopOtherInteractions);
+        Debug.Log("currently selc " + currentlySelecting);
 
     }
 
@@ -56,75 +61,6 @@ public class GasCan : Item
         
         while (health > 0)
         {
-            //RaycastHit[] hits = Physics.RaycastAll(Player.instance.playerCamera.transform.position, Player.instance.playerCamera.transform.forward, 3);
-            //Vector3 position = Player.instance.playerCamera.transform.position + Player.instance.playerCamera.transform.forward * 3;
-            //foreach (RaycastHit hit in hits)
-            //{
-            //    if(Physics.Raycast(hit.point, Vector3.down, out RaycastHit hit2))
-            //    {
-            //        if (hit2.collider.CompareTag("Gas"))
-            //        {
-            //            break;
-            //        }
-
-            //        if (hit2.collider.gameObject.GetComponent<Player>())
-            //        {
-            //            continue;
-            //        }
-
-            //        if (hit2.collider == canCollider)
-            //        {
-            //            continue;
-            //        }
-
-            //        if (hit2.transform.gameObject.GetComponent<BurnableObject>())
-            //        {
-            //            BurnableObject obj = hit2.transform.gameObject.GetComponent<BurnableObject>();
-            //            obj.ApplyGas();
-            //        }
-
-            //        Instantiate(gasSprite, new Vector3(hit.point.x, hit.point.y + 0.001f, hit.point.z), Quaternion.identity);
-            //        health--;
-            //        Debug.Log("Placed something because the player did hit something in initial raycast");
-            //        break;
-            //    }      
-            //}
-
-            //if (hits.Length == 0)
-            //{
-            //    if (Physics.Raycast(position, Vector3.down, out RaycastHit hitInfo))
-            //    {
-            //        if (hitInfo.collider.CompareTag("Gas"))
-            //        {
-            //            break;
-            //        }
-
-            //        if (hitInfo.collider.gameObject.GetComponent<Player>())
-            //        {
-            //            continue;
-            //        }
-
-            //        if (hitInfo.collider == canCollider)
-            //        {
-            //            continue;
-            //        }
-
-            //        if (hitInfo.transform.gameObject.GetComponent<BurnableObject>())
-            //        {
-            //            BurnableObject obj = hitInfo.transform.gameObject.GetComponent<BurnableObject>();
-            //            obj.ApplyGas();
-            //        }
-
-            //        Instantiate(gasSprite, new Vector3(hitInfo.point.x, hitInfo.point.y + 0.001f, hitInfo.point.z), Quaternion.identity);
-            //        health--;
-            //        Debug.Log("Placed something because of the fact the initail raycast didn't hit anything");
-            //    }
-            //    Debug.Log("Didn't hit anything");
-            //}
-
-            //yield return new WaitForSeconds(spawnTimer);
-            //Debug.Log("Next sequence");
-
             Vector3 targetPoint = Vector3.zero;
             if(Physics.Raycast(Player.instance.playerCamera.transform.position, Player.instance.playerCamera.transform.forward, out RaycastHit hit, pourRange))
             {
@@ -178,7 +114,10 @@ public class GasCan : Item
         }
     }
 
-  
+    public static void AddHealth(int amount)
+    {
+        addHealth += amount;
+    }
 
   
 }

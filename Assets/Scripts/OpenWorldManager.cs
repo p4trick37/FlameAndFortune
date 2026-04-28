@@ -73,7 +73,7 @@ public class OpenWorldManager : MonoBehaviour
 
     private void FindUIElements()
     {
-        moneyText = Player.instance.MoneyTxt;
+        //moneyText = Player.instance.MoneyTxt;
     }
 
     private void UpdateMoneyText()

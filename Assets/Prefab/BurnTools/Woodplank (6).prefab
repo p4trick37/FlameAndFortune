@@ -147,7 +147,7 @@ MonoBehaviour:
   maxHealth: 100
   currentHealth: 100
   igniteDamagePercentToStartBurning: 0.1
-  burnDamagePerSecond: 5
+  burnDamagePerSecond: 35
   isBurning: 0
   isBurnedOut: 0
   isGasSoaked: 0

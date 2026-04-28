@@ -44,18 +44,23 @@ public class GameManager : MonoBehaviour
         numberOfObjects = allBurnableObjects.Count;
         spawnPlayer = true;
 
-
+        timer = burnTime;
     }
 
     private void OnEnable()
     {
-        Player.instance.gameObject.transform.position = playerSpawnPoint.position;
+        
     }
 
     private void Start()
     {
-        timer = burnTime;
+        Player.instance.ResetInventory(); // HARD RESET (critical)
         Player.instance.FindObjectsInScene();
+        Player.instance.gameObject.transform.position = playerSpawnPoint.position;
+        Player.instance.SetPlayer("Level");
+
+        Player.instance.LoadInventory(); // now safe
+
         FindUIElements();
     }
 
@@ -116,8 +121,7 @@ public class GameManager : MonoBehaviour
         Player.instance.ClearInventory();
         Player.instance.gameObject.GetComponent<PlayerData>().AddMoney(MoneyMade());
         yield return new WaitForSeconds(timeToSwitchScene);
-        SceneManager.LoadScene("OpenWorld");
-        Player.instance.ChangeHUD();
+        SceneManager.LoadScene("Upgrade");
     }
 
     private int MoneyMade()

@@ -6,11 +6,15 @@ public class WoodPlank : Item
     [SerializeField] private float timeInHand;
     private float timer;
     private BurnableObject burnObj;
+    private static int amountChange;
 
     private void Awake()
     {
         burnObj = gameObject.GetComponent<BurnableObject>();
+        burnObj.SetAddedHealth(amountChange);
+        amountChange = 0;
         timer = timeInHand;
+        
     }
 
     private void Update()
@@ -38,6 +42,11 @@ public class WoodPlank : Item
     {
         inInventory = false;
         ChangeLayerMask(gameObject, "Burnable");
+    }
+
+    public static void AddHealth(int amount)
+    {
+        amountChange += amount;
     }
 
 }

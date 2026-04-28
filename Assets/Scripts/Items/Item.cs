@@ -10,18 +10,16 @@ public class Item : MonoBehaviour, IPickupable
     protected bool inInventory = false;
     protected bool currentlySelecting = false;
     [SerializeField] private Sprite image;
-
-    private void OnEnable()
-    {
-        playerHand = FindHand();
-
-    }
-
    
-    public virtual GameObject FindHand()
+    public virtual void FindHand()
     {
         GameObject hand = GameObject.Find("Hand");
-        return hand;
+        playerHand = hand;
+    }
+
+    public virtual void FindHand(GameObject hand)
+    {
+        playerHand = hand;
     }
 
     public virtual void SetToHand()

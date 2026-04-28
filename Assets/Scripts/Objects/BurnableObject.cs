@@ -81,7 +81,6 @@ private static readonly int OutlineColorID = Shader.PropertyToID("_OutlineColor"
 private void Awake()
 {
     currentHealth = Mathf.Clamp(currentHealth, 0f, maxHealth);
-
     if (TargetMeshFilter == null)
     {
         MeshFilter[] meshFilters = GetComponentsInChildren<MeshFilter>();
@@ -590,5 +589,11 @@ public Color GetHoverColor()
     {
         Gizmos.color = Color.red;
         Gizmos.DrawWireSphere(transform.position, spreadRadius);
+    }
+
+    public void SetAddedHealth(int amount)
+    {
+        maxHealth += amount;
+        currentHealth += amount;
     }
 }

@@ -1,3 +1,4 @@
+using System.Runtime.CompilerServices;
 using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
@@ -32,24 +33,24 @@ public class Player : MonoBehaviour
     [Header("Character Controller")]
     [SerializeField] private CharacterController cc;
     [Header("Inventory")]
+    public int InventorySize => inventorySize;
+    [SerializeField] private GameObject playerHand;
     [SerializeField] private int inventorySize;
     [SerializeField] private GameObject[] inventory;
     [SerializeField] private Image[] hudSlots;
+    [SerializeField] private GameObject[] itemPrefabs;
     public int CurrentSlot => currentSlot;
     [SerializeField] private int currentSlot;
     [Header("HUD")]
-    [SerializeField] private GameObject openWorldHUD;
     [SerializeField] private GameObject gameHUD;
-    public TMP_Text MoneyTxt => moneyTxt;
+    [SerializeField] private GameObject inventoryHUD;
     public TMP_Text InGameTimerTxt => inGameTimerTxt;
     public TMP_Text PercentCompleteTxt => percentCompleteTxt;
 
-    [SerializeField] private TMP_Text moneyTxt;
     [SerializeField] private TMP_Text inGameTimerTxt;
     [SerializeField] private TMP_Text percentCompleteTxt;
 
     [Header("Managers")]
-    [SerializeField] private OpenWorldManager openWorldManager;
     [SerializeField] private GameManager gameManager;
 
     public bool freezePlayer = false;
@@ -71,16 +72,18 @@ public class Player : MonoBehaviour
         {
             Destroy(gameObject);
         }
-
+        SetInventory(inventorySize);
+        currentSlot = 1;
         SetMovementSpeed(defaultWalkSpeed, defaultSprintSpeed);
         LockSprint(false);
     }
 
+
     private void Start()
     {
         Cursor.lockState = CursorLockMode.Locked;
-        inventory = SetInventory(inventorySize);
-        currentSlot = 1;
+        //inventory = SetInventory(inventorySize);
+        //currentSlot = 1;
     }
 
     void Update()
@@ -328,10 +331,10 @@ public class Player : MonoBehaviour
     }
 
 
-    private GameObject[] SetInventory(int size)
+    public void SetInventory(int size)
     {
         GameObject[] gameObjects = new GameObject[size];
-        return gameObjects;
+        inventory = gameObjects;
     }
 
     private int NumKeyboardPressedReturn()
@@ -401,8 +404,9 @@ public class Player : MonoBehaviour
     {
         for (int i = 0; i < inventory.Length; i++)
         {
-            if(inventory[i] == null)
+            if(!inventory[i])
             {
+                inventory[i] = null;
                 hudSlots[i].sprite = null;
                 hudSlots[i].color = new Color(255, 255, 255, 0);
             }
@@ -424,35 +428,103 @@ public class Player : MonoBehaviour
         }
     }
 
-    private void OnTriggerEnter(Collider other)
+    //private void OnTriggerEnter(Collider other)
+    //{
+    //    if(openWorldManager != null)
+    //    {
+    //        if(other.gameObject == openWorldManager.LevelCollider())
+    //        {
+    //            openWorldManager.PlayerEnterLevel();
+    //            ChangeHUD();
+    //        }
+    //    }
+    //}
+
+    public void FindObjectsInScene()
     {
-        if(openWorldManager != null)
+        //openWorldManager = FindAnyObjectByType<OpenWorldManager>();
+        gameManager = FindAnyObjectByType<GameManager>();
+    }
+  
+    //public void ChangeHUD()
+    //{
+    //    if(openWorldHUD.activeInHierarchy == true)
+    //    {
+    //        openWorldHUD.SetActive(false);
+    //        gameHUD.SetActive(true);
+    //    }
+    //    else
+    //    {
+    //        openWorldHUD.SetActive(true);
+    //        gameHUD.SetActive(false);
+    //    }
+    //}
+
+    public void SetPlayer(string sceneName)
+    {
+        if (sceneName.Equals("Upgrade"))
         {
-            if(other.gameObject == openWorldManager.LevelCollider())
+            playerCamera.gameObject.SetActive(false);
+            Cursor.lockState = CursorLockMode.None;
+            gameHUD.SetActive(false);
+            inventoryHUD.SetActive(false);
+        }
+        else
+        {
+            playerCamera.gameObject.SetActive(true);
+            Cursor.lockState = CursorLockMode.Locked;
+            gameHUD.SetActive(true);
+            inventoryHUD.SetActive(true);
+        }
+    }
+
+    public void LoadInventory()
+    {
+        CleanInventory();
+        Debug.Log("itemPrefabs length: " + itemPrefabs.Length);
+        foreach (GameObject objectPrefab in itemPrefabs)
+        {
+            GameObject objectItem = Instantiate(objectPrefab);
+            Debug.Log(objectItem.name);
+            Item item = objectItem.GetComponent<Item>();
+            bool emptySlot = false;
+            int emptyIndex = 0;
+            Debug.Log(inventory == null ? "Inventory is NULL" : "Inventory is NOT null");
+            for (int i = 0; i < inventory.Length; i++)
             {
-                openWorldManager.PlayerEnterLevel();
-                ChangeHUD();
+                if (!inventory[i])
+                {
+                    emptySlot = true;
+                    emptyIndex = i;
+                    Debug.Log("Yea booy it is your birthday");
+                    break;
+                }
+            }
+            if (emptySlot == true)
+            {
+                item.FindHand(playerHand);
+                item.SetToHand();
+                inventory[emptyIndex] = item.OnPickup();
+                item.GetSlotNumber(emptyIndex + 1);
+                item.ChangeRigidbodyState();
+                Debug.Log("Should of been done setting up the inventory");
             }
         }
     }
 
-    public void FindObjectsInScene()
+    public void CleanInventory()
     {
-        openWorldManager = FindAnyObjectByType<OpenWorldManager>();
-        gameManager = FindAnyObjectByType<GameManager>();
+        for (int i = 0; i < inventory.Length; i++)
+        {
+            if (!inventory[i]) 
+            {
+                inventory[i] = null;
+            }
+        }
     }
-  
-    public void ChangeHUD()
+
+    public void ResetInventory()
     {
-        if(openWorldHUD.activeInHierarchy == true)
-        {
-            openWorldHUD.SetActive(false);
-            gameHUD.SetActive(true);
-        }
-        else
-        {
-            openWorldHUD.SetActive(true);
-            gameHUD.SetActive(false);
-        }
+        inventory = new GameObject[inventorySize];
     }
 }

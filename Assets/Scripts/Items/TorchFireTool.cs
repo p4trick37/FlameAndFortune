@@ -40,6 +40,7 @@ public class TorchFireTool : Item
 
     [Header("Health")]
     [SerializeField] private float maxHealth;
+    private static float changeMaxHealth;
     [SerializeField] private float currentHealth;
     [SerializeField] private float drainPerSecond;
     private float healthTimer;
@@ -53,15 +54,14 @@ public class TorchFireTool : Item
     private bool micReady = false;
 
     public bool TorchIsLit => torchIsLit;
-
+    private int frameCount = 0;
 
     private void Start()
     {
-        if (playerCamera == null)
-        {
-            playerCamera = Camera.main;
-        }
+        maxHealth += changeMaxHealth;
         currentHealth = maxHealth;
+        changeMaxHealth = 0;
+
         healthTimer = 1;
         hoveredLayer = LayerMask.NameToLayer(hoveredLayerName);
         if (hoveredLayer < 0)
@@ -75,26 +75,33 @@ public class TorchFireTool : Item
 
     private void Update()
     {
-        UpdateHover();
-        CheckForSelection(); // From Item
-        if (Input.GetKeyDown(relightKey))
+        if (frameCount < 5)
         {
-            TryRelightTorch();
+            PlayerStart();
+            frameCount++;
         }
-
-        if (Input.GetMouseButton(0) && currentlySelecting == true && Player.instance.StopOtherInteractions == false)
+        else
         {
-            TryIgniteHeldTarget();
+            UpdateHover();
+            CheckForSelection(); // From Item
+            if (Input.GetKeyDown(relightKey))
+            {
+                TryRelightTorch();
+            }
+
+            if (Input.GetMouseButton(0) && currentlySelecting == true && Player.instance.StopOtherInteractions == false)
+            {
+                TryIgniteHeldTarget();
+            }
+
+            if (currentHealth <= 0)
+            {
+                torchIsLit = false;
+                litTorchVisual.SetActive(false);
+            }
+
+            UpdateProgressUI();
         }
-
-        if(currentHealth <= 0)
-        {
-            torchIsLit = false;
-            litTorchVisual.SetActive(false);
-        }
-
-        UpdateProgressUI();
-
     }
 
     private void SetupMicrophone()
@@ -347,5 +354,18 @@ if (Physics.Raycast(ray, out RaycastHit hit, hoverDistance, interactLayers))
             Debug.Log("health drain");
         }
         Debug.Log(healthTimer);
+    }
+
+    public static void AddHealth(int amount)
+    {
+        changeMaxHealth += amount;
+    }
+
+    private void PlayerStart()
+    {
+        if (playerCamera == null)
+        {
+            playerCamera = Camera.main;
+        }
     }
 }
