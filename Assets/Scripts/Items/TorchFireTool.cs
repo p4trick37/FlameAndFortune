@@ -71,6 +71,8 @@ public class TorchFireTool : Item
 
         UpdateTorchVisual();
         SetupMicrophone();
+
+        progressUI = FindProgressBar();
     }
 
     private void Update()
@@ -367,5 +369,11 @@ if (Physics.Raycast(ray, out RaycastHit hit, hoverDistance, interactLayers))
         {
             playerCamera = Camera.main;
         }
+    }
+
+    private IgniteProgressUI FindProgressBar()
+    {
+        IgniteProgressUI progressbar = FindAnyObjectByType<IgniteProgressUI>();
+        return progressbar;
     }
 }

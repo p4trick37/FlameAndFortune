@@ -248,7 +248,7 @@ MonoBehaviour:
   m_FallbackScreenDPI: 96
   m_DefaultSpriteDPI: 96
   m_DynamicPixelsPerUnit: 1
-  m_PresetInfoIsWorld: 1
+  m_PresetInfoIsWorld: 0
 --- !u!114 &1425528376943450445
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -281,7 +281,7 @@ MonoBehaviour:
   slider: {fileID: 2434970869444798281}
   fillImage: {fileID: 7758525261506062490}
   canvasGroup: {fileID: 6385904435180936720}
-  extraOffset: {x: 0, y: -0.5, z: 0}
+  extraOffset: {x: 0, y: 0, z: 0}
 --- !u!225 &6385904435180936720
 CanvasGroup:
   m_ObjectHideFlags: 0

@@ -1,3 +1,4 @@
+using System.Security;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -31,6 +32,8 @@ public class SceneSwitcher : MonoBehaviour
     {
         if (useSpaceToContinue && Input.GetKeyDown(KeyCode.Space))
         {
+            Player.instance.ClearInventory();
+            Player.instance.ResetInventory();
             LoadNextScene();
         }
     }

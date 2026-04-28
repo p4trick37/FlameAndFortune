@@ -74,9 +74,9 @@ MonoBehaviour:
   micThreshold: 0.02
   drawDebugRay: 1
   logHoverName: 0
-  maxHealth: 60
+  maxHealth: 8
   currentHealth: 0
-  drainPerSecond: 3
+  drainPerSecond: 1
 --- !u!65 &2223729465300215322
 BoxCollider:
   m_ObjectHideFlags: 0
