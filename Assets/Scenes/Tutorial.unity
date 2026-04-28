@@ -460,7 +460,7 @@ MonoBehaviour:
   numberOfObjects: 0
   percentBurned: 0
   percentBurnedText: {fileID: 0}
-  burnTime: 99999
+  burnTime: 60
   timerText: {fileID: 0}
   timeToSwitchScene: 1.5
   playerSpawnPoint: {fileID: 541035306}
@@ -2072,11 +2072,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 5622847430578937229, guid: b405d7ff5a99ac342b3006a33d31e5b5, type: 3}
   m_PrefabInstance: {fileID: 906026981}
   m_PrefabAsset: {fileID: 0}
---- !u!4 &942367548 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 3212859566087897257, guid: b4a4b1ad148c9524fb9f2a51a8da89d3, type: 3}
-  m_PrefabInstance: {fileID: 1344472497}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &987870082
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2692,7 +2687,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 249091169}
-  m_Father: {fileID: 942367548}
+  m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -2773,7 +2768,7 @@ PrefabInstance:
     - target: {fileID: 268714872355346073, guid: f6b38e867a7963c43a9e240efe045868, type: 3}
       propertyPath: nextScene
       value: 
-      objectReference: {fileID: 102900000, guid: 2257e8e7bcae0b742a9770102266bbac, type: 3}
+      objectReference: {fileID: 102900000, guid: 4d10cf8a7fb69754b8ee9ed6d32ab7bc, type: 3}
     - target: {fileID: 268714872355346073, guid: f6b38e867a7963c43a9e240efe045868, type: 3}
       propertyPath: useSpaceToContinue
       value: 1
@@ -2953,10 +2948,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
-    m_AddedGameObjects:
-    - targetCorrespondingSourceObject: {fileID: 3212859566087897257, guid: b4a4b1ad148c9524fb9f2a51a8da89d3, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1270679003}
+    m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b4a4b1ad148c9524fb9f2a51a8da89d3, type: 3}
 --- !u!1001 &1358058296
@@ -5630,6 +5622,7 @@ SceneRoots:
   m_Roots:
   - {fileID: 1804897360}
   - {fileID: 1242408357}
+  - {fileID: 1270679003}
   - {fileID: 1513937324}
   - {fileID: 1344472497}
   - {fileID: 263737688}

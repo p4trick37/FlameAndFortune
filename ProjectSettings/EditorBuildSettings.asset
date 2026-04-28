@@ -9,6 +9,12 @@ EditorBuildSettings:
     path: Assets/Scenes/MarkScene.unity
     guid: 99c9720ab356a0642a771bea13969a05
   - enabled: 1
+    path: Assets/Scenes/StartMenu.unity
+    guid: 463af2c2fa3e13846a190848d04c5f75
+  - enabled: 1
+    path: Assets/Scenes/Story.unity
+    guid: 4c74cfd74d79b574f9a778217c337182
+  - enabled: 1
     path: Assets/Scenes/Tutorial.unity
     guid: 9d8282efbb535a149b1f1d721e417c98
   - enabled: 1

@@ -369,12 +369,17 @@ Debug.Log("Updating burn visual on " + name);
                 }
 
                 if (other.IsBurnedOut || other.IsBurning)
-                {
-                    continue;
-                }
+{
+    continue;
+}
 
-                float igniteDamageThisTick = spreadIgniteDamagePerSecond * spreadInterval;
-                other.AddIgniteDamage(igniteDamageThisTick);
+if (other.CompareTag("Electronic") || hits[i].CompareTag("Electronic"))
+{
+    continue;
+}
+
+float igniteDamageThisTick = spreadIgniteDamagePerSecond * spreadInterval;
+other.AddIgniteDamage(igniteDamageThisTick);
             }
 
             yield return wait;
