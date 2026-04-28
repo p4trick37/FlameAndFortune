@@ -6868,8 +6868,16 @@ PrefabInstance:
       value: Painting_small_C
       objectReference: {fileID: 0}
     - target: {fileID: 2640473230381553717, guid: ba79dc52f2b009246bd54dd347d8c595, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 2640473230381553717, guid: ba79dc52f2b009246bd54dd347d8c595, type: 3}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2640473230381553717, guid: ba79dc52f2b009246bd54dd347d8c595, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3453989082984759951, guid: ba79dc52f2b009246bd54dd347d8c595, type: 3}
       propertyPath: m_RootOrder
@@ -6918,7 +6926,10 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 2640473230381553717, guid: ba79dc52f2b009246bd54dd347d8c595, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1949968392}
   m_SourcePrefab: {fileID: 100100000, guid: ba79dc52f2b009246bd54dd347d8c595, type: 3}
 --- !u!4 &187048711 stripped
 Transform:
@@ -13049,13 +13060,32 @@ PrefabInstance:
       value: Vase_A
       objectReference: {fileID: 0}
     - target: {fileID: 6449584350095330671, guid: 447482a62d099f64eb06d91f57597382, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 6449584350095330671, guid: 447482a62d099f64eb06d91f57597382, type: 3}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6449584350095330671, guid: 447482a62d099f64eb06d91f57597382, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7947611911684527755, guid: 447482a62d099f64eb06d91f57597382, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 7947611911684527755, guid: 447482a62d099f64eb06d91f57597382, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 6449584350095330671, guid: 447482a62d099f64eb06d91f57597382, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1534054209}
   m_SourcePrefab: {fileID: 100100000, guid: 447482a62d099f64eb06d91f57597382, type: 3}
 --- !u!4 &377664568 stripped
 Transform:
@@ -19026,6 +19056,11 @@ MonoBehaviour:
   TargetMeshFilter: {fileID: 0}
   uiAnchorOverride: {fileID: 0}
   uiOffset: {x: 0, y: 0, z: 0}
+--- !u!1 &525453150 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 106908626439682376, guid: 9fa298a564f71fa40b8b6dfdd36cbf9a, type: 3}
+  m_PrefabInstance: {fileID: 824373056}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &532693570
 GameObject:
   m_ObjectHideFlags: 0
@@ -29770,6 +29805,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Painting_medium_J
       objectReference: {fileID: 0}
+    - target: {fileID: 106908626439682376, guid: 9fa298a564f71fa40b8b6dfdd36cbf9a, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 106908626439682376, guid: 9fa298a564f71fa40b8b6dfdd36cbf9a, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 734087258229761010, guid: 9fa298a564f71fa40b8b6dfdd36cbf9a, type: 3}
       propertyPath: m_RootOrder
       value: 370
@@ -29817,13 +29860,54 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 106908626439682376, guid: 9fa298a564f71fa40b8b6dfdd36cbf9a, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 824373058}
   m_SourcePrefab: {fileID: 100100000, guid: 9fa298a564f71fa40b8b6dfdd36cbf9a, type: 3}
 --- !u!4 &824373057 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 734087258229761010, guid: 9fa298a564f71fa40b8b6dfdd36cbf9a, type: 3}
   m_PrefabInstance: {fileID: 824373056}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &824373058
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 525453150}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4b234415ec5b9f948896c680264c7815, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::BurnableObject
+  fireType: 0
+  maxHealth: 100
+  currentHealth: 100
+  igniteDamagePercentToStartBurning: 0.1
+  burnDamagePerSecond: 10
+  isBurning: 0
+  isBurnedOut: 0
+  isGasSoaked: 0
+  gasIgniteMultiplier: 2
+  gasBurnMultiplier: 2
+  canSpreadFire: 1
+  spreadRadius: 0.3
+  spreadInterval: 0.5
+  spreadIgniteDamagePerSecond: 3
+  spreadLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  targetRenderers: []
+  burnedColor: {r: 0.1, g: 0.1, b: 0.1, a: 1}
+  affectEmission: 0
+  fireParticlePrefab: {fileID: 8295591563862043295, guid: 86cf272c329017647a3b0c6c6edcff58, type: 3}
+  particleSpawnPoint: {fileID: 0}
+  particleOffset: {x: 0, y: 0, z: 0}
+  TargetMeshFilter: {fileID: 0}
+  uiAnchorOverride: {fileID: 0}
+  uiOffset: {x: 0, y: 0, z: 0}
 --- !u!1 &825228706 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 3849011959669116970, guid: 0bd9146884a5fed4b9b3cc9c767d1b93, type: 3}
@@ -36145,6 +36229,11 @@ PrefabInstance:
 Transform:
   m_CorrespondingSourceObject: {fileID: 7303812653065604609, guid: 5845ef3d1e22e4d49b8258eb4104bd6b, type: 3}
   m_PrefabInstance: {fileID: 1030576854}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1031358429 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8448786404272111867, guid: 8efd7eb341db2d34da5f0583e1039216, type: 3}
+  m_PrefabInstance: {fileID: 1944989677}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1031762082
 PrefabInstance:
@@ -44349,8 +44438,16 @@ PrefabInstance:
       value: Painting_table_I
       objectReference: {fileID: 0}
     - target: {fileID: 8466703734528798844, guid: ab426a055cff2d14eb81eaf0188b7774, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 8466703734528798844, guid: ab426a055cff2d14eb81eaf0188b7774, type: 3}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8466703734528798844, guid: ab426a055cff2d14eb81eaf0188b7774, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 9093918409954929350, guid: ab426a055cff2d14eb81eaf0188b7774, type: 3}
       propertyPath: m_RootOrder
@@ -44399,7 +44496,10 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 8466703734528798844, guid: ab426a055cff2d14eb81eaf0188b7774, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1360036949}
   m_SourcePrefab: {fileID: 100100000, guid: ab426a055cff2d14eb81eaf0188b7774, type: 3}
 --- !u!4 &1332989749 stripped
 Transform:
@@ -44778,6 +44878,22 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2985174859248636536, guid: b4a4b1ad148c9524fb9f2a51a8da89d3, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2985174859248636536, guid: b4a4b1ad148c9524fb9f2a51a8da89d3, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2985174859248636536, guid: b4a4b1ad148c9524fb9f2a51a8da89d3, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2985174859248636536, guid: b4a4b1ad148c9524fb9f2a51a8da89d3, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3212859566087897257, guid: b4a4b1ad148c9524fb9f2a51a8da89d3, type: 3}
       propertyPath: m_LocalPosition.x
       value: -3.18
@@ -44821,6 +44937,38 @@ PrefabInstance:
     - target: {fileID: 7961538665946744700, guid: b4a4b1ad148c9524fb9f2a51a8da89d3, type: 3}
       propertyPath: m_Name
       value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 8127373592363285297, guid: b4a4b1ad148c9524fb9f2a51a8da89d3, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8127373592363285297, guid: b4a4b1ad148c9524fb9f2a51a8da89d3, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8127373592363285297, guid: b4a4b1ad148c9524fb9f2a51a8da89d3, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8127373592363285297, guid: b4a4b1ad148c9524fb9f2a51a8da89d3, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8224424342811157318, guid: b4a4b1ad148c9524fb9f2a51a8da89d3, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8224424342811157318, guid: b4a4b1ad148c9524fb9f2a51a8da89d3, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8224424342811157318, guid: b4a4b1ad148c9524fb9f2a51a8da89d3, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8224424342811157318, guid: b4a4b1ad148c9524fb9f2a51a8da89d3, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -45678,6 +45826,49 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 7348639668777227509, guid: f3abc6dabb7972941809a9087f2c80bd, type: 3}
   m_PrefabInstance: {fileID: 1358981365}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1360036945 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8466703734528798844, guid: ab426a055cff2d14eb81eaf0188b7774, type: 3}
+  m_PrefabInstance: {fileID: 1332989748}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1360036949
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1360036945}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4b234415ec5b9f948896c680264c7815, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::BurnableObject
+  fireType: 0
+  maxHealth: 100
+  currentHealth: 100
+  igniteDamagePercentToStartBurning: 0.1
+  burnDamagePerSecond: 10
+  isBurning: 0
+  isBurnedOut: 0
+  isGasSoaked: 0
+  gasIgniteMultiplier: 2
+  gasBurnMultiplier: 2
+  canSpreadFire: 1
+  spreadRadius: 0.3
+  spreadInterval: 0.5
+  spreadIgniteDamagePerSecond: 3
+  spreadLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  targetRenderers: []
+  burnedColor: {r: 0.1, g: 0.1, b: 0.1, a: 1}
+  affectEmission: 0
+  fireParticlePrefab: {fileID: 8295591563862043295, guid: 86cf272c329017647a3b0c6c6edcff58, type: 3}
+  particleSpawnPoint: {fileID: 0}
+  particleOffset: {x: 0, y: 0, z: 0}
+  TargetMeshFilter: {fileID: 0}
+  uiAnchorOverride: {fileID: 0}
+  uiOffset: {x: 0, y: 0, z: 0}
 --- !u!1001 &1363768096
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -51924,6 +52115,49 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::RotateObject
   closeRotation: 0
   openRotation: -95
+--- !u!1 &1534054205 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6449584350095330671, guid: 447482a62d099f64eb06d91f57597382, type: 3}
+  m_PrefabInstance: {fileID: 377664567}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1534054209
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1534054205}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4b234415ec5b9f948896c680264c7815, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::BurnableObject
+  fireType: 0
+  maxHealth: 100
+  currentHealth: 100
+  igniteDamagePercentToStartBurning: 0.1
+  burnDamagePerSecond: 10
+  isBurning: 0
+  isBurnedOut: 0
+  isGasSoaked: 0
+  gasIgniteMultiplier: 2
+  gasBurnMultiplier: 2
+  canSpreadFire: 1
+  spreadRadius: 0.3
+  spreadInterval: 0.5
+  spreadIgniteDamagePerSecond: 3
+  spreadLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  targetRenderers: []
+  burnedColor: {r: 0.1, g: 0.1, b: 0.1, a: 1}
+  affectEmission: 0
+  fireParticlePrefab: {fileID: 8295591563862043295, guid: 86cf272c329017647a3b0c6c6edcff58, type: 3}
+  particleSpawnPoint: {fileID: 0}
+  particleOffset: {x: 0, y: 0, z: 0}
+  TargetMeshFilter: {fileID: 0}
+  uiAnchorOverride: {fileID: 0}
+  uiOffset: {x: 0, y: 0, z: 0}
 --- !u!1001 &1538064037
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -67423,8 +67657,16 @@ PrefabInstance:
       value: Painting_table_C
       objectReference: {fileID: 0}
     - target: {fileID: 8448786404272111867, guid: 8efd7eb341db2d34da5f0583e1039216, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 8448786404272111867, guid: 8efd7eb341db2d34da5f0583e1039216, type: 3}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8448786404272111867, guid: 8efd7eb341db2d34da5f0583e1039216, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 9082580483509475905, guid: 8efd7eb341db2d34da5f0583e1039216, type: 3}
       propertyPath: m_RootOrder
@@ -67473,13 +67715,54 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 8448786404272111867, guid: 8efd7eb341db2d34da5f0583e1039216, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1944989682}
   m_SourcePrefab: {fileID: 100100000, guid: 8efd7eb341db2d34da5f0583e1039216, type: 3}
 --- !u!4 &1944989678 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 9082580483509475905, guid: 8efd7eb341db2d34da5f0583e1039216, type: 3}
   m_PrefabInstance: {fileID: 1944989677}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1944989682
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1031358429}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4b234415ec5b9f948896c680264c7815, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::BurnableObject
+  fireType: 0
+  maxHealth: 100
+  currentHealth: 100
+  igniteDamagePercentToStartBurning: 0.1
+  burnDamagePerSecond: 10
+  isBurning: 0
+  isBurnedOut: 0
+  isGasSoaked: 0
+  gasIgniteMultiplier: 2
+  gasBurnMultiplier: 2
+  canSpreadFire: 1
+  spreadRadius: 0.3
+  spreadInterval: 0.5
+  spreadIgniteDamagePerSecond: 3
+  spreadLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  targetRenderers: []
+  burnedColor: {r: 0.1, g: 0.1, b: 0.1, a: 1}
+  affectEmission: 0
+  fireParticlePrefab: {fileID: 8295591563862043295, guid: 86cf272c329017647a3b0c6c6edcff58, type: 3}
+  particleSpawnPoint: {fileID: 0}
+  particleOffset: {x: 0, y: 0, z: 0}
+  TargetMeshFilter: {fileID: 0}
+  uiAnchorOverride: {fileID: 0}
+  uiOffset: {x: 0, y: 0, z: 0}
 --- !u!1001 &1945848694
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -67666,6 +67949,49 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 7470883493808617156, guid: 593f1653d598169429c0f241256ffc48, type: 3}
   m_PrefabInstance: {fileID: 1478388949}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1949968388 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2640473230381553717, guid: ba79dc52f2b009246bd54dd347d8c595, type: 3}
+  m_PrefabInstance: {fileID: 187048710}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1949968392
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1949968388}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4b234415ec5b9f948896c680264c7815, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::BurnableObject
+  fireType: 0
+  maxHealth: 100
+  currentHealth: 100
+  igniteDamagePercentToStartBurning: 0.1
+  burnDamagePerSecond: 10
+  isBurning: 0
+  isBurnedOut: 0
+  isGasSoaked: 0
+  gasIgniteMultiplier: 2
+  gasBurnMultiplier: 2
+  canSpreadFire: 1
+  spreadRadius: 0.3
+  spreadInterval: 0.5
+  spreadIgniteDamagePerSecond: 3
+  spreadLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  targetRenderers: []
+  burnedColor: {r: 0.1, g: 0.1, b: 0.1, a: 1}
+  affectEmission: 0
+  fireParticlePrefab: {fileID: 8295591563862043295, guid: 86cf272c329017647a3b0c6c6edcff58, type: 3}
+  particleSpawnPoint: {fileID: 0}
+  particleOffset: {x: 0, y: 0, z: 0}
+  TargetMeshFilter: {fileID: 0}
+  uiAnchorOverride: {fileID: 0}
+  uiOffset: {x: 0, y: 0, z: 0}
 --- !u!1001 &1951205598
 PrefabInstance:
   m_ObjectHideFlags: 0
