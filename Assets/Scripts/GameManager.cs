@@ -1,8 +1,6 @@
 using UnityEngine;
 using System.Collections.Generic;
 using TMPro;
-using System.Runtime.CompilerServices;
-using UnityEditor.UIElements;
 using System.Collections;
 using UnityEngine.SceneManagement;
 public class GameManager : MonoBehaviour
