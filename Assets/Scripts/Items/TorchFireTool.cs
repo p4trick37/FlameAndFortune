@@ -1,4 +1,3 @@
-using System.Threading;
 using UnityEngine;
 
 public class TorchFireTool : Item
@@ -29,10 +28,10 @@ public class TorchFireTool : Item
     [SerializeField] private float hairsprayIgniteMultiplier = 2.5f;
     [SerializeField] private KeyCode fallbackBoostKey = KeyCode.LeftShift;
 
-    [Header("Microphone")]
-    [SerializeField] private bool useMicrophone = true;
-    [SerializeField] private int sampleWindow = 128;
-    [SerializeField] private float micThreshold = 0.02f;
+    // [Header("Microphone")]
+    // [SerializeField] private bool useMicrophone = true;
+    // [SerializeField] private int sampleWindow = 128;
+    // [SerializeField] private float micThreshold = 0.02f;
 
     [Header("Debug")]
     [SerializeField] private bool drawDebugRay = true;
@@ -70,7 +69,7 @@ public class TorchFireTool : Item
         }
 
         UpdateTorchVisual();
-        SetupMicrophone();
+        // SetupMicrophone();
 
         progressUI = FindProgressBar();
     }
@@ -106,23 +105,23 @@ public class TorchFireTool : Item
         }
     }
 
-    private void SetupMicrophone()
-    {
-        if (!useMicrophone)
-        {
-            return;
-        }
+    // private void SetupMicrophone()
+    // {
+    //     if (!useMicrophone)
+    //     {
+    //         return;
+    //     }
 
-        if (Microphone.devices == null || Microphone.devices.Length == 0)
-        {
-            micReady = false;
-            return;
-        }
+    //     if (Microphone.devices == null || Microphone.devices.Length == 0)
+    //     {
+    //         micReady = false;
+    //         return;
+    //     }
 
-        selectedMicDevice = Microphone.devices[0];
-        micClip = Microphone.Start(selectedMicDevice, true, 1, 44100);
-        micReady = true;
-    }
+    //     selectedMicDevice = Microphone.devices[0];
+    //     micClip = Microphone.Start(selectedMicDevice, true, 1, 44100);
+    //     micReady = true;
+    // }
 
     private void UpdateHover()
     {
@@ -215,10 +214,10 @@ if (Physics.Raycast(ray, out RaycastHit hit, hoverDistance, interactLayers))
 
         float igniteDamage = torchIgniteDamagePerSecond * Time.deltaTime;
 
-        if (IsBoostActive())
-        {
-            igniteDamage *= hairsprayIgniteMultiplier;
-        }
+        // if (IsBoostActive())
+        // {
+        //     igniteDamage *= hairsprayIgniteMultiplier;
+        // }
         UpdateHealth();
         Debug.Log("Applying ignite damage: " + igniteDamage + " to " + currentHovered.name);
         currentHovered.AddIgniteDamage(igniteDamage);
@@ -226,41 +225,41 @@ if (Physics.Raycast(ray, out RaycastHit hit, hoverDistance, interactLayers))
         
     }
 
-    private bool IsBoostActive()
-    {
-        bool fallbackHeld = Input.GetKey(fallbackBoostKey);
-        bool micBlowing = GetMicVolumeLevel() >= micThreshold;
-        return fallbackHeld || micBlowing;
-    }
+    // private bool IsBoostActive()
+    // {
+    //     bool fallbackHeld = Input.GetKey(fallbackBoostKey);
+    //     // bool micBlowing = GetMicVolumeLevel() >= micThreshold;
+    //     // return fallbackHeld || micBlowing;
+    // }
 
-    private float GetMicVolumeLevel()
-    {
-        if (!useMicrophone || !micReady || micClip == null)
-        {
-            return 0f;
-        }
+    // private float GetMicVolumeLevel()
+    // {
+    //     if (!useMicrophone || !micReady || micClip == null)
+    //     {
+    //         return 0f;
+    //     }
 
-        int micPosition = Microphone.GetPosition(selectedMicDevice) - sampleWindow + 1;
-        if (micPosition < 0)
-        {
-            return 0f;
-        }
+    //     int micPosition = Microphone.GetPosition(selectedMicDevice) - sampleWindow + 1;
+    //     if (micPosition < 0)
+    //     {
+    //         return 0f;
+    //     }
 
-        float[] waveData = new float[sampleWindow];
-        micClip.GetData(waveData, micPosition);
+    //     float[] waveData = new float[sampleWindow];
+    //     micClip.GetData(waveData, micPosition);
 
-        float levelMax = 0f;
-        for (int i = 0; i < sampleWindow; i++)
-        {
-            float wavePeak = Mathf.Abs(waveData[i]);
-            if (wavePeak > levelMax)
-            {
-                levelMax = wavePeak;
-            }
-        }
+    //     float levelMax = 0f;
+    //     for (int i = 0; i < sampleWindow; i++)
+    //     {
+    //         float wavePeak = Mathf.Abs(waveData[i]);
+    //         if (wavePeak > levelMax)
+    //         {
+    //             levelMax = wavePeak;
+    //         }
+    //     }
 
-        return levelMax;
-    }
+    //     return levelMax;
+    // }
 
     public void SetTorchLit(bool lit)
     {
@@ -334,10 +333,10 @@ if (Physics.Raycast(ray, out RaycastHit hit, hoverDistance, interactLayers))
             currentHovered.SetHovered(false, hoveredLayer);
         }
 
-        if (micReady && !string.IsNullOrEmpty(selectedMicDevice))
-        {
-            Microphone.End(selectedMicDevice);
-        }
+        // if (micReady && !string.IsNullOrEmpty(selectedMicDevice))
+        // {
+        //     Microphone.End(selectedMicDevice);
+        // }
     }
 
     private void OnDrawGizmosSelected()
