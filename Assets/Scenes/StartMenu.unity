@@ -1381,8 +1381,8 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1963758291}
         m_TargetAssemblyTypeName: SceneSwitcher, Assembly-CSharp
-        m_MethodName: SwitchToScene
-        m_Mode: 5
+        m_MethodName: LoadNextScene
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -2322,6 +2322,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 268714872355346073, guid: f6b38e867a7963c43a9e240efe045868, type: 3}
+      propertyPath: nextScene
+      value: 
+      objectReference: {fileID: 102900000, guid: 4c74cfd74d79b574f9a778217c337182, type: 3}
+    - target: {fileID: 268714872355346073, guid: f6b38e867a7963c43a9e240efe045868, type: 3}
+      propertyPath: nextSceneName
+      value: Story
+      objectReference: {fileID: 0}
     - target: {fileID: 3488808635654224756, guid: f6b38e867a7963c43a9e240efe045868, type: 3}
       propertyPath: m_LocalPosition.x
       value: 2014.0426

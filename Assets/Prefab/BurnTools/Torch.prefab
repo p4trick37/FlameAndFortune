@@ -69,12 +69,9 @@ MonoBehaviour:
   torchIgniteDamagePerSecond: 5
   hairsprayIgniteMultiplier: 2.5
   fallbackBoostKey: 304
-  useMicrophone: 1
-  sampleWindow: 128
-  micThreshold: 0.02
   drawDebugRay: 1
   logHoverName: 0
-  maxHealth: 8
+  maxHealth: 15
   currentHealth: 0
   drainPerSecond: 1
 --- !u!65 &2223729465300215322

@@ -13,13 +13,13 @@ public class SceneSwitcher : MonoBehaviour
 #endif
 
     [Header("Settings")]
+    [SerializeField] private string nextSceneName;   // Used in builds
     [SerializeField] private bool useSpaceToContinue = false;
 
-    private string nextSceneName;
-
-    private void Awake()
+    private void OnValidate()
     {
 #if UNITY_EDITOR
+        // Auto-fill the scene name whenever the SceneAsset changes
         if (nextScene != null)
         {
             nextSceneName = nextScene.name;
@@ -37,13 +37,13 @@ public class SceneSwitcher : MonoBehaviour
         }
     }
 
-    // 🔹 Used by UI Button (your current setup)
+    // 🔹 Used by UI Button
     public void SwitchToScene(string sceneName)
     {
         SceneManager.LoadScene(sceneName);
     }
 
-    // 🔹 Used for tutorial progression (Space key)
+    // 🔹 Used for spacebar progression
     public void LoadNextScene()
     {
         if (!string.IsNullOrEmpty(nextSceneName))

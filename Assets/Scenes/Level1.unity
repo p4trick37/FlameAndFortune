@@ -49429,6 +49429,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 668758499446700805, guid: 593f1653d598169429c0f241256ffc48, type: 3}
+      propertyPath: stopDistance
+      value: 2.7
+      objectReference: {fileID: 0}
+    - target: {fileID: 668758499446700805, guid: 593f1653d598169429c0f241256ffc48, type: 3}
       propertyPath: moveObjectsWith.Array.size
       value: 2
       objectReference: {fileID: 0}
@@ -49575,6 +49579,10 @@ PrefabInstance:
     - target: {fileID: 6727271184424281416, guid: 593f1653d598169429c0f241256ffc48, type: 3}
       propertyPath: m_LocalPosition.x
       value: 2.019
+      objectReference: {fileID: 0}
+    - target: {fileID: 6848716263078472034, guid: 593f1653d598169429c0f241256ffc48, type: 3}
+      propertyPath: m_Enabled
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6873411840122165798, guid: 593f1653d598169429c0f241256ffc48, type: 3}
       propertyPath: m_TagString
@@ -69137,7 +69145,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1777062070157419919, guid: 9d4351e70891e754cb9869ad844c5e16, type: 3}
       propertyPath: stopDistance
-      value: 4
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 1837390232446101499, guid: 9d4351e70891e754cb9869ad844c5e16, type: 3}
       propertyPath: m_StaticEditorFlags
