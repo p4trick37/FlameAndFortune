@@ -3434,7 +3434,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4332040048999818023, guid: 2446554e4d0da5f48a09f0358dd26b7e, type: 3}
       propertyPath: spreadRadius
-      value: 0.3
+      value: 0.85
       objectReference: {fileID: 0}
     - target: {fileID: 4332040048999818023, guid: 2446554e4d0da5f48a09f0358dd26b7e, type: 3}
       propertyPath: spreadInterval
@@ -13059,7 +13059,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 768184855438726613, guid: 8f86dc0b2d4b7504eb2b3980c06b38c5, type: 3}
       propertyPath: spreadRadius
-      value: 0.3
+      value: 0.55
       objectReference: {fileID: 0}
     - target: {fileID: 768184855438726613, guid: 8f86dc0b2d4b7504eb2b3980c06b38c5, type: 3}
       propertyPath: spreadInterval
@@ -30431,7 +30431,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2156334852093623894, guid: fd0718736eb8b2348ae0a8e133c4e2d0, type: 3}
       propertyPath: spreadRadius
-      value: 0.3
+      value: 1.19
       objectReference: {fileID: 0}
     - target: {fileID: 2156334852093623894, guid: fd0718736eb8b2348ae0a8e133c4e2d0, type: 3}
       propertyPath: currentHealth
@@ -32622,12 +32622,20 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 8295591563862043295, guid: 86cf272c329017647a3b0c6c6edcff58, type: 3}
     - target: {fileID: 976112939787875477, guid: 098e735f32ffb8f43a8f0e62f1644580, type: 3}
-      propertyPath: m_StaticEditorFlags
+      propertyPath: m_Layer
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 976112939787875477, guid: 098e735f32ffb8f43a8f0e62f1644580, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 1328212915206419845, guid: 098e735f32ffb8f43a8f0e62f1644580, type: 3}
       propertyPath: m_Name
       value: Shower_stall_190cm_R
+      objectReference: {fileID: 0}
+    - target: {fileID: 1328212915206419845, guid: 098e735f32ffb8f43a8f0e62f1644580, type: 3}
+      propertyPath: m_Layer
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1328212915206419845, guid: 098e735f32ffb8f43a8f0e62f1644580, type: 3}
       propertyPath: m_IsActive
@@ -32635,7 +32643,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1328212915206419845, guid: 098e735f32ffb8f43a8f0e62f1644580, type: 3}
       propertyPath: m_StaticEditorFlags
-      value: 0
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 1811874454369120063, guid: 098e735f32ffb8f43a8f0e62f1644580, type: 3}
       propertyPath: m_RootOrder
@@ -32682,8 +32690,12 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2031578145648398900, guid: 098e735f32ffb8f43a8f0e62f1644580, type: 3}
-      propertyPath: m_StaticEditorFlags
+      propertyPath: m_Layer
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2031578145648398900, guid: 098e735f32ffb8f43a8f0e62f1644580, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 2477444272883512291, guid: 098e735f32ffb8f43a8f0e62f1644580, type: 3}
       propertyPath: uiOffset.y
@@ -32698,8 +32710,12 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 8295591563862043295, guid: 86cf272c329017647a3b0c6c6edcff58, type: 3}
     - target: {fileID: 3640143818079683545, guid: 098e735f32ffb8f43a8f0e62f1644580, type: 3}
-      propertyPath: m_StaticEditorFlags
+      propertyPath: m_Layer
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3640143818079683545, guid: 098e735f32ffb8f43a8f0e62f1644580, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 3736829303282341186, guid: 098e735f32ffb8f43a8f0e62f1644580, type: 3}
       propertyPath: uiOffset.y
@@ -32742,8 +32758,12 @@ PrefabInstance:
       value: 1.036
       objectReference: {fileID: 0}
     - target: {fileID: 5436273758892485075, guid: 098e735f32ffb8f43a8f0e62f1644580, type: 3}
-      propertyPath: m_StaticEditorFlags
+      propertyPath: m_Layer
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5436273758892485075, guid: 098e735f32ffb8f43a8f0e62f1644580, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 6746243666157607777, guid: 098e735f32ffb8f43a8f0e62f1644580, type: 3}
       propertyPath: uiOffset.y
@@ -32770,8 +32790,12 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 8295591563862043295, guid: 86cf272c329017647a3b0c6c6edcff58, type: 3}
     - target: {fileID: 7333118194442893374, guid: 098e735f32ffb8f43a8f0e62f1644580, type: 3}
-      propertyPath: m_StaticEditorFlags
+      propertyPath: m_Layer
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7333118194442893374, guid: 098e735f32ffb8f43a8f0e62f1644580, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 7966771575041598084, guid: 098e735f32ffb8f43a8f0e62f1644580, type: 3}
       propertyPath: m_LocalPosition.x
@@ -32781,6 +32805,11 @@ PrefabInstance:
     - {fileID: 691990492510214405, guid: 098e735f32ffb8f43a8f0e62f1644580, type: 3}
     - {fileID: 3966605899241034086, guid: 098e735f32ffb8f43a8f0e62f1644580, type: 3}
     - {fileID: -1877992133570689317, guid: 098e735f32ffb8f43a8f0e62f1644580, type: 3}
+    - {fileID: 2477444272883512291, guid: 098e735f32ffb8f43a8f0e62f1644580, type: 3}
+    - {fileID: 3736829303282341186, guid: 098e735f32ffb8f43a8f0e62f1644580, type: 3}
+    - {fileID: 783454253502701702, guid: 098e735f32ffb8f43a8f0e62f1644580, type: 3}
+    - {fileID: 6746243666157607777, guid: 098e735f32ffb8f43a8f0e62f1644580, type: 3}
+    - {fileID: 7249662709752114853, guid: 098e735f32ffb8f43a8f0e62f1644580, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -48368,7 +48397,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3676734797059334009, guid: 02b7dbc4ca82b08449b26b7b15980dde, type: 3}
       propertyPath: spreadRadius
-      value: 0.3
+      value: 0.62
       objectReference: {fileID: 0}
     - target: {fileID: 3676734797059334009, guid: 02b7dbc4ca82b08449b26b7b15980dde, type: 3}
       propertyPath: currentHealth
@@ -61476,7 +61505,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -6411325434937318648, guid: a52ad3cad3a455c4994d02b7279979b0, type: 3}
       propertyPath: spreadRadius
-      value: 0.3
+      value: 0.88
       objectReference: {fileID: 0}
     - target: {fileID: -6411325434937318648, guid: a52ad3cad3a455c4994d02b7279979b0, type: 3}
       propertyPath: currentHealth
@@ -65774,7 +65803,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9038219611160926848, guid: 99265c689b5762b4a8463d68b4ddc60b, type: 3}
       propertyPath: spreadRadius
-      value: 0.3
+      value: 0.62
       objectReference: {fileID: 0}
     - target: {fileID: 9038219611160926848, guid: 99265c689b5762b4a8463d68b4ddc60b, type: 3}
       propertyPath: currentHealth
@@ -71688,7 +71717,7 @@ MonoBehaviour:
   gasIgniteMultiplier: 2
   gasBurnMultiplier: 2
   canSpreadFire: 1
-  spreadRadius: 1
+  spreadRadius: 1.2
   spreadInterval: 0.5
   spreadIgniteDamagePerSecond: 3
   spreadLayers:
@@ -74348,7 +74377,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2243331557030323582, guid: d8e8f989d2d2d2c4d85cc0a9a0e7245e, type: 3}
       propertyPath: spreadRadius
-      value: 0.3
+      value: 1.19
       objectReference: {fileID: 0}
     - target: {fileID: 2243331557030323582, guid: d8e8f989d2d2d2c4d85cc0a9a0e7245e, type: 3}
       propertyPath: currentHealth
@@ -80901,6 +80930,10 @@ PrefabInstance:
     - target: {fileID: 7236387735329886788, guid: f894574977aa3b748857b15a53868ea3, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8811551876847666350, guid: f894574977aa3b748857b15a53868ea3, type: 3}
+      propertyPath: burnTime
+      value: 60
       objectReference: {fileID: 0}
     - target: {fileID: 8811551876847666350, guid: f894574977aa3b748857b15a53868ea3, type: 3}
       propertyPath: playerSpawnPoint
