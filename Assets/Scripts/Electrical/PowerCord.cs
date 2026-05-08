@@ -34,8 +34,10 @@ public class PowerCord : MonoBehaviour
     [Header("Wires Panel")]
     [SerializeField] private GameObject wireCanvas;
     [SerializeField] private WirePanel wirePanel;
-
+    
     private Player player;
+    private GameManager gameManager;
+    private SceneSwitcher sceneSwitcher;
 
     //Manager vairablers
     private bool wirePanelCompleted = false;
@@ -49,6 +51,8 @@ public class PowerCord : MonoBehaviour
         player = Player.instance;
         burnableObject = transform.parent.GetComponentInChildren<BurnableObject>();
         FlashObject();
+        gameManager = FindAnyObjectByType<GameManager>();
+        sceneSwitcher = FindAnyObjectByType<SceneSwitcher>();
     }
 
 
@@ -181,6 +185,14 @@ public class PowerCord : MonoBehaviour
         wireCanvas.SetActive(true);
         Cursor.lockState = CursorLockMode.None;
         Player.instance.freezePlayer = true;
+        if(gameManager != null)
+        {
+            gameManager.GetPowerCord(this);
+        }
+        if(sceneSwitcher != null)
+        {
+            sceneSwitcher.GetPowerCord(this);
+        }
     }
 
     private void IgniteObject()

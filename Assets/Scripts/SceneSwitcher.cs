@@ -16,6 +16,9 @@ public class SceneSwitcher : MonoBehaviour
     [SerializeField] private string nextSceneName;   // Used in builds
     [SerializeField] private bool useSpaceToContinue = false;
 
+    private bool currentlyInPanel;
+    private PowerCord powerCord;
+
     private void OnValidate()
     {
 #if UNITY_EDITOR
@@ -33,6 +36,7 @@ public class SceneSwitcher : MonoBehaviour
         {
             Player.instance.ClearInventory();
             Player.instance.ResetInventory();
+            powerCord.ExitWirePanel();
             LoadNextScene();
         }
     }
@@ -59,5 +63,10 @@ public class SceneSwitcher : MonoBehaviour
     public void Quit()
     {
         Application.Quit();
+    }
+
+    public void GetPowerCord(PowerCord cord)
+    {
+        powerCord = cord;
     }
 }

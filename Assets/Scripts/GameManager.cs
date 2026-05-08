@@ -30,6 +30,10 @@ public class GameManager : MonoBehaviour
     private bool dummybool = true;
     [Header("Money")]
     [SerializeField] private int maxAmountOfMoney;
+    
+
+    private bool currentlyInPanel;
+    private PowerCord powerCord;
 
     public float PercentBurnedValue => percentBurned;
     
@@ -142,6 +146,7 @@ public class GameManager : MonoBehaviour
     private IEnumerator GameOver()
     {
         Player.instance.ClearInventory();
+        powerCord.ExitWirePanel();
         Player.instance.gameObject.GetComponent<PlayerData>().AddMoney(MoneyMade());
         yield return new WaitForSeconds(timeToSwitchScene);
         SceneManager.LoadScene("Upgrade");
@@ -165,5 +170,15 @@ public class GameManager : MonoBehaviour
         int minutes = (int)timer / 60;
         string timerDisplay = minutes + ":" + seconds.ToString("D2");
         return timerDisplay;
+    }
+
+    public void InPanel(bool inPanel)
+    {
+        currentlyInPanel = inPanel;
+    }
+
+    public void GetPowerCord(PowerCord cord)
+    {
+        powerCord = cord;
     }
 }
