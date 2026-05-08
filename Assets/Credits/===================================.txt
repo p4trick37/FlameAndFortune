@@ -1,0 +1,72 @@
+========================================
+ASSET PACK CREDITS
+========================================
+
+Project Name:
+Flame and Fortune
+
+Developer:
+Mark Bergsbaken
+Patrick Wood
+
+========================================
+UNITY ASSET STORE PACKS
+========================================
+
+Asset Pack Name:
+House Props & Furniture Vol. 2
+
+Creator / Publisher:
+Finward Studios
+
+Asset Store Link:
+https://assetstore.unity.com/packages/3d/props/interior/house-props-furniture-vol-2-265523
+
+License:
+Used under the Unity Asset Store EULA.
+
+----------------------------------------
+
+Asset Pack Name:
+Low-Poly Forest Survival Starter Pack Lite
+
+Creator / Publisher:
+Devtricked
+
+Asset Store Link:
+https://assetstore.unity.com/packages/3d/props/low-poly-forest-survival-starter-pack-lite-334794
+
+License:
+Used under the Unity Asset Store EULA.
+
+----------------------------------------
+
+Asset Pack Name:
+Free Fire VFX - URP
+
+Creator / Publisher:
+Vefects
+
+Asset Store Link:
+https://assetstore.unity.com/packages/vfx/particles/fire-explosions/free-fire-vfx-urp-266226
+
+License:
+Used under the Unity Asset Store EULA.
+
+----------------------------------------
+
+Asset Pack Name:
+[Pack Name]
+
+Creator / Publisher:
+[Creator Name]
+
+Asset Store Link:
+[Paste Link Here]
+
+License:
+Used under the Unity Asset Store EULA.
+
+========================================
+END OF CREDITS
+========================================
