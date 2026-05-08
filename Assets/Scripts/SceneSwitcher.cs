@@ -30,16 +30,21 @@ public class SceneSwitcher : MonoBehaviour
 #endif
     }
 
-    private void Update()
+private void Update()
+{
+    if (useSpaceToContinue && Input.GetKeyDown(KeyCode.Space))
     {
-        if (useSpaceToContinue && Input.GetKeyDown(KeyCode.Space))
+        Player.instance.ClearInventory();
+        Player.instance.ResetInventory();
+
+        if (powerCord != null)
         {
-            Player.instance.ClearInventory();
-            Player.instance.ResetInventory();
             powerCord.ExitWirePanel();
-            LoadNextScene();
         }
+
+        LoadNextScene();
     }
+}
 
     // 🔹 Used by UI Button
     public void SwitchToScene(string sceneName)

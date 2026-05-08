@@ -2439,6 +2439,8 @@ MonoBehaviour:
   TargetMeshFilter: {fileID: 0}
   uiAnchorOverride: {fileID: 0}
   uiOffset: {x: 0, y: 0, z: 0}
+  boxColliders: []
+  maxVolumeCollider: {fileID: 0}
 --- !u!1001 &58859590
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6325,6 +6327,10 @@ MonoBehaviour:
   numberOfObjects: 0
   percentBurned: 0
   percentBurnedText: {fileID: 0}
+  totalColliders: 0
+  currentColliders: 0
+  totalVolume: 0
+  currentVolume: 0
   burnTime: 60
   timerText: {fileID: 0}
   timeToSwitchScene: 1.5
@@ -18225,6 +18231,8 @@ MonoBehaviour:
   TargetMeshFilter: {fileID: 0}
   uiAnchorOverride: {fileID: 0}
   uiOffset: {x: 0, y: 0, z: 0}
+  boxColliders: []
+  maxVolumeCollider: {fileID: 0}
 --- !u!1 &532693570
 GameObject:
   m_ObjectHideFlags: 0
@@ -28775,6 +28783,8 @@ MonoBehaviour:
   TargetMeshFilter: {fileID: 0}
   uiAnchorOverride: {fileID: 0}
   uiOffset: {x: 0, y: 0, z: 0}
+  boxColliders: []
+  maxVolumeCollider: {fileID: 0}
 --- !u!1001 &827207437
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -35885,6 +35895,8 @@ MonoBehaviour:
   TargetMeshFilter: {fileID: 0}
   uiAnchorOverride: {fileID: 0}
   uiOffset: {x: 0, y: 0, z: 0}
+  boxColliders: []
+  maxVolumeCollider: {fileID: 0}
 --- !u!1001 &1068787609
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -47616,6 +47628,10 @@ PrefabInstance:
       value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 2834180925201064209, guid: 593f1653d598169429c0f241256ffc48, type: 3}
+      propertyPath: m_TagString
+      value: Electronic
+      objectReference: {fileID: 0}
+    - target: {fileID: 2834180925201064209, guid: 593f1653d598169429c0f241256ffc48, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 0
       objectReference: {fileID: 0}
@@ -48967,6 +48983,8 @@ MonoBehaviour:
   TargetMeshFilter: {fileID: 0}
   uiAnchorOverride: {fileID: 0}
   uiOffset: {x: 0, y: 0, z: 0}
+  boxColliders: []
+  maxVolumeCollider: {fileID: 0}
 --- !u!1 &1513937323
 GameObject:
   m_ObjectHideFlags: 0
@@ -72220,6 +72238,8 @@ MonoBehaviour:
   TargetMeshFilter: {fileID: 0}
   uiAnchorOverride: {fileID: 0}
   uiOffset: {x: 0, y: 0, z: 0}
+  boxColliders: []
+  maxVolumeCollider: {fileID: 0}
 --- !u!1 &2125524650
 GameObject:
   m_ObjectHideFlags: 0

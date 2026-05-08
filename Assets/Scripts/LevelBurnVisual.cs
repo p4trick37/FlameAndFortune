@@ -40,7 +40,7 @@ public class LevelBurnVisual : MonoBehaviour
         }
 
         float percent01 = Mathf.Clamp01((float)gameManager.PercentBurnedValue / 100f);
-        Debug.Log("Debug gmess" + gameManager.PercentBurnedValue);
+            // Debug.Log("Debug gmess" + gameManager.PercentBurnedValue);
         UpdateWallVisual(percent01);
     }
 

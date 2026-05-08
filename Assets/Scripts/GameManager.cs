@@ -17,7 +17,7 @@ public class GameManager : MonoBehaviour
 
     [SerializeField] private float totalVolume;
     [SerializeField] private float currentVolume;
-    [Header("Timer")]
+    [Header("Timer")]   
     [SerializeField] private float burnTime;
     [SerializeField] private TMP_Text timerText;
     private float timer;
@@ -143,14 +143,27 @@ public class GameManager : MonoBehaviour
         timerText.text = TimerDisplay(timer);
     }
 
-    private IEnumerator GameOver()
+   private IEnumerator GameOver()
+{
+    if (Player.instance != null)
     {
         Player.instance.ClearInventory();
-        powerCord.ExitWirePanel();
-        Player.instance.gameObject.GetComponent<PlayerData>().AddMoney(MoneyMade());
-        yield return new WaitForSeconds(timeToSwitchScene);
-        SceneManager.LoadScene("Upgrade");
+
+        PlayerData playerData = Player.instance.gameObject.GetComponent<PlayerData>();
+        if (playerData != null)
+        {
+            playerData.AddMoney(MoneyMade());
+        }
     }
+
+    if (powerCord != null)
+    {
+        powerCord.ExitWirePanel();
+    }
+
+    yield return new WaitForSeconds(timeToSwitchScene);
+    SceneManager.LoadScene("Upgrade");
+}
 
     private int MoneyMade()
     {
