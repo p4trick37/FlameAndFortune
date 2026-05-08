@@ -11,6 +11,12 @@ public class GameManager : MonoBehaviour
     [SerializeField] private int numberOfObjects;
     [SerializeField] private float percentBurned;
     [SerializeField] private TMP_Text percentBurnedText;
+
+    [SerializeField] private int totalColliders;
+    [SerializeField] private int currentColliders;
+
+    [SerializeField] private float totalVolume;
+    [SerializeField] private float currentVolume;
     [Header("Timer")]
     [SerializeField] private float burnTime;
     [SerializeField] private TMP_Text timerText;
@@ -39,6 +45,17 @@ public class GameManager : MonoBehaviour
                 allBurnableObjects.Add(objects[i]);
             }
         }
+
+        for(int i = 0; i < allBurnableObjects.Count; i++)
+        {
+            totalColliders += allBurnableObjects[i].GetNumberOfColliders();
+        }
+
+        for(int i = 0; i < allBurnableObjects.Count; i++)
+        {
+            totalVolume += allBurnableObjects[i].GetMaxVolume();
+        }
+
         numberOfObjects = allBurnableObjects.Count;
         spawnPlayer = true;
 
@@ -85,23 +102,31 @@ public class GameManager : MonoBehaviour
         spawnPlayer = true;
     }
 
-  private void CheckForBurns()
-{
-    for (int i = allBurnableObjects.Count - 1; i >= 0; i--)
+   private void CheckForBurns()
     {
-        if (allBurnableObjects[i].CurrentHealth <= 0)
+        for (int i = allBurnableObjects.Count - 1; i >= 0; i--)
         {
-            numberOfBurns++;
-            allBurnableObjects.RemoveAt(i);
+            if (allBurnableObjects[i].CurrentHealth <= 0)
+            {
+                numberOfBurns++;
+                currentColliders += allBurnableObjects[i].GetNumberOfColliders();
+                currentVolume += allBurnableObjects[i].GetMaxVolume();
+                allBurnableObjects.RemoveAt(i);
+            }
         }
     }
-}
 
     private float PercentBurned(int currentBurns, int numOfBurnObj)
     {
         float percent = ((float)currentBurns / numOfBurnObj) * 100;
         return percent;
     }
+    private float PercentBurned(float currentBurns, float numOfBurnObj)
+    {
+        float percent = (currentBurns / numOfBurnObj) * 100;
+        return percent;
+    }
+
 
     private void Timer()
     {

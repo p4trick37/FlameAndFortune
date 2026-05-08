@@ -39,6 +39,7 @@ public class Player : MonoBehaviour
     [SerializeField] private GameObject[] inventory;
     [SerializeField] private Image[] hudSlots;
     [SerializeField] private GameObject[] itemPrefabs;
+    [SerializeField] private RectTransform[] boxImages;
     public int CurrentSlot => currentSlot;
     [SerializeField] private int currentSlot;
     [Header("HUD")]
@@ -49,9 +50,12 @@ public class Player : MonoBehaviour
 
     [SerializeField] private TMP_Text inGameTimerTxt;
     [SerializeField] private TMP_Text percentCompleteTxt;
+    [SerializeField] private RectTransform highlight;
 
     [Header("Managers")]
     [SerializeField] private GameManager gameManager;
+    [Header("Skil")]
+    [SerializeField] private GameObject skin;
 
     public bool freezePlayer = false;
 
@@ -76,6 +80,10 @@ public class Player : MonoBehaviour
         currentSlot = 1;
         SetMovementSpeed(defaultWalkSpeed, defaultSprintSpeed);
         LockSprint(false);
+        if (boxImages.Length > 0)
+        {
+            highlight.position = boxImages[0].position;
+        }
     }
 
 
@@ -210,6 +218,7 @@ public class Player : MonoBehaviour
                     
                     TryForMovableAppliance(hit);
                     TryForRotationObject(hit);
+                    Debug.Log("This bitch is definitly going");
                 }
             }
 
@@ -280,6 +289,7 @@ public class Player : MonoBehaviour
             {
                 appliance.moveObject = false;
             }
+            Debug.Log("Found move appliance");
         }
         
     }
@@ -345,6 +355,21 @@ public class Player : MonoBehaviour
             if (Input.GetKeyDown(KeyCode.Alpha0 + i))
             {
                 select = i;
+            }
+        }
+        if (boxImages.Length > 0)
+        {
+            if (select == 1)
+            {
+                highlight.position = boxImages[0].position;
+            }
+            else if (select == 2)
+            {
+                highlight.position = boxImages[1].position;
+            }
+            else if (select == 3)
+            {
+                highlight.position = boxImages[2].position;
             }
         }
         return select;
@@ -526,5 +551,10 @@ public class Player : MonoBehaviour
     public void ResetInventory()
     {
         inventory = new GameObject[inventorySize];
+    }
+
+    public GameObject ReturnSkin()
+    {
+        return skin;
     }
 }

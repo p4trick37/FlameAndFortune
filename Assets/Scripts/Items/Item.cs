@@ -13,8 +13,8 @@ public class Item : MonoBehaviour, IPickupable
    
     public virtual void FindHand()
     {
-        GameObject hand = GameObject.Find("Hand");
-        playerHand = hand;
+        Hand hand = FindAnyObjectByType<Hand>();
+        playerHand = hand.gameObject;
     }
 
     public virtual void FindHand(GameObject hand)

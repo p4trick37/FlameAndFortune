@@ -133,7 +133,7 @@ private void UpdateWallVisual(float levelBurnPercent01)
             
         //     return 0f;
         // }
-Debug.Log(rawBurn01);
+//Debug.Log(rawBurn01);
         float range = Mathf.Max(0.0001f, fullDarkPercent - darkeningStartPercent);
         float mapped = (rawBurn01 - darkeningStartPercent) / range;
         return Mathf.Clamp01(mapped);

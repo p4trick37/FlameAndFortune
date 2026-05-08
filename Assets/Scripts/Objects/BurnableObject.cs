@@ -60,6 +60,10 @@ private static readonly int OutlineColorID = Shader.PropertyToID("_OutlineColor"
     [SerializeField] private Transform uiAnchorOverride;
     [SerializeField] private Vector3 uiOffset = new Vector3(0f, 0f, 0f);
 
+    [Header("All Colliders")]
+    [SerializeField] private BoxCollider[] boxColliders;
+    [SerializeField] private BoxCollider maxVolumeCollider;
+
     private GameObject spawnedFireEffect;
     private Material[][] runtimeMaterials;
     private Color[][] originalColors;
@@ -103,6 +107,7 @@ private void Awake()
     CreateRuntimeMaterialInstances();
     UpdateBurnVisual();
     CacheLayers();
+        FindAllColliders();
 }
 
     private void CreateRuntimeMaterialInstances()
@@ -601,4 +606,53 @@ public Color GetHoverColor()
         maxHealth += amount;
         currentHealth += amount;
     }
+
+    private void FindAllColliders()
+    {
+        boxColliders = GetComponents<BoxCollider>();
+    }
+
+    public int GetNumberOfColliders()
+    {
+        if(boxColliders.Length == 0)
+        {
+            return 3;
+        }
+        return boxColliders.Length;
+    }
+
+    public void FindMaxVolumeCollider()
+    {
+        BoxCollider currentMaxCollider = boxColliders[0];
+        for(int i = 1; i < boxColliders.Length; i++)
+        {
+            if (GetVolumeOfCollider(boxColliders[i]) > GetVolumeOfCollider(currentMaxCollider))
+            {
+                currentMaxCollider = boxColliders[i];
+            }
+        }
+
+        maxVolumeCollider = currentMaxCollider;
+    }
+    public float GetMaxVolume()
+    {
+        return GetVolumeOfCollider(maxVolumeCollider);
+    }
+
+    private float GetVolumeOfCollider(BoxCollider boxCollider)
+    {
+        float volume;
+        if(boxCollider != null)
+        {
+            Vector3 size = boxCollider.size;
+            volume = size.x * size.y * size.z;
+        }
+        else
+        {
+            return 5;
+        }
+
+        return volume;
+    }
+
 }

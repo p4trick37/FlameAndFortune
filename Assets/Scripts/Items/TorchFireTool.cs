@@ -60,7 +60,6 @@ public class TorchFireTool : Item
         maxHealth += changeMaxHealth;
         currentHealth = maxHealth;
         changeMaxHealth = 0;
-
         healthTimer = 1;
         hoveredLayer = LayerMask.NameToLayer(hoveredLayerName);
         if (hoveredLayer < 0)

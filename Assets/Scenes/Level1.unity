@@ -2394,6 +2394,8 @@ MonoBehaviour:
   TargetMeshFilter: {fileID: 0}
   uiAnchorOverride: {fileID: 0}
   uiOffset: {x: 0, y: 0, z: 0}
+  boxColliders: []
+  maxVolumeCollider: {fileID: 0}
 --- !u!1 &55049743
 GameObject:
   m_ObjectHideFlags: 0
@@ -2690,6 +2692,8 @@ MonoBehaviour:
   TargetMeshFilter: {fileID: 0}
   uiAnchorOverride: {fileID: 0}
   uiOffset: {x: 0, y: 0, z: 0}
+  boxColliders: []
+  maxVolumeCollider: {fileID: 0}
 --- !u!1001 &58859590
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3166,6 +3170,8 @@ MonoBehaviour:
   TargetMeshFilter: {fileID: 0}
   uiAnchorOverride: {fileID: 0}
   uiOffset: {x: 0, y: 0, z: 0}
+  boxColliders: []
+  maxVolumeCollider: {fileID: 0}
 --- !u!1001 &73305605
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4071,7 +4077,10 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 1445744956966903839, guid: e31fda4f80c18b74087f8eb1b664c5cc, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 910600775}
   m_SourcePrefab: {fileID: 100100000, guid: e31fda4f80c18b74087f8eb1b664c5cc, type: 3}
 --- !u!1001 &107127869
 PrefabInstance:
@@ -9609,6 +9618,8 @@ MonoBehaviour:
   TargetMeshFilter: {fileID: 0}
   uiAnchorOverride: {fileID: 0}
   uiOffset: {x: 0, y: 0, z: 0}
+  boxColliders: []
+  maxVolumeCollider: {fileID: 0}
 --- !u!1001 &252217591
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -9704,6 +9715,10 @@ PrefabInstance:
     - target: {fileID: 5225116802745522206, guid: aa01e0058bffc3a458f4624664465e29, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5710888604060407219, guid: aa01e0058bffc3a458f4624664465e29, type: 3}
+      propertyPath: m_PresetInfoIsWorld
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -9945,6 +9960,8 @@ MonoBehaviour:
   TargetMeshFilter: {fileID: 0}
   uiAnchorOverride: {fileID: 0}
   uiOffset: {x: 0, y: 0, z: 0}
+  boxColliders: []
+  maxVolumeCollider: {fileID: 0}
 --- !u!1001 &263737688
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -12947,6 +12964,8 @@ MonoBehaviour:
   TargetMeshFilter: {fileID: 0}
   uiAnchorOverride: {fileID: 0}
   uiOffset: {x: 0, y: 0, z: 0}
+  boxColliders: []
+  maxVolumeCollider: {fileID: 0}
 --- !u!1001 &361102893
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -18926,6 +18945,8 @@ MonoBehaviour:
   TargetMeshFilter: {fileID: 0}
   uiAnchorOverride: {fileID: 0}
   uiOffset: {x: 0, y: 0, z: 0}
+  boxColliders: []
+  maxVolumeCollider: {fileID: 0}
 --- !u!1001 &502265131
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -19672,6 +19693,8 @@ MonoBehaviour:
   TargetMeshFilter: {fileID: 0}
   uiAnchorOverride: {fileID: 0}
   uiOffset: {x: 0, y: 0, z: 0}
+  boxColliders: []
+  maxVolumeCollider: {fileID: 0}
 --- !u!1 &525453150 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 106908626439682376, guid: 9fa298a564f71fa40b8b6dfdd36cbf9a, type: 3}
@@ -24437,6 +24460,8 @@ MonoBehaviour:
   TargetMeshFilter: {fileID: 0}
   uiAnchorOverride: {fileID: 0}
   uiOffset: {x: 0, y: 0, z: 0}
+  boxColliders: []
+  maxVolumeCollider: {fileID: 0}
 --- !u!1001 &675157540
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -27161,6 +27186,8 @@ MonoBehaviour:
   TargetMeshFilter: {fileID: 0}
   uiAnchorOverride: {fileID: 0}
   uiOffset: {x: 0, y: 0, z: 0}
+  boxColliders: []
+  maxVolumeCollider: {fileID: 0}
 --- !u!1001 &741373988
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -29674,6 +29701,10 @@ PrefabInstance:
       propertyPath: posDirection
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 575304078672493225, guid: e31fda4f80c18b74087f8eb1b664c5cc, type: 3}
+      propertyPath: stopDistance
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 1445744956966903839, guid: e31fda4f80c18b74087f8eb1b664c5cc, type: 3}
       propertyPath: m_TagString
       value: Electronic
@@ -29901,7 +29932,10 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 1445744956966903839, guid: e31fda4f80c18b74087f8eb1b664c5cc, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1927257498}
   m_SourcePrefab: {fileID: 100100000, guid: e31fda4f80c18b74087f8eb1b664c5cc, type: 3}
 --- !u!1 &809452095 stripped
 GameObject:
@@ -30798,6 +30832,8 @@ MonoBehaviour:
   TargetMeshFilter: {fileID: 0}
   uiAnchorOverride: {fileID: 0}
   uiOffset: {x: 0, y: 0, z: 0}
+  boxColliders: []
+  maxVolumeCollider: {fileID: 0}
 --- !u!1 &825228706 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 3849011959669116970, guid: 0bd9146884a5fed4b9b3cc9c767d1b93, type: 3}
@@ -30841,6 +30877,8 @@ MonoBehaviour:
   TargetMeshFilter: {fileID: 0}
   uiAnchorOverride: {fileID: 0}
   uiOffset: {x: 0, y: 0, z: 0}
+  boxColliders: []
+  maxVolumeCollider: {fileID: 0}
 --- !u!1001 &827207437
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -31934,6 +31972,8 @@ MonoBehaviour:
   TargetMeshFilter: {fileID: 0}
   uiAnchorOverride: {fileID: 0}
   uiOffset: {x: 0, y: 0, z: 0}
+  boxColliders: []
+  maxVolumeCollider: {fileID: 0}
 --- !u!1001 &865440331
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -33932,6 +33972,38 @@ MonoBehaviour:
   m_ShadowLayerMask: 1
   m_RenderingLayers: 1
   m_ShadowRenderingLayers: 1
+--- !u!1 &910600768 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1445744956966903839, guid: e31fda4f80c18b74087f8eb1b664c5cc, type: 3}
+  m_PrefabInstance: {fileID: 101285793}
+  m_PrefabAsset: {fileID: 0}
+--- !u!54 &910600775
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 910600768}
+  serializedVersion: 5
+  m_Mass: 1
+  m_LinearDamping: 0
+  m_AngularDamping: 0.05
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1001 &911093300
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -34047,6 +34119,8 @@ MonoBehaviour:
   TargetMeshFilter: {fileID: 0}
   uiAnchorOverride: {fileID: 0}
   uiOffset: {x: 0, y: 0, z: 0}
+  boxColliders: []
+  maxVolumeCollider: {fileID: 0}
 --- !u!1001 &911449084
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -35350,6 +35424,8 @@ MonoBehaviour:
   TargetMeshFilter: {fileID: 0}
   uiAnchorOverride: {fileID: 0}
   uiOffset: {x: 0, y: 0, z: 0}
+  boxColliders: []
+  maxVolumeCollider: {fileID: 0}
 --- !u!1 &948187877
 GameObject:
   m_ObjectHideFlags: 0
@@ -35758,6 +35834,8 @@ MonoBehaviour:
   TargetMeshFilter: {fileID: 0}
   uiAnchorOverride: {fileID: 0}
   uiOffset: {x: 0, y: 0, z: 0}
+  boxColliders: []
+  maxVolumeCollider: {fileID: 0}
 --- !u!1001 &977985671
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -37062,6 +37140,8 @@ MonoBehaviour:
   TargetMeshFilter: {fileID: 0}
   uiAnchorOverride: {fileID: 0}
   uiOffset: {x: 0, y: 0, z: 0}
+  boxColliders: []
+  maxVolumeCollider: {fileID: 0}
 --- !u!1001 &1019987719
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -37886,6 +37966,8 @@ MonoBehaviour:
   TargetMeshFilter: {fileID: 0}
   uiAnchorOverride: {fileID: 0}
   uiOffset: {x: 0, y: 0, z: 0}
+  boxColliders: []
+  maxVolumeCollider: {fileID: 0}
 --- !u!1 &1046959798
 GameObject:
   m_ObjectHideFlags: 0
@@ -38710,6 +38792,8 @@ MonoBehaviour:
   TargetMeshFilter: {fileID: 0}
   uiAnchorOverride: {fileID: 0}
   uiOffset: {x: 0, y: 0, z: 0}
+  boxColliders: []
+  maxVolumeCollider: {fileID: 0}
 --- !u!1001 &1068787609
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -39448,6 +39532,8 @@ MonoBehaviour:
   TargetMeshFilter: {fileID: 0}
   uiAnchorOverride: {fileID: 0}
   uiOffset: {x: 0, y: 0, z: 0}
+  boxColliders: []
+  maxVolumeCollider: {fileID: 0}
 --- !u!1001 &1087785161
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -42100,6 +42186,8 @@ MonoBehaviour:
   TargetMeshFilter: {fileID: 0}
   uiAnchorOverride: {fileID: 0}
   uiOffset: {x: 0, y: 0, z: 0}
+  boxColliders: []
+  maxVolumeCollider: {fileID: 0}
 --- !u!1 &1173391809
 GameObject:
   m_ObjectHideFlags: 0
@@ -42432,6 +42520,8 @@ MonoBehaviour:
   TargetMeshFilter: {fileID: 0}
   uiAnchorOverride: {fileID: 0}
   uiOffset: {x: 0, y: 0, z: 0}
+  boxColliders: []
+  maxVolumeCollider: {fileID: 0}
 --- !u!1001 &1178139431
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -43824,6 +43914,38 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 7699588432608979885, guid: de7072913f59a5744896122843f033b9, type: 3}
   m_PrefabInstance: {fileID: 1229509184}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1231841671 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7085003734858869210, guid: 593f1653d598169429c0f241256ffc48, type: 3}
+  m_PrefabInstance: {fileID: 1478388949}
+  m_PrefabAsset: {fileID: 0}
+--- !u!54 &1231841683
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1231841671}
+  serializedVersion: 5
+  m_Mass: 1
+  m_LinearDamping: 0
+  m_AngularDamping: 0.05
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1001 &1234280026
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -45134,6 +45256,8 @@ MonoBehaviour:
   TargetMeshFilter: {fileID: 0}
   uiAnchorOverride: {fileID: 0}
   uiOffset: {x: 0, y: 0, z: 0}
+  boxColliders: []
+  maxVolumeCollider: {fileID: 0}
 --- !u!1 &1287724059 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 2289098282633321536, guid: 1ff0df4660b6d8d48a9160c024b22f49, type: 3}
@@ -45470,6 +45594,8 @@ MonoBehaviour:
   TargetMeshFilter: {fileID: 0}
   uiAnchorOverride: {fileID: 0}
   uiOffset: {x: 0, y: 0, z: 0}
+  boxColliders: []
+  maxVolumeCollider: {fileID: 0}
 --- !u!1 &1305351346
 GameObject:
   m_ObjectHideFlags: 0
@@ -46500,22 +46626,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 2985174859248636536, guid: b4a4b1ad148c9524fb9f2a51a8da89d3, type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2985174859248636536, guid: b4a4b1ad148c9524fb9f2a51a8da89d3, type: 3}
-      propertyPath: m_AnchorMin.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2985174859248636536, guid: b4a4b1ad148c9524fb9f2a51a8da89d3, type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2985174859248636536, guid: b4a4b1ad148c9524fb9f2a51a8da89d3, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 3212859566087897257, guid: b4a4b1ad148c9524fb9f2a51a8da89d3, type: 3}
       propertyPath: m_LocalPosition.x
       value: -3.18
@@ -46559,38 +46669,6 @@ PrefabInstance:
     - target: {fileID: 7961538665946744700, guid: b4a4b1ad148c9524fb9f2a51a8da89d3, type: 3}
       propertyPath: m_Name
       value: Player
-      objectReference: {fileID: 0}
-    - target: {fileID: 8127373592363285297, guid: b4a4b1ad148c9524fb9f2a51a8da89d3, type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8127373592363285297, guid: b4a4b1ad148c9524fb9f2a51a8da89d3, type: 3}
-      propertyPath: m_AnchorMin.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8127373592363285297, guid: b4a4b1ad148c9524fb9f2a51a8da89d3, type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8127373592363285297, guid: b4a4b1ad148c9524fb9f2a51a8da89d3, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8224424342811157318, guid: b4a4b1ad148c9524fb9f2a51a8da89d3, type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8224424342811157318, guid: b4a4b1ad148c9524fb9f2a51a8da89d3, type: 3}
-      propertyPath: m_AnchorMin.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8224424342811157318, guid: b4a4b1ad148c9524fb9f2a51a8da89d3, type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8224424342811157318, guid: b4a4b1ad148c9524fb9f2a51a8da89d3, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -47292,6 +47370,8 @@ MonoBehaviour:
   TargetMeshFilter: {fileID: 0}
   uiAnchorOverride: {fileID: 0}
   uiOffset: {x: 0, y: 0, z: 0}
+  boxColliders: []
+  maxVolumeCollider: {fileID: 0}
 --- !u!1001 &1358058296
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -47545,6 +47625,8 @@ MonoBehaviour:
   TargetMeshFilter: {fileID: 0}
   uiAnchorOverride: {fileID: 0}
   uiOffset: {x: 0, y: 0, z: 0}
+  boxColliders: []
+  maxVolumeCollider: {fileID: 0}
 --- !u!1001 &1363768096
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -47981,6 +48063,8 @@ MonoBehaviour:
   TargetMeshFilter: {fileID: 0}
   uiAnchorOverride: {fileID: 0}
   uiOffset: {x: 0, y: 0, z: 0}
+  boxColliders: []
+  maxVolumeCollider: {fileID: 0}
 --- !u!1001 &1382086314
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -48928,6 +49012,8 @@ MonoBehaviour:
   TargetMeshFilter: {fileID: 0}
   uiAnchorOverride: {fileID: 0}
   uiOffset: {x: 0, y: 0, z: 0}
+  boxColliders: []
+  maxVolumeCollider: {fileID: 0}
 --- !u!1 &1413414930 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 5446062101795565323, guid: 86ca41f3f004c26478a17bd2f76325a8, type: 3}
@@ -48971,6 +49057,8 @@ MonoBehaviour:
   TargetMeshFilter: {fileID: 0}
   uiAnchorOverride: {fileID: 0}
   uiOffset: {x: 0, y: 0, z: 0}
+  boxColliders: []
+  maxVolumeCollider: {fileID: 0}
 --- !u!1001 &1417086800
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -49241,6 +49329,8 @@ MonoBehaviour:
   TargetMeshFilter: {fileID: 0}
   uiAnchorOverride: {fileID: 0}
   uiOffset: {x: 0, y: 0, z: 0}
+  boxColliders: []
+  maxVolumeCollider: {fileID: 0}
 --- !u!1 &1419930096
 GameObject:
   m_ObjectHideFlags: 0
@@ -49315,6 +49405,8 @@ MonoBehaviour:
   TargetMeshFilter: {fileID: 0}
   uiAnchorOverride: {fileID: 0}
   uiOffset: {x: 0, y: 0, z: 0}
+  boxColliders: []
+  maxVolumeCollider: {fileID: 0}
 --- !u!1001 &1424713789
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -49453,6 +49545,8 @@ MonoBehaviour:
   TargetMeshFilter: {fileID: 0}
   uiAnchorOverride: {fileID: 0}
   uiOffset: {x: 0, y: 0, z: 0}
+  boxColliders: []
+  maxVolumeCollider: {fileID: 0}
 --- !u!1001 &1431068553
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -50920,6 +51014,8 @@ MonoBehaviour:
   TargetMeshFilter: {fileID: 0}
   uiAnchorOverride: {fileID: 0}
   uiOffset: {x: 0, y: 0, z: 0}
+  boxColliders: []
+  maxVolumeCollider: {fileID: 0}
 --- !u!1001 &1464526830
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -51047,6 +51143,8 @@ MonoBehaviour:
   TargetMeshFilter: {fileID: 0}
   uiAnchorOverride: {fileID: 0}
   uiOffset: {x: 0, y: 0, z: 0}
+  boxColliders: []
+  maxVolumeCollider: {fileID: 0}
 --- !u!1 &1465800728 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 557976101606975631, guid: f6c8623661fa28c43a0169d1fbc875ad, type: 3}
@@ -51090,6 +51188,8 @@ MonoBehaviour:
   TargetMeshFilter: {fileID: 0}
   uiAnchorOverride: {fileID: 0}
   uiOffset: {x: 0, y: 0, z: 0}
+  boxColliders: []
+  maxVolumeCollider: {fileID: 0}
 --- !u!1001 &1467579630
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -51359,6 +51459,8 @@ MonoBehaviour:
   TargetMeshFilter: {fileID: 0}
   uiAnchorOverride: {fileID: 0}
   uiOffset: {x: 0, y: 0, z: 0}
+  boxColliders: []
+  maxVolumeCollider: {fileID: 0}
 --- !u!4 &1476083046 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 873186533270936570, guid: fccc93b795fddda41a7703500af84464, type: 3}
@@ -51921,7 +52023,10 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 7085003734858869210, guid: 593f1653d598169429c0f241256ffc48, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1231841683}
   m_SourcePrefab: {fileID: 100100000, guid: 593f1653d598169429c0f241256ffc48, type: 3}
 --- !u!1 &1479730672 stripped
 GameObject:
@@ -51966,6 +52071,8 @@ MonoBehaviour:
   TargetMeshFilter: {fileID: 0}
   uiAnchorOverride: {fileID: 0}
   uiOffset: {x: 0, y: 0, z: 0}
+  boxColliders: []
+  maxVolumeCollider: {fileID: 0}
 --- !u!4 &1479993077 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 873186533270936570, guid: fccc93b795fddda41a7703500af84464, type: 3}
@@ -52283,6 +52390,8 @@ MonoBehaviour:
   TargetMeshFilter: {fileID: 0}
   uiAnchorOverride: {fileID: 0}
   uiOffset: {x: 0, y: 0, z: 0}
+  boxColliders: []
+  maxVolumeCollider: {fileID: 0}
 --- !u!1 &1483479464 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 7937706449320196915, guid: 7410c9a5bcfc9ad4abd6f13482a1b933, type: 3}
@@ -52326,6 +52435,8 @@ MonoBehaviour:
   TargetMeshFilter: {fileID: 0}
   uiAnchorOverride: {fileID: 0}
   uiOffset: {x: 0, y: 0, z: 0}
+  boxColliders: []
+  maxVolumeCollider: {fileID: 0}
 --- !u!1 &1486312128 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 4002582574360743285, guid: bdbdc2324c25bb74f80d736780d7cd6f, type: 3}
@@ -52451,6 +52562,8 @@ MonoBehaviour:
   TargetMeshFilter: {fileID: 0}
   uiAnchorOverride: {fileID: 0}
   uiOffset: {x: 0, y: 0, z: 0}
+  boxColliders: []
+  maxVolumeCollider: {fileID: 0}
 --- !u!1001 &1488634046
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -52594,6 +52707,8 @@ MonoBehaviour:
   TargetMeshFilter: {fileID: 0}
   uiAnchorOverride: {fileID: 0}
   uiOffset: {x: 0, y: 0, z: 0}
+  boxColliders: []
+  maxVolumeCollider: {fileID: 0}
 --- !u!1001 &1488765639
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -53289,6 +53404,8 @@ MonoBehaviour:
   TargetMeshFilter: {fileID: 0}
   uiAnchorOverride: {fileID: 0}
   uiOffset: {x: 0, y: 0, z: 0}
+  boxColliders: []
+  maxVolumeCollider: {fileID: 0}
 --- !u!1 &1513937323
 GameObject:
   m_ObjectHideFlags: 0
@@ -53970,6 +54087,8 @@ MonoBehaviour:
   TargetMeshFilter: {fileID: 0}
   uiAnchorOverride: {fileID: 0}
   uiOffset: {x: 0, y: 0, z: 0}
+  boxColliders: []
+  maxVolumeCollider: {fileID: 0}
 --- !u!1001 &1521797760
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -54401,6 +54520,8 @@ MonoBehaviour:
   TargetMeshFilter: {fileID: 0}
   uiAnchorOverride: {fileID: 0}
   uiOffset: {x: 0, y: 0, z: 0}
+  boxColliders: []
+  maxVolumeCollider: {fileID: 0}
 --- !u!1001 &1530678841
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -54685,6 +54806,8 @@ MonoBehaviour:
   TargetMeshFilter: {fileID: 0}
   uiAnchorOverride: {fileID: 0}
   uiOffset: {x: 0, y: 0, z: 0}
+  boxColliders: []
+  maxVolumeCollider: {fileID: 0}
 --- !u!1001 &1538064037
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -54868,6 +54991,8 @@ MonoBehaviour:
   TargetMeshFilter: {fileID: 0}
   uiAnchorOverride: {fileID: 0}
   uiOffset: {x: 0, y: 0, z: 0}
+  boxColliders: []
+  maxVolumeCollider: {fileID: 0}
 --- !u!1001 &1547541152
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -55164,6 +55289,8 @@ MonoBehaviour:
   TargetMeshFilter: {fileID: 0}
   uiAnchorOverride: {fileID: 0}
   uiOffset: {x: 0, y: 0, z: 0}
+  boxColliders: []
+  maxVolumeCollider: {fileID: 0}
 --- !u!1 &1560998905
 GameObject:
   m_ObjectHideFlags: 0
@@ -55388,6 +55515,8 @@ MonoBehaviour:
   TargetMeshFilter: {fileID: 0}
   uiAnchorOverride: {fileID: 0}
   uiOffset: {x: 0, y: 0, z: 0}
+  boxColliders: []
+  maxVolumeCollider: {fileID: 0}
 --- !u!1001 &1566779113
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -55520,6 +55649,8 @@ MonoBehaviour:
   TargetMeshFilter: {fileID: 0}
   uiAnchorOverride: {fileID: 0}
   uiOffset: {x: 0, y: 0, z: 0}
+  boxColliders: []
+  maxVolumeCollider: {fileID: 0}
 --- !u!1001 &1567053008
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -55986,6 +56117,10 @@ PrefabInstance:
       propertyPath: m_StaticEditorFlags
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1337019662658874834, guid: db10d2c97b7760640afaa23717c867ea, type: 3}
+      propertyPath: stopDistance
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 1895170196031188136, guid: db10d2c97b7760640afaa23717c867ea, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 0
@@ -56145,7 +56280,10 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 7608200642153911491, guid: db10d2c97b7760640afaa23717c867ea, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1956603084}
   m_SourcePrefab: {fileID: 100100000, guid: db10d2c97b7760640afaa23717c867ea, type: 3}
 --- !u!4 &1576866170 stripped
 Transform:
@@ -57035,6 +57173,8 @@ MonoBehaviour:
   TargetMeshFilter: {fileID: 0}
   uiAnchorOverride: {fileID: 0}
   uiOffset: {x: 0, y: 0, z: 0}
+  boxColliders: []
+  maxVolumeCollider: {fileID: 0}
 --- !u!1001 &1601163976
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -57594,6 +57734,8 @@ MonoBehaviour:
   TargetMeshFilter: {fileID: 0}
   uiAnchorOverride: {fileID: 0}
   uiOffset: {x: 0, y: 0, z: 0}
+  boxColliders: []
+  maxVolumeCollider: {fileID: 0}
 --- !u!1001 &1604948334
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -58206,6 +58348,8 @@ MonoBehaviour:
   TargetMeshFilter: {fileID: 0}
   uiAnchorOverride: {fileID: 0}
   uiOffset: {x: 0, y: 0, z: 0}
+  boxColliders: []
+  maxVolumeCollider: {fileID: 0}
 --- !u!1001 &1616651950
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -59019,6 +59163,8 @@ MonoBehaviour:
   TargetMeshFilter: {fileID: 0}
   uiAnchorOverride: {fileID: 0}
   uiOffset: {x: 0, y: 0, z: 0}
+  boxColliders: []
+  maxVolumeCollider: {fileID: 0}
 --- !u!1001 &1637432389
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -59135,6 +59281,8 @@ MonoBehaviour:
   TargetMeshFilter: {fileID: 0}
   uiAnchorOverride: {fileID: 0}
   uiOffset: {x: 0, y: 0, z: 0}
+  boxColliders: []
+  maxVolumeCollider: {fileID: 0}
 --- !u!1001 &1639588940
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -59683,6 +59831,8 @@ MonoBehaviour:
   TargetMeshFilter: {fileID: 0}
   uiAnchorOverride: {fileID: 0}
   uiOffset: {x: 0, y: 0, z: 0}
+  boxColliders: []
+  maxVolumeCollider: {fileID: 0}
 --- !u!1001 &1645645436
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -59991,6 +60141,8 @@ MonoBehaviour:
   TargetMeshFilter: {fileID: 0}
   uiAnchorOverride: {fileID: 0}
   uiOffset: {x: 0, y: 0, z: 0}
+  boxColliders: []
+  maxVolumeCollider: {fileID: 0}
 --- !u!1001 &1654669951
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -63244,6 +63396,8 @@ MonoBehaviour:
   TargetMeshFilter: {fileID: 0}
   uiAnchorOverride: {fileID: 0}
   uiOffset: {x: 0, y: 0, z: 0}
+  boxColliders: []
+  maxVolumeCollider: {fileID: 0}
 --- !u!1001 &1715940740
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -64481,6 +64635,8 @@ MonoBehaviour:
   TargetMeshFilter: {fileID: 0}
   uiAnchorOverride: {fileID: 0}
   uiOffset: {x: 0, y: 0, z: 0}
+  boxColliders: []
+  maxVolumeCollider: {fileID: 0}
 --- !u!1001 &1754180649
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -64696,6 +64852,8 @@ MonoBehaviour:
   TargetMeshFilter: {fileID: 0}
   uiAnchorOverride: {fileID: 0}
   uiOffset: {x: 0, y: 0, z: 0}
+  boxColliders: []
+  maxVolumeCollider: {fileID: 0}
 --- !u!1001 &1759683355
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -65261,6 +65419,8 @@ MonoBehaviour:
   TargetMeshFilter: {fileID: 0}
   uiAnchorOverride: {fileID: 0}
   uiOffset: {x: 0, y: 0, z: 0}
+  boxColliders: []
+  maxVolumeCollider: {fileID: 0}
 --- !u!1001 &1772496578
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -66563,6 +66723,8 @@ MonoBehaviour:
   TargetMeshFilter: {fileID: 0}
   uiAnchorOverride: {fileID: 0}
   uiOffset: {x: 0, y: 0, z: 0}
+  boxColliders: []
+  maxVolumeCollider: {fileID: 0}
 --- !u!1001 &1803571177
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -67420,6 +67582,8 @@ MonoBehaviour:
   TargetMeshFilter: {fileID: 0}
   uiAnchorOverride: {fileID: 0}
   uiOffset: {x: 0, y: 0, z: 0}
+  boxColliders: []
+  maxVolumeCollider: {fileID: 0}
 --- !u!1001 &1830056403
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -67539,6 +67703,8 @@ MonoBehaviour:
   TargetMeshFilter: {fileID: 0}
   uiAnchorOverride: {fileID: 0}
   uiOffset: {x: 0, y: 0, z: 0}
+  boxColliders: []
+  maxVolumeCollider: {fileID: 0}
 --- !u!4 &1837356915 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4526731104115145583, guid: b136ba735377dd5459d84dc71af771c0, type: 3}
@@ -68326,6 +68492,8 @@ MonoBehaviour:
   TargetMeshFilter: {fileID: 0}
   uiAnchorOverride: {fileID: 0}
   uiOffset: {x: 0, y: 0, z: 0}
+  boxColliders: []
+  maxVolumeCollider: {fileID: 0}
 --- !u!1001 &1852574574
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -68932,6 +69100,8 @@ MonoBehaviour:
   TargetMeshFilter: {fileID: 0}
   uiAnchorOverride: {fileID: 0}
   uiOffset: {x: 0, y: 0, z: 0}
+  boxColliders: []
+  maxVolumeCollider: {fileID: 0}
 --- !u!1001 &1871936325
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -69878,6 +70048,8 @@ MonoBehaviour:
   TargetMeshFilter: {fileID: 0}
   uiAnchorOverride: {fileID: 0}
   uiOffset: {x: 0, y: 0, z: 0}
+  boxColliders: []
+  maxVolumeCollider: {fileID: 0}
 --- !u!1001 &1895162205
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -70007,6 +70179,8 @@ MonoBehaviour:
   TargetMeshFilter: {fileID: 0}
   uiAnchorOverride: {fileID: 0}
   uiOffset: {x: 0, y: 0, z: 0}
+  boxColliders: []
+  maxVolumeCollider: {fileID: 0}
 --- !u!1 &1898181547 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 582819633588584921, guid: 26cbfbde3277cc843a37a17fe7e04c4b, type: 3}
@@ -70125,6 +70299,8 @@ MonoBehaviour:
   TargetMeshFilter: {fileID: 0}
   uiAnchorOverride: {fileID: 0}
   uiOffset: {x: 0, y: 0, z: 0}
+  boxColliders: []
+  maxVolumeCollider: {fileID: 0}
 --- !u!1001 &1908553903
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -70397,6 +70573,8 @@ MonoBehaviour:
   TargetMeshFilter: {fileID: 0}
   uiAnchorOverride: {fileID: 0}
   uiOffset: {x: 0, y: 0, z: 0}
+  boxColliders: []
+  maxVolumeCollider: {fileID: 0}
 --- !u!1001 &1914829650
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -70887,6 +71065,38 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 6850571271995082241, guid: 92478e2d75698b140b64918b714e17fa, type: 3}
   m_PrefabInstance: {fileID: 1921701215}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1927257491 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1445744956966903839, guid: e31fda4f80c18b74087f8eb1b664c5cc, type: 3}
+  m_PrefabInstance: {fileID: 805513264}
+  m_PrefabAsset: {fileID: 0}
+--- !u!54 &1927257498
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1927257491}
+  serializedVersion: 5
+  m_Mass: 1
+  m_LinearDamping: 0
+  m_AngularDamping: 0.05
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1001 &1927343043
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -71504,6 +71714,8 @@ MonoBehaviour:
   TargetMeshFilter: {fileID: 0}
   uiAnchorOverride: {fileID: 0}
   uiOffset: {x: 0, y: 0, z: 0}
+  boxColliders: []
+  maxVolumeCollider: {fileID: 0}
 --- !u!1001 &1945848694
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -71732,6 +71944,8 @@ MonoBehaviour:
   TargetMeshFilter: {fileID: 0}
   uiAnchorOverride: {fileID: 0}
   uiOffset: {x: 0, y: 0, z: 0}
+  boxColliders: []
+  maxVolumeCollider: {fileID: 0}
 --- !u!4 &1949752798 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7470883493808617156, guid: 593f1653d598169429c0f241256ffc48, type: 3}
@@ -71780,6 +71994,8 @@ MonoBehaviour:
   TargetMeshFilter: {fileID: 0}
   uiAnchorOverride: {fileID: 0}
   uiOffset: {x: 0, y: 0, z: 0}
+  boxColliders: []
+  maxVolumeCollider: {fileID: 0}
 --- !u!1001 &1951205598
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -72199,6 +72415,40 @@ MonoBehaviour:
   TargetMeshFilter: {fileID: 0}
   uiAnchorOverride: {fileID: 0}
   uiOffset: {x: 0, y: 0, z: 0}
+  boxColliders: []
+  maxVolumeCollider: {fileID: 0}
+--- !u!1 &1956603076 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7608200642153911491, guid: db10d2c97b7760640afaa23717c867ea, type: 3}
+  m_PrefabInstance: {fileID: 1576866169}
+  m_PrefabAsset: {fileID: 0}
+--- !u!54 &1956603084
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1956603076}
+  serializedVersion: 5
+  m_Mass: 1
+  m_LinearDamping: 0
+  m_AngularDamping: 0.05
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1001 &1960368478
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -72402,6 +72652,8 @@ MonoBehaviour:
   TargetMeshFilter: {fileID: 0}
   uiAnchorOverride: {fileID: 0}
   uiOffset: {x: 0, y: 0, z: 0}
+  boxColliders: []
+  maxVolumeCollider: {fileID: 0}
 --- !u!1 &1967400603
 GameObject:
   m_ObjectHideFlags: 0
@@ -72725,6 +72977,8 @@ MonoBehaviour:
   TargetMeshFilter: {fileID: 0}
   uiAnchorOverride: {fileID: 0}
   uiOffset: {x: 0, y: 0, z: 0}
+  boxColliders: []
+  maxVolumeCollider: {fileID: 0}
 --- !u!1001 &1974518224
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -73187,6 +73441,8 @@ MonoBehaviour:
   TargetMeshFilter: {fileID: 0}
   uiAnchorOverride: {fileID: 0}
   uiOffset: {x: 0, y: 0, z: 0}
+  boxColliders: []
+  maxVolumeCollider: {fileID: 0}
 --- !u!1001 &1984107503
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -73505,6 +73761,8 @@ MonoBehaviour:
   TargetMeshFilter: {fileID: 0}
   uiAnchorOverride: {fileID: 0}
   uiOffset: {x: 0, y: 0, z: 0}
+  boxColliders: []
+  maxVolumeCollider: {fileID: 0}
 --- !u!1001 &1986830873
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -73730,6 +73988,8 @@ MonoBehaviour:
   TargetMeshFilter: {fileID: 0}
   uiAnchorOverride: {fileID: 0}
   uiOffset: {x: 0, y: 0, z: 0}
+  boxColliders: []
+  maxVolumeCollider: {fileID: 0}
 --- !u!1001 &1991707684
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -74187,6 +74447,8 @@ MonoBehaviour:
   TargetMeshFilter: {fileID: 0}
   uiAnchorOverride: {fileID: 0}
   uiOffset: {x: 0, y: 0, z: 0}
+  boxColliders: []
+  maxVolumeCollider: {fileID: 0}
 --- !u!21 &1998804125
 Material:
   serializedVersion: 8
@@ -75733,6 +75995,8 @@ MonoBehaviour:
   TargetMeshFilter: {fileID: 0}
   uiAnchorOverride: {fileID: 0}
   uiOffset: {x: 0, y: 0, z: 0}
+  boxColliders: []
+  maxVolumeCollider: {fileID: 0}
 --- !u!1 &2035555843
 GameObject:
   m_ObjectHideFlags: 0
@@ -76131,6 +76395,8 @@ MonoBehaviour:
   TargetMeshFilter: {fileID: 0}
   uiAnchorOverride: {fileID: 0}
   uiOffset: {x: 0, y: 0, z: 0}
+  boxColliders: []
+  maxVolumeCollider: {fileID: 0}
 --- !u!1001 &2043429897
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -76250,6 +76516,8 @@ MonoBehaviour:
   TargetMeshFilter: {fileID: 0}
   uiAnchorOverride: {fileID: 0}
   uiOffset: {x: 0, y: 0, z: 0}
+  boxColliders: []
+  maxVolumeCollider: {fileID: 0}
 --- !u!1001 &2045177186
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -76437,6 +76705,8 @@ MonoBehaviour:
   TargetMeshFilter: {fileID: 0}
   uiAnchorOverride: {fileID: 0}
   uiOffset: {x: 0, y: 0, z: 0}
+  boxColliders: []
+  maxVolumeCollider: {fileID: 0}
 --- !u!1001 &2049638631
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -76682,6 +76952,8 @@ MonoBehaviour:
   TargetMeshFilter: {fileID: 0}
   uiAnchorOverride: {fileID: 0}
   uiOffset: {x: 0, y: 0, z: 0}
+  boxColliders: []
+  maxVolumeCollider: {fileID: 0}
 --- !u!1001 &2051962306
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -77399,6 +77671,8 @@ MonoBehaviour:
   TargetMeshFilter: {fileID: 0}
   uiAnchorOverride: {fileID: 0}
   uiOffset: {x: 0, y: 0, z: 0}
+  boxColliders: []
+  maxVolumeCollider: {fileID: 0}
 --- !u!1001 &2061707275
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -77721,6 +77995,8 @@ MonoBehaviour:
   TargetMeshFilter: {fileID: 0}
   uiAnchorOverride: {fileID: 0}
   uiOffset: {x: 0, y: 0, z: 0}
+  boxColliders: []
+  maxVolumeCollider: {fileID: 0}
 --- !u!1001 &2066974491
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -78217,6 +78493,8 @@ MonoBehaviour:
   TargetMeshFilter: {fileID: 0}
   uiAnchorOverride: {fileID: 0}
   uiOffset: {x: 0, y: 0, z: 0}
+  boxColliders: []
+  maxVolumeCollider: {fileID: 0}
 --- !u!1001 &2078395651
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -79213,6 +79491,8 @@ MonoBehaviour:
   TargetMeshFilter: {fileID: 0}
   uiAnchorOverride: {fileID: 0}
   uiOffset: {x: 0, y: 0, z: 0}
+  boxColliders: []
+  maxVolumeCollider: {fileID: 0}
 --- !u!1 &2102126198
 GameObject:
   m_ObjectHideFlags: 0
@@ -79931,6 +80211,8 @@ MonoBehaviour:
   TargetMeshFilter: {fileID: 0}
   uiAnchorOverride: {fileID: 0}
   uiOffset: {x: 0, y: 0, z: 0}
+  boxColliders: []
+  maxVolumeCollider: {fileID: 0}
 --- !u!1 &2115985651
 GameObject:
   m_ObjectHideFlags: 0
@@ -80325,6 +80607,8 @@ MonoBehaviour:
   TargetMeshFilter: {fileID: 0}
   uiAnchorOverride: {fileID: 0}
   uiOffset: {x: 0, y: 0, z: 0}
+  boxColliders: []
+  maxVolumeCollider: {fileID: 0}
 --- !u!1 &2125524650
 GameObject:
   m_ObjectHideFlags: 0
@@ -80707,6 +80991,8 @@ MonoBehaviour:
   TargetMeshFilter: {fileID: 0}
   uiAnchorOverride: {fileID: 0}
   uiOffset: {x: 0, y: 0, z: 0}
+  boxColliders: []
+  maxVolumeCollider: {fileID: 0}
 --- !u!1001 &2146340313
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -80933,7 +81219,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8811551876847666350, guid: f894574977aa3b748857b15a53868ea3, type: 3}
       propertyPath: burnTime
-      value: 60
+      value: 90
       objectReference: {fileID: 0}
     - target: {fileID: 8811551876847666350, guid: f894574977aa3b748857b15a53868ea3, type: 3}
       propertyPath: playerSpawnPoint

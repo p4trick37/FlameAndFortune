@@ -23,6 +23,7 @@ public class MoveAppliance : MonoBehaviour
     [SerializeField] private float stopDistance;
     private float startPosition;
     private float endPosition;
+    
     //private Transform stopTransformLessThan;
     //private Transform stopTransformGreaterThan;
     //[SerializeField] private Transform setStopTransform1;
@@ -89,10 +90,12 @@ public class MoveAppliance : MonoBehaviour
             if(zAxis == true)
             {
                 MoveOnZAxis(hitTransform);
+                Debug.Log("Should be moving");
             }
             else
             {
                 MoveOnXAxis(hitTransform);
+                Debug.Log("Should be moving");
             }
             Bounds();
         }
@@ -106,15 +109,11 @@ public class MoveAppliance : MonoBehaviour
     private void MoveOnXAxis(Vector3 hitTransform)
     {
         transform.position = new Vector3(hitTransform.x, transform.position.y, transform.position.z);
-
-        
     }
 
     private void MoveOnZAxis(Vector3 hitTransform)
     {
         transform.position = new Vector3(transform.position.x, transform.position.y, hitTransform.z);
-        
-
     }
     
     private void Bounds()
@@ -188,6 +187,70 @@ public class MoveAppliance : MonoBehaviour
         moveObject = false;
     }
 
+    private void OnTriggerEnter(Collider other)
+    {
+        Skin playerSkin = other.gameObject.GetComponent<Skin>();
+        if (playerSkin != null)
+        {
+            moveObject = false;
+            Debug.Log("Colliding with the player");
+            if (zAxis == true)
+            {
+                if (posDirection == true)
+                {
+                    transform.position = new Vector3(transform.position.x, transform.position.y, endPosition);
+                }
+                else
+                {
+                    transform.position = new Vector3(transform.position.x, transform.position.y, endPosition);
+                }
+            }
+            else
+            {
+                if (posDirection == true)
+                {
+                    transform.position = new Vector3(endPosition, transform.position.y, transform.position.z);
+                }
+                else
+                {
+                    transform.position = new Vector3(endPosition, transform.position.y, transform.position.z);
+                }
+            }
+        }
+        Debug.Log("Found a Trigger");
+    }
 
+    private void OnTriggerStay(Collider other)
+    {
+        Skin playerSkin = other.gameObject.GetComponent<Skin>();
+        if (playerSkin != null)
+        {
+            moveObject = false;
+            Debug.Log("Colliding with the player");
+            if (zAxis == true)
+            {
+                if (posDirection == true)
+                {
+                    transform.position = new Vector3(transform.position.x, transform.position.y, endPosition);
+                }
+                else
+                {
+                    transform.position = new Vector3(transform.position.x, transform.position.y, endPosition);
+                }
+            }
+            else
+            {
+                if (posDirection == true)
+                {
+                    transform.position = new Vector3(endPosition, transform.position.y, transform.position.z);
+                }
+                else
+                {
+                    transform.position = new Vector3(endPosition, transform.position.y, transform.position.z);
+                }
+            }
+        }
+        Debug.Log("Found a Trigger");
+    }
 
 }
